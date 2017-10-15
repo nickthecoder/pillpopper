@@ -1,0 +1,421 @@
+{
+    "info": {
+        "title": "Pill Popper",
+        "width": 1024,
+        "height": 600,
+        "resizable": true,
+        "initialScene": "level01",
+        "testScene": "level01",
+        "producer": "uk.co.nickthecoder.tickle.NoProducer",
+        "packages": [
+            "uk.co.nickthecoder.tickle"
+        ]
+    },
+    "layouts": [
+        {
+            "name": "main",
+            "stages": [
+                {
+                    "name": "main",
+                    "stage": "uk.co.nickthecoder.tickle.stage.GameStage"
+                }
+            ],
+            "views": [
+                {
+                    "name": "main",
+                    "view": "uk.co.nickthecoder.tickle.stage.ZOrderStageView",
+                    "stage": "main",
+                    "zOrder": 50,
+                    "hAlignment": "LEFT",
+                    "leftRightMargin": 0,
+                    "vAlignment": "TOP",
+                    "topBottomMargin": 0
+                }
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "name": "sprites",
+            "file": "images/sprites.png"
+        }
+    ],
+    "poses": [
+        {
+            "name": "wall_s",
+            "texture": "sprites",
+            "left": 274,
+            "bottom": 90,
+            "right": 315,
+            "top": 49,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_w",
+            "texture": "sprites",
+            "left": 229,
+            "bottom": 90,
+            "right": 270,
+            "top": 49,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_e",
+            "texture": "sprites",
+            "left": 274,
+            "bottom": 45,
+            "right": 315,
+            "top": 4,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_n",
+            "texture": "sprites",
+            "left": 229,
+            "bottom": 45,
+            "right": 270,
+            "top": 4,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_se",
+            "texture": "sprites",
+            "left": 184,
+            "bottom": 90,
+            "right": 225,
+            "top": 49,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_sw",
+            "texture": "sprites",
+            "left": 139,
+            "bottom": 90,
+            "right": 180,
+            "top": 49,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_ne",
+            "texture": "sprites",
+            "left": 184,
+            "bottom": 45,
+            "right": 225,
+            "top": 4,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_nw",
+            "texture": "sprites",
+            "left": 139,
+            "bottom": 45,
+            "right": 180,
+            "top": 4,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_ns",
+            "texture": "sprites",
+            "left": 94,
+            "bottom": 90,
+            "right": 135,
+            "top": 49,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_ew",
+            "texture": "sprites",
+            "left": 94,
+            "bottom": 45,
+            "right": 135,
+            "top": 4,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_tw",
+            "texture": "sprites",
+            "left": 49,
+            "bottom": 90,
+            "right": 90,
+            "top": 49,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_tn",
+            "texture": "sprites",
+            "left": 4,
+            "bottom": 90,
+            "right": 45,
+            "top": 49,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_ts",
+            "texture": "sprites",
+            "left": 49,
+            "bottom": 45,
+            "right": 90,
+            "top": 4,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        },
+        {
+            "name": "wall_te",
+            "texture": "sprites",
+            "left": 4,
+            "bottom": 45,
+            "right": 45,
+            "top": 4,
+            "offsetX": 20,
+            "offsetY": 20,
+            "direction": 0
+        }
+    ],
+    "costumes": [
+        {
+            "name": "wall_s",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_s"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_w",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_w"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_e",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_e"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_n",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_n"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_se",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_se"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_sw",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_sw"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_ne",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_ne"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_nw",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_nw"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_ns",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_ns"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_ew",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_ew"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_tw",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_tw"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_tn",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_tn"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_ts",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_ts"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wall_te",
+            "role": "",
+            "canRotate": false,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wall_te"
+                    ]
+                }
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "name": "left",
+            "keys": [
+                {
+                    "key": "Left",
+                    "state": "PRESSED"
+                }
+            ]
+        },
+        {
+            "name": "right",
+            "keys": [
+                {
+                    "key": "Right",
+                    "state": "PRESSED"
+                }
+            ]
+        },
+        {
+            "name": "up",
+            "keys": [
+                {
+                    "key": "Up",
+                    "state": "PRESSED"
+                }
+            ]
+        },
+        {
+            "name": "down",
+            "keys": [
+                {
+                    "key": "Down",
+                    "state": "PRESSED"
+                }
+            ]
+        }
+    ]
+}

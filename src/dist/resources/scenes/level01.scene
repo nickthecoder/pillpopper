@@ -1,0 +1,223 @@
+{
+    "director": "uk.co.nickthecoder.tickle.NoDirector",
+    "background": "#000000",
+    "showMouse": true,
+    "layout": "main",
+    "stages": [
+        {
+            "name": "main",
+            "actors": [
+                {
+                    "costume": "wall_nw",
+                    "x": 59,
+                    "y": 562,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 101,
+                    "y": 562,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 60,
+                    "y": 520,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 144,
+                    "y": 562,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 187,
+                    "y": 563,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ts",
+                    "x": 231,
+                    "y": 561,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 232,
+                    "y": 517,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_n",
+                    "x": 146,
+                    "y": 475,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 60,
+                    "y": 478,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_s",
+                    "x": 146,
+                    "y": 435,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_s",
+                    "x": 231,
+                    "y": 476,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_n",
+                    "x": 228,
+                    "y": 387,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 60,
+                    "y": 437,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 60,
+                    "y": 396,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 61,
+                    "y": 314,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_te",
+                    "x": 59,
+                    "y": 354,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_e",
+                    "x": 103,
+                    "y": 353,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_tw",
+                    "x": 227,
+                    "y": 346,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_w",
+                    "x": 185,
+                    "y": 351,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_n",
+                    "x": 146,
+                    "y": 264,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_sw",
+                    "x": 142,
+                    "y": 224,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 62,
+                    "y": 269,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 62,
+                    "y": 225,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 62,
+                    "y": 184,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_sw",
+                    "x": 60,
+                    "y": 142,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 102,
+                    "y": 143,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 145,
+                    "y": 145,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 186,
+                    "y": 144,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_e",
+                    "x": 185,
+                    "y": 225,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_n",
+                    "x": 270,
+                    "y": 224,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 229,
+                    "y": 145,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_tn",
+                    "x": 270,
+                    "y": 143,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_sw",
+                    "x": 227,
+                    "y": 306,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_e",
+                    "x": 270,
+                    "y": 304,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 269,
+                    "y": 183,
+                    "direction": 0
+                }
+            ]
+        }
+    ]
+}
