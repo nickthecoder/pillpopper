@@ -8,7 +8,7 @@ import uk.co.nickthecoder.tickle.resources.Resources
 
 val GRID_SIZE = 40
 
-class Popper : AbstractRole() {
+class Player : AbstractRole() {
 
     val left = Resources.instance.input("left")
     val right = Resources.instance.input("right")

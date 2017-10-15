@@ -11,10 +11,10 @@ open class Pill : AbstractRole() {
 
     var eaten = false
 
-    lateinit var director: Maze
+    lateinit var director: Play
 
     override fun activated() {
-        director = Game.instance.director as Maze
+        director = Game.instance.director as Play
         director.neighbourhood.getBlock(actor.x, actor.y).add(this)
         director.pills++
     }

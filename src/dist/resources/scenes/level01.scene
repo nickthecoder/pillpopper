@@ -1,5 +1,5 @@
 {
-    "director": "uk.co.nickthecoder.pillpopper.Maze",
+    "director": "uk.co.nickthecoder.pillpopper.Play",
     "background": "#000000",
     "showMouse": true,
     "layout": "main",
@@ -1052,7 +1052,7 @@
                     "direction": 0
                 },
                 {
-                    "costume": "popper",
+                    "costume": "player",
                     "x": 360,
                     "y": 80,
                     "direction": 0

@@ -522,20 +522,6 @@
             ]
         },
         {
-            "name": "popper",
-            "role": "uk.co.nickthecoder.pillpopper.Popper",
-            "canRotate": false,
-            "zOrder": -1,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "popper"
-                    ]
-                }
-            ]
-        },
-        {
             "name": "drinky",
             "role": "",
             "canRotate": false,
@@ -564,6 +550,20 @@
                             "valign": "TOP",
                             "color": "#ffffffff"
                         }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "player",
+            "role": "uk.co.nickthecoder.pillpopper.Player",
+            "canRotate": false,
+            "zOrder": -1,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "popper"
                     ]
                 }
             ]

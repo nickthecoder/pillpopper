@@ -4,7 +4,7 @@ import uk.co.nickthecoder.tickle.AbstractDirector
 import uk.co.nickthecoder.tickle.Game
 import uk.co.nickthecoder.tickle.neighbourhood.StandardNeighbourhood
 
-class Maze : AbstractDirector() {
+class Play : AbstractDirector() {
 
     override val neighbourhood = StandardNeighbourhood(GRID_SIZE.toDouble())
 
