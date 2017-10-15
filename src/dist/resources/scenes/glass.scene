@@ -1,0 +1,20 @@
+{
+    "director": "uk.co.nickthecoder.tickle.NoDirector",
+    "background": "#000000",
+    "showMouse": false,
+    "layout": "glass",
+    "stages": [
+        {
+            "name": "glass",
+            "actors": [
+                {
+                    "costume": "score",
+                    "x": 1007,
+                    "y": 585,
+                    "direction": 0,
+                    "text": ""
+                }
+            ]
+        }
+    ]
+}

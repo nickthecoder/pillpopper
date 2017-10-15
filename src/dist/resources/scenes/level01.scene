@@ -1,5 +1,5 @@
 {
-    "director": "uk.co.nickthecoder.tickle.NoDirector",
+    "director": "uk.co.nickthecoder.pillpopper.Maze",
     "background": "#000000",
     "showMouse": true,
     "layout": "main",
@@ -9,212 +9,1052 @@
             "actors": [
                 {
                     "costume": "wall_nw",
-                    "x": 59,
-                    "y": 562,
+                    "x": 40,
+                    "y": 440,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 101,
-                    "y": 562,
+                    "x": 80,
+                    "y": 440,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 60,
-                    "y": 520,
+                    "x": 40,
+                    "y": 400,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 144,
-                    "y": 562,
+                    "x": 120,
+                    "y": 440,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 187,
-                    "y": 563,
+                    "x": 160,
+                    "y": 440,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ts",
-                    "x": 231,
-                    "y": 561,
+                    "x": 200,
+                    "y": 440,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 232,
-                    "y": 517,
+                    "x": 200,
+                    "y": 400,
                     "direction": 0
                 },
                 {
                     "costume": "wall_n",
-                    "x": 146,
-                    "y": 475,
+                    "x": 120,
+                    "y": 360,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 60,
-                    "y": 478,
+                    "x": 40,
+                    "y": 360,
                     "direction": 0
                 },
                 {
                     "costume": "wall_s",
-                    "x": 146,
-                    "y": 435,
+                    "x": 120,
+                    "y": 320,
                     "direction": 0
                 },
                 {
                     "costume": "wall_s",
-                    "x": 231,
-                    "y": 476,
+                    "x": 200,
+                    "y": 360,
                     "direction": 0
                 },
                 {
                     "costume": "wall_n",
-                    "x": 228,
-                    "y": 387,
+                    "x": 200,
+                    "y": 280,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 60,
-                    "y": 437,
+                    "x": 40,
+                    "y": 320,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 60,
-                    "y": 396,
+                    "x": 40,
+                    "y": 280,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 61,
-                    "y": 314,
+                    "x": 40,
+                    "y": 200,
                     "direction": 0
                 },
                 {
                     "costume": "wall_te",
-                    "x": 59,
-                    "y": 354,
+                    "x": 40,
+                    "y": 240,
                     "direction": 0
                 },
                 {
                     "costume": "wall_e",
-                    "x": 103,
-                    "y": 353,
+                    "x": 80,
+                    "y": 240,
                     "direction": 0
                 },
                 {
                     "costume": "wall_tw",
-                    "x": 227,
-                    "y": 346,
+                    "x": 200,
+                    "y": 240,
                     "direction": 0
                 },
                 {
                     "costume": "wall_w",
-                    "x": 185,
-                    "y": 351,
+                    "x": 160,
+                    "y": 240,
                     "direction": 0
                 },
                 {
                     "costume": "wall_n",
-                    "x": 146,
-                    "y": 264,
+                    "x": 120,
+                    "y": 160,
                     "direction": 0
                 },
                 {
                     "costume": "wall_sw",
-                    "x": 142,
-                    "y": 224,
+                    "x": 120,
+                    "y": 120,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 62,
-                    "y": 269,
+                    "x": 40,
+                    "y": 160,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 62,
-                    "y": 225,
+                    "x": 40,
+                    "y": 120,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 62,
-                    "y": 184,
+                    "x": 40,
+                    "y": 80,
                     "direction": 0
                 },
                 {
                     "costume": "wall_sw",
-                    "x": 60,
-                    "y": 142,
+                    "x": 40,
+                    "y": 40,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 102,
-                    "y": 143,
+                    "x": 120,
+                    "y": 40,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 145,
-                    "y": 145,
+                    "x": 160,
+                    "y": 40,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 186,
-                    "y": 144,
+                    "x": 200,
+                    "y": 40,
                     "direction": 0
                 },
                 {
                     "costume": "wall_e",
-                    "x": 185,
-                    "y": 225,
+                    "x": 200,
+                    "y": 120,
                     "direction": 0
                 },
                 {
                     "costume": "wall_n",
-                    "x": 270,
-                    "y": 224,
+                    "x": 280,
+                    "y": 160,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 229,
-                    "y": 145,
+                    "x": 80,
+                    "y": 40,
                     "direction": 0
                 },
                 {
                     "costume": "wall_tn",
-                    "x": 270,
-                    "y": 143,
-                    "direction": 0
-                },
-                {
-                    "costume": "wall_sw",
-                    "x": 227,
-                    "y": 306,
-                    "direction": 0
-                },
-                {
-                    "costume": "wall_e",
-                    "x": 270,
-                    "y": 304,
+                    "x": 280,
+                    "y": 40,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 269,
-                    "y": 183,
+                    "x": 280,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 240,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 280,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 320,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 360,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 400,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 440,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 480,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 560,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 600,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_nw",
+                    "x": 280,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 280,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_sw",
+                    "x": 280,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_s",
+                    "x": 200,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 280,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 320,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 360,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 400,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 240,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_e",
+                    "x": 320,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_w",
+                    "x": 400,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ne",
+                    "x": 440,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_se",
+                    "x": 440,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 440,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 440,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 280,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 160,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 320,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 360,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 480,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 400,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_s",
+                    "x": 360,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_n",
+                    "x": 360,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_n",
+                    "x": 440,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 440,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 440,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 520,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_s",
+                    "x": 520,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_s",
+                    "x": 600,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_n",
+                    "x": 600,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ts",
+                    "x": 520,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ne",
+                    "x": 680,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 640,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 680,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 680,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 680,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 680,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 680,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 680,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 680,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 680,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 520,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 560,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 600,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 640,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_se",
+                    "x": 680,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_tn",
+                    "x": 440,
+                    "y": 40,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_n",
+                    "x": 520,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_e",
+                    "x": 560,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_s",
+                    "x": 520,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_w",
+                    "x": 520,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 560,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_se",
+                    "x": 600,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_n",
+                    "x": 600,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_te",
+                    "x": 520,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_w",
+                    "x": 640,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_tw",
+                    "x": 680,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "powerPill",
+                    "x": 80,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "powerPill",
+                    "x": 640,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "powerPill",
+                    "x": 640,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "powerPill",
+                    "x": 80,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 120,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 160,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 200,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 240,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 240,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 240,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 200,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 160,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 160,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 120,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 80,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 80,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 80,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 120,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 120,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 80,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 80,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 120,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 80,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 160,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 160,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 160,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 160,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 200,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 240,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 240,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 240,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 240,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 280,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 320,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 400,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 360,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 440,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 480,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 480,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 480,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 480,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 520,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 560,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 600,
+                    "y": 80,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 640,
+                    "y": 120,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 640,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 640,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 600,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 560,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 560,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 520,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 480,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 480,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 480,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 480,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 480,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 440,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 400,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 320,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 280,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 240,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 240,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 520,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 560,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 560,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 560,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 600,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 640,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 640,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 640,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 600,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 560,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 600,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 360,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "drinky",
+                    "x": 320,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "popper",
+                    "x": 360,
+                    "y": 80,
                     "direction": 0
                 }
             ]
