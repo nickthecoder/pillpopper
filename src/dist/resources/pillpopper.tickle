@@ -348,6 +348,17 @@
             "offsetX": 16,
             "offsetY": 18,
             "direction": 0
+        },
+        {
+            "name": "eaten",
+            "texture": "sprites",
+            "left": 53,
+            "bottom": 169,
+            "right": 104,
+            "top": 136,
+            "offsetX": 24,
+            "offsetY": 14,
+            "direction": 0
         }
     ],
     "costumes": [
@@ -604,6 +615,12 @@
                     "poses": [
                         "scared"
                     ]
+                },
+                {
+                    "name": "eaten",
+                    "poses": [
+                        "eaten"
+                    ]
                 }
             ],
             "attributes": [
@@ -663,6 +680,12 @@
                     "poses": [
                         "scared"
                     ]
+                },
+                {
+                    "name": "eaten",
+                    "poses": [
+                        "eaten"
+                    ]
                 }
             ],
             "attributes": [
@@ -689,6 +712,12 @@
                     "poses": [
                         "scared"
                     ]
+                },
+                {
+                    "name": "eaten",
+                    "poses": [
+                        "eaten"
+                    ]
                 }
             ],
             "attributes": [
@@ -714,6 +743,12 @@
                     "name": "scared",
                     "poses": [
                         "scared"
+                    ]
+                },
+                {
+                    "name": "eaten",
+                    "poses": [
+                        "eaten"
                     ]
                 }
             ],

@@ -47,7 +47,7 @@ abstract class Ghost : AbstractRole() {
     /**
      * A chasing movement of one block
      */
-    val chaseOne = OneAction { changeDirection(chaseScorer) }.then(MoveForwards().then { checkScared() })
+    val chaseOne = OneAction { changeDirection(chaseScorer) }.then(MoveForwards().then { checkTurningScared() })
 
     /**
      * Chases forever - [movement] uses this most of the time.
@@ -55,8 +55,7 @@ abstract class Ghost : AbstractRole() {
     val chase: Action = chaseOne.forever()
 
     /**
-     * The current movement action. This changes over time, from [startMovement] to [chase], and then when eaten
-     * changes to [runHome].
+     * The current movement action. This changes over time.
      */
     var movement: Action = NoAction()
         set(v) {
@@ -72,7 +71,7 @@ abstract class Ghost : AbstractRole() {
     var seekingDoor: Boolean = false
 
     /**
-     * True when a power pill has been eaten. Reset as soon as checkScared has run.
+     * True when a power pill has been eaten. Reset as soon as checkTurningScared has run.
      */
     var turningScared: Boolean = false
 
@@ -82,7 +81,7 @@ abstract class Ghost : AbstractRole() {
     var scared: Boolean = false
 
     /**
-     * true when the ghost has been eaten. Reset when back in the pen.
+     * true when the ghost has been eaten. Reset when out of the pen.
      */
     var eaten: Boolean = false
 
@@ -95,7 +94,7 @@ abstract class Ghost : AbstractRole() {
         val foundDoor = closest(actor.stage!!.findRole<Door>())
         if (foundDoor == null) {
             actor.die()
-            println("No door found!")
+            println("ERROR. No door found!")
         } else {
             door = foundDoor
         }
@@ -175,16 +174,24 @@ abstract class Ghost : AbstractRole() {
 
     }
 
+    /**
+     * A power pill has been eaten by the Player.
+     */
     fun runAway() {
-        actor.event("scared")
-        turningScared = true
-        scared = true
+        if (!eaten && !seekingDoor) {
+            actor.event("scared")
+            turningScared = true
+            scared = true
+        }
     }
 
-    fun checkScared() {
+    fun checkTurningScared() {
         if (turningScared) {
             turningScared = false
-            val runOne = OneAction { changeDirection { runAwayScorer(it) } }.then(MoveForwards()).then { checkEaten() }
+            val runOne = OneAction { changeDirection { runAwayScorer(it) } }.then(MoveForwards()).then {
+                checkTurningScared()
+                checkEaten()
+            }
             movement = runOne.repeat(30)
                     .then {
                         scared = false
@@ -196,7 +203,6 @@ abstract class Ghost : AbstractRole() {
 
     fun checkEaten() {
         if (eaten) {
-            eaten = false
             turningScared = false
             // Go to the pen
             seekDoor(chaseOne.repeat(2)
@@ -205,7 +211,10 @@ abstract class Ghost : AbstractRole() {
                     .then(
                             chaseOne.repeat(reExitAfter) // Wait in the pen for a while,
                                     // Head out the door and resume chasing the player
-                                    .then { seekDoor(afterAction = chase) }
+                                    .then {
+                                        eaten = false
+                                        seekDoor(afterAction = chase)
+                                    }
                     )
             )
         }
@@ -221,9 +230,10 @@ abstract class Ghost : AbstractRole() {
     /**
      * Caught by Player after a power pill has been eaten.
      */
-    fun eat() {
+    fun eaten() {
         actor.event("eaten") // Change appearance
         eaten = true
+        scared = false
         PillPopper.instance.eatenGhost()
     }
 
@@ -237,7 +247,7 @@ abstract class Ghost : AbstractRole() {
                 if (eaten) {
                     // Do nothing
                 } else if (scared) {
-                    eat()
+                    eaten()
                 } else {
                     Player.instance.killed()
                 }
