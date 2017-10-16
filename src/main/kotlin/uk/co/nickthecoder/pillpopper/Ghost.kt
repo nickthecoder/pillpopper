@@ -7,6 +7,7 @@ import uk.co.nickthecoder.tickle.action.Action
 import uk.co.nickthecoder.tickle.action.Idle
 import uk.co.nickthecoder.tickle.action.NoAction
 import uk.co.nickthecoder.tickle.action.OneAction
+import uk.co.nickthecoder.tickle.graphics.Color
 import uk.co.nickthecoder.tickle.neighbourhood.Block
 import uk.co.nickthecoder.tickle.stage.findRole
 import uk.co.nickthecoder.tickle.util.Attribute
@@ -88,6 +89,7 @@ abstract class Ghost : AbstractRole() {
     lateinit var door: Role
 
     override fun activated() {
+        actor.color = Color(1f, 1f, 1f, 0.8f)
         movement = Idle(initialIdle).then(chaseOne.repeat(exitAfter).then { seekDoor(afterAction = chase) })
 
         block = Game.instance.director.neighbourhood.getBlock(actor.x, actor.y)

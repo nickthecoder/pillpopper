@@ -1,0 +1,38 @@
+
+Add bonus factory : Creates beer bottles/beer glass/wine glass
+
+Animation when finished the level
+
+Move to next level when complete
+
+Slow scared ghosts down
+	Full speed when eaten
+
+Slow Player when eating pills
+
+Later
+-----
+
+Animation for Player and Ghosts
+	Ghost outline wobbles
+	Eyes as separate entities
+		Different poses for left/right/up/down
+		Jiggle around a little.
+
+Splash screen
+
+Highscore
+
+Scrolling view for a HUGE maze.
+
+Scores fly upwards each time something is eaten.
+
+Much Later
+----------
+
+Animations between Play scenes
+	
+Speech bubbles when eating power pills and bonuses
+	
+
+

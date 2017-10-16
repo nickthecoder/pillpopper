@@ -2,6 +2,8 @@ package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.AbstractProducer
 import uk.co.nickthecoder.tickle.Game
+import uk.co.nickthecoder.tickle.action.NoAction
+import uk.co.nickthecoder.tickle.stage.findRole
 
 class PillPopper : AbstractProducer() {
 
@@ -18,7 +20,14 @@ class PillPopper : AbstractProducer() {
      */
     var ghostPoints = 0
 
-    override fun sceneActivated() {
+    /**
+     * The number of pills yet to be collected. Incremented  by Pill.onActivate
+     */
+    var pills: Int = 0
+
+    override fun sceneBegin() {
+        pills = 0
+
         Game.instance.scene.findStage("glass")?.let { glass ->
             scoreRole = glass.actors.firstOrNull { it.role is Score }?.role as Score
             scoreRole?.update(score)
@@ -32,16 +41,24 @@ class PillPopper : AbstractProducer() {
         return points
     }
 
-    fun eatenPowerPill() {
-        ghostPoints = 50
-        addPoints(10)
+    fun eatenPill(isPowerPill: Boolean) {
+        if (isPowerPill) {
+            ghostPoints = 50
+            addPoints(10)
+        } else {
+            addPoints(1)
+        }
+        pills--
+        if (pills <= 0) {
+            Player.instance.levelComplete()
+
+            Player.instance.actor.stage!!.findRole<Ghost>().forEach { ghost ->
+                ghost.movement = NoAction()
+            }
+        }
     }
 
-    fun eatenPill() {
-        addPoints(1)
-    }
-
-    private fun addPoints(points: Int) {
+    fun addPoints(points: Int) {
         score += points
         scoreRole?.update(score)
     }

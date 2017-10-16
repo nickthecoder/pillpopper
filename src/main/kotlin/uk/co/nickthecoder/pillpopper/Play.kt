@@ -8,8 +8,6 @@ class Play : AbstractDirector() {
 
     override val neighbourhood = StandardNeighbourhood(GRID_SIZE.toDouble())
 
-    var pills : Int = 0
-
     override fun begin() {
         Game.instance.mergeScene("glass")
     }

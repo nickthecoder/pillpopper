@@ -5,9 +5,11 @@ import uk.co.nickthecoder.tickle.Game
 import uk.co.nickthecoder.tickle.action.Action
 import uk.co.nickthecoder.tickle.action.Kill
 import uk.co.nickthecoder.tickle.action.animation.Eases
+import uk.co.nickthecoder.tickle.action.animation.Forwards
 import uk.co.nickthecoder.tickle.action.animation.Grow
 import uk.co.nickthecoder.tickle.neighbourhood.Block
 import uk.co.nickthecoder.tickle.resources.Resources
+import uk.co.nickthecoder.tickle.util.Angle
 
 class Player : AbstractRole() {
 
@@ -46,7 +48,7 @@ class Player : AbstractRole() {
         block.occupants.forEach {
             val role = it.role
             if (role is Pill) {
-                role.eat()
+                role.eaten()
             }
         }
     }
@@ -64,6 +66,21 @@ class Player : AbstractRole() {
     fun killed() {
         dead = true
         movement = Grow(actor, 1.0, 0.1, Eases.easeIn).then(Kill(actor))
+    }
+
+    /**
+     * Called by PillPopper Producer when all pills have been eaten
+     */
+    fun levelComplete() {
+        actor.zOrder = 100.0
+        val time = 0.2
+
+        val jumpUp = Forwards(actor.position, 50.0, Angle.degrees(90.0), time, Eases.easeOutCubic)
+        val jumpDown = Forwards(actor.position, 50.0, Angle.degrees(-90.0), time, Eases.easeInCubic)
+        val kissIn = Grow(actor, time, 3.0, Eases.easeIn)
+        val kissOut = Grow(actor, time, 1.0, Eases.linear)
+
+        movement = (jumpUp.and(kissIn)).then(jumpDown.and(kissOut)).repeat(3)
     }
 
     inner class Movement : Action {

@@ -11,25 +11,23 @@ open class Pill : AbstractRole() {
 
     var eaten = false
 
+    open val isPowerPill = false
+
     lateinit var director: Play
 
     override fun activated() {
         director = Game.instance.director as Play
         director.neighbourhood.getBlock(actor.x, actor.y).add(this)
-        director.pills++
+        PillPopper.instance.pills++
     }
 
     override fun tick() {}
 
-    open fun eat() {
+    open fun eaten() {
         actor.die()
         eaten = true
         director.neighbourhood.getBlock(actor.x, actor.y).remove(this)
-        addScore()
-    }
-
-    open fun addScore() {
-        PillPopper.instance.eatenPill()
+        PillPopper.instance.eatenPill(isPowerPill)
     }
 
     override fun end() {
