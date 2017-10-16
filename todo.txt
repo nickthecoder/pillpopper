@@ -1,8 +1,6 @@
 
 Add bonus factory : Creates beer bottles/beer glass/wine glass
 
-Animation when finished the level
-
 Move to next level when complete
 
 Slow scared ghosts down
@@ -13,15 +11,19 @@ Slow Player when eating pills
 Later
 -----
 
+Leave lipstick marks when kissing (End of level animation).
+
 Animation for Player and Ghosts
 	Ghost outline wobbles
 	Eyes as separate entities
 		Different poses for left/right/up/down
 		Jiggle around a little.
 
+Resize window based on the size of the maze
+
 Splash screen
 
-Highscore
+Highscore (saved)
 
 Scrolling view for a HUGE maze.
 

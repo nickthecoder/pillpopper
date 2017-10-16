@@ -10,15 +10,22 @@ import uk.co.nickthecoder.tickle.action.animation.Grow
 import uk.co.nickthecoder.tickle.neighbourhood.Block
 import uk.co.nickthecoder.tickle.resources.Resources
 import uk.co.nickthecoder.tickle.util.Angle
+import uk.co.nickthecoder.tickle.util.Attribute
 
 class Player : AbstractRole() {
+
+    @Attribute
+    var highSpeed: Double = 4.0
+
+    @Attribute
+    var lowSpeed: Double = 3.0
+
+    var speed: Double = 0.0
 
     val left = Resources.instance.input("left")
     val right = Resources.instance.input("right")
     val up = Resources.instance.input("up")
     val down = Resources.instance.input("down")
-
-    var speed: Double = 4.0
 
     var dx: Int = 0
 
@@ -33,6 +40,7 @@ class Player : AbstractRole() {
     }
 
     override fun activated() {
+        speed = highSpeed
         block = Game.instance.director.neighbourhood.getBlock(actor.x, actor.y)
     }
 
@@ -49,6 +57,9 @@ class Player : AbstractRole() {
             val role = it.role
             if (role is Pill) {
                 role.eaten()
+                speed = lowSpeed
+            } else {
+                speed = highSpeed
             }
         }
     }

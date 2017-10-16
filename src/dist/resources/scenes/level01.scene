@@ -1049,7 +1049,17 @@
                     "costume": "drinky",
                     "x": 320,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "attributes": [
+                        {
+                            "name": "highSpeed",
+                            "value": "3.5"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "2.5"
+                        }
+                    ]
                 },
                 {
                     "costume": "player",
@@ -1061,7 +1071,17 @@
                     "costume": "stinky",
                     "x": 360,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "attributes": [
+                        {
+                            "name": "highSpeed",
+                            "value": "3.8"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3.2"
+                        }
+                    ]
                 },
                 {
                     "costume": "snide",

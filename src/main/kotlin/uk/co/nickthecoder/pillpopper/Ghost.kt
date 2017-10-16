@@ -25,7 +25,12 @@ abstract class Ghost : AbstractRole() {
     var initialIdle = 0
 
     @Attribute
-    var speed = 4.0
+    var highSpeed = 4.0
+
+    @Attribute
+    var lowSpeed = 3.0
+
+    var speed = 0.0
 
     /**
      * Time to stay in the pen at the beginning of the scene (measured in whole-block movements)
@@ -89,6 +94,7 @@ abstract class Ghost : AbstractRole() {
     lateinit var door: Role
 
     override fun activated() {
+        speed = highSpeed
         actor.color = Color(1f, 1f, 1f, 0.8f)
         movement = Idle(initialIdle).then(chaseOne.repeat(exitAfter).then { seekDoor(afterAction = chase) })
 
@@ -182,6 +188,7 @@ abstract class Ghost : AbstractRole() {
     fun runAway() {
         if (!eaten && !seekingDoor) {
             actor.event("scared")
+            speed = lowSpeed
             turningScared = true
             scared = true
         }
@@ -234,6 +241,7 @@ abstract class Ghost : AbstractRole() {
      */
     fun eaten() {
         actor.event("eaten") // Change appearance
+        speed = highSpeed
         eaten = true
         scared = false
         PillPopper.instance.eatenGhost()
