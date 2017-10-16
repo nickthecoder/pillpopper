@@ -6,6 +6,8 @@ val GRID_SIZE = 40
 
 val TOUCHING_DISTANCE = 10.0
 
+val STARTING_BONUS = 50
+
 enum class Direction(val dx: Int, val dy: Int) {
     NORTH(0, 1), EAST(1, 0), SOUTH(0, -1), WEST(-1, 0);
 

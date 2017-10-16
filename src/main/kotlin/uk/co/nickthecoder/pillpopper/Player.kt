@@ -55,7 +55,7 @@ class Player : AbstractRole() {
 
         block.occupants.forEach {
             val role = it.role
-            if (role is Pill) {
+            if (role is Edible) {
                 role.eaten()
                 speed = lowSpeed
             } else {

@@ -10,6 +10,11 @@ class Play : AbstractDirector() {
 
     override fun begin() {
         Game.instance.mergeScene("glass")
+        instance = this
+    }
+
+    companion object {
+        lateinit var instance : Play
     }
 
 }

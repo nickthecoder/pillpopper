@@ -4,7 +4,7 @@ import uk.co.nickthecoder.tickle.AbstractRole
 import uk.co.nickthecoder.tickle.Game
 import uk.co.nickthecoder.tickle.util.CostumeAttribute
 
-open class Pill : AbstractRole() {
+open class Pill : AbstractRole(), Edible {
 
     @CostumeAttribute
     var points: Int = 1
@@ -23,7 +23,7 @@ open class Pill : AbstractRole() {
 
     override fun tick() {}
 
-    open fun eaten() {
+    override fun eaten() {
         actor.die()
         eaten = true
         director.neighbourhood.getBlock(actor.x, actor.y).remove(this)

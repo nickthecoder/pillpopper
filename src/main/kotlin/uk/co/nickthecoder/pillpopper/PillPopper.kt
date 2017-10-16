@@ -21,6 +21,11 @@ class PillPopper : AbstractProducer() {
     var ghostPoints = 0
 
     /**
+     * Points for eating a Bonus. Increases for each bonus eaten.
+     */
+    var bonusPoints = STARTING_BONUS
+
+    /**
      * The number of pills yet to be collected. Incremented  by Pill.onActivate
      */
     var pills: Int = 0
@@ -56,6 +61,20 @@ class PillPopper : AbstractProducer() {
                 ghost.movement = NoAction()
             }
         }
+    }
+
+    fun eatenBonus(): Int {
+        val points = bonusPoints
+        addPoints(points)
+        bonusPoints *= 2
+        return points
+    }
+
+    /**
+     * If the bonus timed out before being eaten then the bonus is reset
+     */
+    fun missedBonus() {
+        bonusPoints = STARTING_BONUS
     }
 
     fun addPoints(points: Int) {

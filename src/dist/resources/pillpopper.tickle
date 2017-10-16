@@ -359,6 +359,39 @@
             "offsetX": 24,
             "offsetY": 14,
             "direction": 0
+        },
+        {
+            "name": "beer",
+            "texture": "sprites",
+            "left": 108,
+            "bottom": 168,
+            "right": 131,
+            "top": 137,
+            "offsetX": 12,
+            "offsetY": 14,
+            "direction": 0
+        },
+        {
+            "name": "wine",
+            "texture": "sprites",
+            "left": 138,
+            "bottom": 166,
+            "right": 155,
+            "top": 138,
+            "offsetX": 9,
+            "offsetY": 14,
+            "direction": 0
+        },
+        {
+            "name": "bonusFactory",
+            "texture": "sprites",
+            "left": 160,
+            "bottom": 163,
+            "right": 185,
+            "top": 139,
+            "offsetX": 14,
+            "offsetY": 11,
+            "direction": 0
         }
     ],
     "costumes": [
@@ -783,6 +816,55 @@
                     "name": "default",
                     "poses": [
                         "flag"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "beer",
+            "role": "uk.co.nickthecoder.pillpopper.Bonus",
+            "canRotate": false,
+            "zOrder": 0,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "beer"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "bonusFactory",
+            "role": "uk.co.nickthecoder.pillpopper.BonusFactory",
+            "canRotate": false,
+            "zOrder": 0,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "bonusFactory"
+                    ]
+                },
+                {
+                    "name": "bonus",
+                    "costumes": [
+                        "beer",
+                        "wine"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wine",
+            "role": "uk.co.nickthecoder.pillpopper.Bonus",
+            "canRotate": false,
+            "zOrder": 0,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "wine"
                     ]
                 }
             ]
