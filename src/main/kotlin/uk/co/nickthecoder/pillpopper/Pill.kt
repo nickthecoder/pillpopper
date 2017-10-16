@@ -25,7 +25,11 @@ open class Pill : AbstractRole() {
         actor.die()
         eaten = true
         director.neighbourhood.getBlock(actor.x, actor.y).remove(this)
-        PillPopper.instance.addPoints(points)
+        addScore()
+    }
+
+    open fun addScore() {
+        PillPopper.instance.eatenPill()
     }
 
     override fun end() {

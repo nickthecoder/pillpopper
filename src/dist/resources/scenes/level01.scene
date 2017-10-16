@@ -1056,6 +1056,36 @@
                     "x": 360,
                     "y": 80,
                     "direction": 0
+                },
+                {
+                    "costume": "stinky",
+                    "x": 360,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "snide",
+                    "x": 400,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "winky",
+                    "x": 360,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "door",
+                    "x": 360,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "flag",
+                    "x": 160,
+                    "y": 400,
+                    "direction": 0
                 }
             ]
         }

@@ -3,10 +3,11 @@ package uk.co.nickthecoder.pillpopper
 import uk.co.nickthecoder.tickle.AbstractRole
 import uk.co.nickthecoder.tickle.Game
 import uk.co.nickthecoder.tickle.action.Action
+import uk.co.nickthecoder.tickle.action.Kill
+import uk.co.nickthecoder.tickle.action.animation.Eases
+import uk.co.nickthecoder.tickle.action.animation.Grow
 import uk.co.nickthecoder.tickle.neighbourhood.Block
 import uk.co.nickthecoder.tickle.resources.Resources
-
-val GRID_SIZE = 40
 
 class Player : AbstractRole() {
 
@@ -17,13 +18,27 @@ class Player : AbstractRole() {
 
     var speed: Double = 4.0
 
+    var dx: Int = 0
+
+    var dy: Int = 0
+
+    var dead: Boolean = false
+
     lateinit var block: Block
+
+    override fun begin() {
+        Player.instance = this
+    }
 
     override fun activated() {
         block = Game.instance.director.neighbourhood.getBlock(actor.x, actor.y)
     }
 
-    val movement = Movement()
+    var movement: Action = Movement()
+        set(v) {
+            field = v
+            v.begin()
+        }
 
     override fun tick() {
         movement.act()
@@ -36,10 +51,22 @@ class Player : AbstractRole() {
         }
     }
 
-    inner class Movement : Action {
+    fun canMove(deltaX: Int, deltaY: Int): Boolean {
+        if (deltaX == 0 && deltaY == 0) {
+            return false
+        }
+        return !block.isSolid(deltaX, deltaY)
+    }
 
-        var dx: Int = 0
-        var dy: Int = 0
+    /**
+     * A ghost has touched us.
+     */
+    fun killed() {
+        dead = true
+        movement = Grow(actor, 1.0, 0.1, Eases.easeIn).then(Kill(actor))
+    }
+
+    inner class Movement : Action {
 
         var nextDx: Int = 0
         var nextDy: Int = 0
@@ -126,20 +153,10 @@ class Player : AbstractRole() {
             dy = deltaY
         }
 
-        fun canMove(deltaX: Int, deltaY: Int): Boolean {
-            if (deltaX == 0 && deltaY == 0) {
-                return false
-            }
-            val nextBlock = block.neighbouringBlock(deltaX, deltaY)
-            nextBlock ?: return false
+    }
 
-            nextBlock.occupants.forEach {
-                if (it.role is Solid) {
-                    return false
-                }
-            }
-            return true
-        }
+    companion object {
+        lateinit var instance: Player
     }
 }
 
