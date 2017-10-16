@@ -5,7 +5,7 @@
         "height": 600,
         "resizable": true,
         "initialScene": "level01",
-        "testScene": "level01",
+        "testScene": "test",
         "producer": "uk.co.nickthecoder.pillpopper.PillPopper",
         "packages": [
             "uk.co.nickthecoder.tickle",

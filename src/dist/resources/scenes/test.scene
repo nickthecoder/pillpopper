@@ -63,20 +63,8 @@
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 400,
-                    "y": 480,
-                    "direction": 0
-                },
-                {
-                    "costume": "wall_ns",
-                    "x": 400,
+                    "x": 480,
                     "y": 440,
-                    "direction": 0
-                },
-                {
-                    "costume": "wall_ns",
-                    "x": 400,
-                    "y": 400,
                     "direction": 0
                 },
                 {
@@ -123,12 +111,6 @@
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 120,
-                    "y": 160,
-                    "direction": 0
-                },
-                {
-                    "costume": "wall_ew",
                     "x": 160,
                     "y": 160,
                     "direction": 0
@@ -142,12 +124,6 @@
                 {
                     "costume": "wall_ew",
                     "x": 240,
-                    "y": 160,
-                    "direction": 0
-                },
-                {
-                    "costume": "wall_ew",
-                    "x": 280,
                     "y": 160,
                     "direction": 0
                 },
@@ -226,23 +202,27 @@
                 {
                     "costume": "bonusFactory",
                     "x": 200,
-                    "y": 360,
+                    "y": 320,
                     "direction": 0,
                     "attributes": [
                         {
                             "name": "period",
-                            "value": "3"
+                            "value": "2"
                         },
                         {
                             "name": "quantity",
                             "value": "3"
+                        },
+                        {
+                            "name": "initialDelay",
+                            "value": "5"
                         }
                     ]
                 },
                 {
                     "costume": "player",
-                    "x": 160,
-                    "y": 240,
+                    "x": 440,
+                    "y": 440,
                     "direction": 0,
                     "attributes": [
                         {
@@ -269,32 +249,14 @@
                 },
                 {
                     "costume": "pill",
-                    "x": 240,
-                    "y": 360,
-                    "direction": 0
-                },
-                {
-                    "costume": "pill",
-                    "x": 240,
-                    "y": 320,
-                    "direction": 0
-                },
-                {
-                    "costume": "pill",
-                    "x": 160,
-                    "y": 320,
-                    "direction": 0
-                },
-                {
-                    "costume": "pill",
                     "x": 200,
-                    "y": 320,
+                    "y": 400,
                     "direction": 0
                 },
                 {
                     "costume": "pill",
-                    "x": 160,
-                    "y": 360,
+                    "x": 240,
+                    "y": 320,
                     "direction": 0
                 },
                 {
@@ -305,8 +267,224 @@
                 },
                 {
                     "costume": "pill",
-                    "x": 200,
+                    "x": 280,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 120,
                     "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 80,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "pill",
+                    "x": 280,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 120,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 120,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 280,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 280,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_nw",
+                    "x": 120,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ne",
+                    "x": 280,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "door",
+                    "x": 200,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_w",
+                    "x": 240,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_e",
+                    "x": 160,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_tn",
+                    "x": 120,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_tn",
+                    "x": 280,
+                    "y": 160,
+                    "direction": 0
+                },
+                {
+                    "costume": "winky",
+                    "x": 160,
+                    "y": 200,
+                    "direction": 0,
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "4.13"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 160,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 200,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ne",
+                    "x": 480,
+                    "y": 480,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_se",
+                    "x": 480,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 440,
+                    "y": 480,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 440,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_te",
+                    "x": 400,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_te",
+                    "x": 400,
+                    "y": 480,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 400,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ew",
+                    "x": 280,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ne",
+                    "x": 320,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_s",
+                    "x": 320,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ns",
+                    "x": 320,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_w",
+                    "x": 120,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_w",
+                    "x": 120,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_e",
+                    "x": 240,
+                    "y": 360,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_w",
+                    "x": 240,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_e",
+                    "x": 160,
+                    "y": 440,
                     "direction": 0
                 }
             ]

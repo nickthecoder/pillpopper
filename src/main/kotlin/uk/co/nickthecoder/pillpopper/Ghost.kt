@@ -124,6 +124,7 @@ abstract class Ghost : AbstractRole() {
         if (oldDirection != direction) {
             actor.x -= travelled * oldDirection.dx
             actor.y -= travelled * oldDirection.dy
+            travelled = 0.0
         }
     }
 
@@ -249,6 +250,9 @@ abstract class Ghost : AbstractRole() {
 
     inner class MoveForwards : Action {
         override fun act(): Boolean {
+            if (travelled >= GRID_SIZE) {
+                println("ERROR. Already travelled more than a whole block.")
+            }
             travelled += speed
             actor.x += speed * direction.dx
             actor.y += speed * direction.dy

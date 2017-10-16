@@ -1106,6 +1106,26 @@
                     "x": 160,
                     "y": 400,
                     "direction": 0
+                },
+                {
+                    "costume": "bonusFactory",
+                    "x": 360,
+                    "y": 200,
+                    "direction": 0,
+                    "attributes": [
+                        {
+                            "name": "initialDelay",
+                            "value": "10"
+                        },
+                        {
+                            "name": "period",
+                            "value": "15"
+                        },
+                        {
+                            "name": "quantity",
+                            "value": "3"
+                        }
+                    ]
                 }
             ]
         }
