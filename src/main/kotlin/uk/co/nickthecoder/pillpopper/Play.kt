@@ -3,8 +3,12 @@ package uk.co.nickthecoder.pillpopper
 import uk.co.nickthecoder.tickle.AbstractDirector
 import uk.co.nickthecoder.tickle.Game
 import uk.co.nickthecoder.tickle.neighbourhood.StandardNeighbourhood
+import uk.co.nickthecoder.tickle.util.Attribute
 
 class Play : AbstractDirector() {
+
+    @Attribute
+    var nextScene: String = ""
 
     override val neighbourhood = StandardNeighbourhood(GRID_SIZE.toDouble())
 
@@ -14,7 +18,7 @@ class Play : AbstractDirector() {
     }
 
     companion object {
-        lateinit var instance : Play
+          lateinit var instance: Play
     }
 
 }

@@ -1,5 +1,11 @@
 {
     "director": "uk.co.nickthecoder.pillpopper.Play",
+    "directorAttributes": [
+        {
+            "name": "nextScene",
+            "value": "level01"
+        }
+    ],
     "background": "#000000",
     "showMouse": true,
     "layout": "main",
@@ -221,8 +227,8 @@
                 },
                 {
                     "costume": "player",
-                    "x": 440,
-                    "y": 440,
+                    "x": 160,
+                    "y": 320,
                     "direction": 0,
                     "attributes": [
                         {
@@ -279,8 +285,8 @@
                 },
                 {
                     "costume": "pill",
-                    "x": 80,
-                    "y": 200,
+                    "x": 280,
+                    "y": 320,
                     "direction": 0
                 },
                 {

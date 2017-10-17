@@ -1,5 +1,11 @@
 {
     "director": "uk.co.nickthecoder.pillpopper.Play",
+    "directorAttributes": [
+        {
+            "name": "nextScene",
+            "value": "level02"
+        }
+    ],
     "background": "#000000",
     "showMouse": true,
     "layout": "main",

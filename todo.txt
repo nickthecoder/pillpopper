@@ -3,12 +3,8 @@
 Bugs
 ----
 
-Ghosts misaligning when speed not a multiple of grid size.
-
 Next
 ----
-
-Add bonus factory : Creates beer bottles/beer glass/wine glass
 
 Move to next level when complete
 

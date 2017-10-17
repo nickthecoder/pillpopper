@@ -91,7 +91,7 @@ class Player : AbstractRole() {
         val kissIn = Grow(actor, time, 3.0, Eases.easeIn)
         val kissOut = Grow(actor, time, 1.0, Eases.linear)
 
-        movement = (jumpUp.and(kissIn)).then(jumpDown.and(kissOut)).repeat(3)
+        movement = (jumpUp.and(kissIn)).then(jumpDown.and(kissOut)).repeat(3).then { Game.instance.startScene(Play.instance.nextScene) }
     }
 
     inner class Movement : Action {

@@ -1,7 +1,6 @@
 package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.AbstractRole
-import uk.co.nickthecoder.tickle.Game
 import uk.co.nickthecoder.tickle.util.CostumeAttribute
 
 open class Pill : AbstractRole(), Edible {
@@ -13,11 +12,8 @@ open class Pill : AbstractRole(), Edible {
 
     open val isPowerPill = false
 
-    lateinit var director: Play
-
     override fun activated() {
-        director = Game.instance.director as Play
-        director.neighbourhood.getBlock(actor.x, actor.y).add(this)
+        Play.instance.neighbourhood.getBlock(actor.x, actor.y).add(this)
         PillPopper.instance.pills++
     }
 
@@ -26,7 +22,7 @@ open class Pill : AbstractRole(), Edible {
     override fun eaten() {
         actor.die()
         eaten = true
-        director.neighbourhood.getBlock(actor.x, actor.y).remove(this)
+        Play.instance.neighbourhood.getBlock(actor.x, actor.y).remove(this)
         PillPopper.instance.eatenPill(isPowerPill)
     }
 

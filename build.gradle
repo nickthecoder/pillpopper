@@ -33,6 +33,7 @@ repositories {
 dependencies {
 
     compile 'uk.co.nickthecoder:tickle:0.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 }
 
 compileKotlin {
