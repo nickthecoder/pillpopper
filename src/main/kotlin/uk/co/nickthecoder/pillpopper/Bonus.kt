@@ -19,4 +19,9 @@ class Bonus : ActionRole(), Edible {
         points.textAppearance?.text = PillPopper.instance.eatenBonus().toString()
 
     }
+
+    override fun end() {
+        super.end()
+        Play.instance.neighbourhood.getBlock(actor.x, actor.y).remove(this)
+    }
 }

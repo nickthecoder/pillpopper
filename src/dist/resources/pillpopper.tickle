@@ -84,12 +84,12 @@
             "yPadding": 1
         },
         {
-            "name": "small",
+            "name": "points",
             "fontName": "URW Gothic L Semi-Bold",
             "style": "PLAIN",
-            "size": 14,
-            "xPadding": 8,
-            "yPadding": 8
+            "size": 24,
+            "xPadding": 6,
+            "yPadding": 6
         }
     ],
     "poses": [
@@ -707,6 +707,12 @@
                     "poses": [
                         "popper"
                     ]
+                },
+                {
+                    "name": "talk",
+                    "costumes": [
+                        "talk"
+                    ]
                 }
             ]
         },
@@ -899,18 +905,50 @@
             "name": "points",
             "role": "uk.co.nickthecoder.pillpopper.Points",
             "canRotate": false,
+            "zOrder": 50,
+            "events": [
+                {
+                    "name": "default",
+                    "textStyles": [
+                        {
+                            "font": "points",
+                            "halign": "CENTER",
+                            "valign": "CENTER",
+                            "color": "#ffffffff",
+                            "outlineColor": "#110141ff"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "talk",
+            "role": "uk.co.nickthecoder.pillpopper.Talk",
+            "canRotate": false,
             "zOrder": 0,
             "events": [
                 {
                     "name": "default",
                     "textStyles": [
                         {
-                            "font": "small",
+                            "font": "points",
                             "halign": "CENTER",
-                            "valign": "CENTER",
-                            "color": "#000000ff",
-                            "outlineColor": "#99cc99ff"
+                            "valign": "BOTTOM",
+                            "color": "#ffffffff",
+                            "outlineColor": "#000000ff"
                         }
+                    ]
+                },
+                {
+                    "name": "powerPill",
+                    "strings": [
+                        "Run!",
+                        "Revenge!",
+                        "Rampage!",
+                        "Coming to get you...",
+                        "Here I come...",
+                        "Scared?",
+                        "Run away"
                     ]
                 }
             ]

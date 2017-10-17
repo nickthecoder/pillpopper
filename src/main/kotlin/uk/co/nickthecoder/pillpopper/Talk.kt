@@ -11,23 +11,26 @@ import uk.co.nickthecoder.tickle.action.animation.Grow
 import uk.co.nickthecoder.tickle.graphics.Color
 import uk.co.nickthecoder.tickle.util.Angle
 
-class Points : ActionRole() {
+class Talk : ActionRole() {
+
+    val direction = Angle()
 
     override fun createAction(): Action? {
-        actor.y += 30.0
-        actor.scale = 0.3
-        val time = 0.5
-        val stillTime = 0.2
-        val growTime = 0.3
-        val fadeDelay = 0.3
-        val rise = Forwards(actor.position, 60.0, Angle.degrees(90.0), time-stillTime, Eases.easeOut)
+        actor.y += 70.0
+        actor.scale = 0.5
+        actor.color.transparent()
+
+        val growTime = 0.2
+        val moveTime = 0.3
+        val delayTime = 0.6
 
         val grow = Grow(actor, growTime, 1.0, Eases.easeOut)
-                .then(Grow(actor, time - growTime, 0.3 ,  Eases.easeIn))
+                .and(Fade(actor, growTime, Color.white(), Eases.linear))
 
-        val fade = Delay(fadeDelay).then(Fade(actor, time - fadeDelay, Color.white().transparent(), Eases.easeIn))
+        val move = Forwards(actor.position, 1000.0, direction, moveTime, Eases.easeIn)
+                .and(Fade(actor, moveTime, Color.white().transparent(), Eases.easeIn))
 
-        return rise.and(grow).and(fade).then(Kill(actor))
+        return grow.then(Delay(delayTime)).then(move).then(Kill(actor))
 
     }
 

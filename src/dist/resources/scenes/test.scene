@@ -3,7 +3,7 @@
     "directorAttributes": [
         {
             "name": "nextScene",
-            "value": "level01"
+            "value": "test"
         }
     ],
     "background": "#000000",
@@ -17,199 +17,232 @@
                     "costume": "wall_nw",
                     "x": 40,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 40,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 40,
                     "y": 440,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 40,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 40,
                     "y": 360,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 40,
                     "y": 320,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 40,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 40,
                     "y": 240,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 40,
                     "y": 200,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 480,
                     "y": 440,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 440,
                     "y": 360,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 440,
                     "y": 320,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 440,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 440,
                     "y": 240,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 440,
                     "y": 200,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_sw",
                     "x": 40,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 80,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 280,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 200,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 240,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 120,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 360,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 360,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 320,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 280,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 240,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 200,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 160,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 120,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 80,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ne",
                     "x": 400,
                     "y": 520,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_se",
                     "x": 440,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "bonusFactory",
                     "x": 200,
                     "y": 320,
                     "direction": 0,
+                    "scale": 1,
                     "attributes": [
                         {
                             "name": "period",
@@ -230,6 +263,7 @@
                     "x": 160,
                     "y": 320,
                     "direction": 0,
+                    "scale": 1,
                     "attributes": [
                         {
                             "name": "highSpeed",
@@ -245,229 +279,267 @@
                     "costume": "pill",
                     "x": 200,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "pill",
                     "x": 240,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "pill",
                     "x": 200,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "pill",
                     "x": 240,
                     "y": 320,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "pill",
                     "x": 160,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "pill",
                     "x": 280,
                     "y": 360,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "pill",
                     "x": 120,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "pill",
                     "x": 280,
                     "y": 320,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "pill",
                     "x": 280,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 160,
                     "y": 200,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 160,
                     "y": 240,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 320,
                     "y": 240,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 320,
                     "y": 200,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_nw",
                     "x": 160,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ne",
                     "x": 320,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "door",
                     "x": 240,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_w",
                     "x": 280,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_e",
                     "x": 200,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_tn",
                     "x": 160,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_tn",
                     "x": 320,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 160,
                     "y": 360,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 200,
                     "y": 360,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ne",
                     "x": 480,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_se",
                     "x": 480,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 440,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 400,
                     "y": 160,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_te",
                     "x": 400,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 400,
                     "y": 440,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ew",
                     "x": 280,
                     "y": 440,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ne",
                     "x": 320,
                     "y": 440,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_s",
                     "x": 320,
                     "y": 360,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ns",
                     "x": 320,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_w",
                     "x": 120,
                     "y": 440,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_w",
                     "x": 120,
                     "y": 360,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_e",
                     "x": 240,
                     "y": 360,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_w",
                     "x": 240,
                     "y": 440,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_e",
                     "x": 160,
                     "y": 440,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "small",
                     "x": 160,
                     "y": 240,
                     "direction": 0,
+                    "scale": 1,
                     "text": "100"
                 },
                 {
@@ -475,127 +547,232 @@
                     "x": 200,
                     "y": 480,
                     "direction": 0,
+                    "scale": 1,
                     "text": "Hello World"
-                },
-                {
-                    "costume": "drinky",
-                    "x": 200,
-                    "y": 200,
-                    "direction": 0,
-                    "attributes": [
-                        {
-                            "name": "exitAfter",
-                            "value": "5"
-                        },
-                        {
-                            "name": "highSpeed",
-                            "value": "4"
-                        },
-                        {
-                            "name": "lowSpeed",
-                            "value": "3"
-                        },
-                        {
-                            "name": "reExitAfter",
-                            "value": "5"
-                        }
-                    ]
                 },
                 {
                     "costume": "powerPill",
                     "x": 80,
                     "y": 320,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "powerPill",
                     "x": 360,
                     "y": 320,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "powerPill",
                     "x": 200,
                     "y": 440,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "powerPill",
                     "x": 360,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "powerPill",
                     "x": 80,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_sw",
                     "x": 400,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "wall_ts",
                     "x": 440,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "beer",
                     "x": 320,
                     "y": 320,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "beer",
                     "x": 120,
                     "y": 240,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "beer",
                     "x": 160,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "beer",
                     "x": 240,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "beer",
                     "x": 320,
                     "y": 480,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "beer",
                     "x": 80,
                     "y": 400,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "beer",
                     "x": 400,
                     "y": 280,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "beer",
                     "x": 360,
                     "y": 200,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
                 },
                 {
                     "costume": "beer",
                     "x": 80,
                     "y": 200,
-                    "direction": 0
+                    "direction": 0,
+                    "scale": 1
+                },
+                {
+                    "costume": "bonusFactory",
+                    "x": 80,
+                    "y": 280,
+                    "direction": 0,
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "initialDelay",
+                            "value": "10"
+                        },
+                        {
+                            "name": "period",
+                            "value": "15"
+                        },
+                        {
+                            "name": "quantity",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "costume": "bonusFactory",
+                    "x": 80,
+                    "y": 360,
+                    "direction": 0,
+                    "scale": 1
+                },
+                {
+                    "costume": "bonusFactory",
+                    "x": 360,
+                    "y": 360,
+                    "direction": 0,
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "initialDelay",
+                            "value": "0.1"
+                        },
+                        {
+                            "name": "period",
+                            "value": "1"
+                        },
+                        {
+                            "name": "quantity",
+                            "value": "100"
+                        }
+                    ]
+                },
+                {
+                    "costume": "bonusFactory",
+                    "x": 360,
+                    "y": 440,
+                    "direction": 0,
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "initialDelay",
+                            "value": "0.5"
+                        },
+                        {
+                            "name": "period",
+                            "value": "1"
+                        },
+                        {
+                            "name": "quantity",
+                            "value": "100"
+                        }
+                    ]
+                },
+                {
+                    "costume": "bonusFactory",
+                    "x": 400,
+                    "y": 360,
+                    "direction": 0,
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "initialDelay",
+                            "value": "0"
+                        },
+                        {
+                            "name": "period",
+                            "value": "0.5"
+                        },
+                        {
+                            "name": "quantity",
+                            "value": "100"
+                        }
+                    ]
+                },
+                {
+                    "costume": "bonusFactory",
+                    "x": 400,
+                    "y": 320,
+                    "direction": 0,
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "initialDelay",
+                            "value": "0.1"
+                        },
+                        {
+                            "name": "period",
+                            "value": "1"
+                        },
+                        {
+                            "name": "quantity",
+                            "value": "100"
+                        }
+                    ]
                 }
             ]
         }
