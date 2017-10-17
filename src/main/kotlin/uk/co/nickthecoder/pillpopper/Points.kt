@@ -8,7 +8,6 @@ import uk.co.nickthecoder.tickle.action.animation.Eases
 import uk.co.nickthecoder.tickle.action.animation.Fade
 import uk.co.nickthecoder.tickle.action.animation.Forwards
 import uk.co.nickthecoder.tickle.action.animation.Grow
-import uk.co.nickthecoder.tickle.graphics.Color
 import uk.co.nickthecoder.tickle.util.Angle
 
 class Points : ActionRole() {
@@ -25,7 +24,7 @@ class Points : ActionRole() {
         val grow = Grow(actor, growTime, 1.0, Eases.easeOut)
                 .then(Grow(actor, time - growTime, 0.3 ,  Eases.easeIn))
 
-        val fade = Delay(fadeDelay).then(Fade(actor, time - fadeDelay, Color.white().transparent(), Eases.easeIn))
+        val fade = Delay(fadeDelay).then(Fade(actor.color, time - fadeDelay, 1f, Eases.easeIn))
 
         return rise.and(grow).and(fade).then(Kill(actor))
 

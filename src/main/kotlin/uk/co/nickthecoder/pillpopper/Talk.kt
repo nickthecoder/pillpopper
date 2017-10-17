@@ -8,7 +8,6 @@ import uk.co.nickthecoder.tickle.action.animation.Eases
 import uk.co.nickthecoder.tickle.action.animation.Fade
 import uk.co.nickthecoder.tickle.action.animation.Forwards
 import uk.co.nickthecoder.tickle.action.animation.Grow
-import uk.co.nickthecoder.tickle.graphics.Color
 import uk.co.nickthecoder.tickle.util.Angle
 
 class Talk : ActionRole() {
@@ -25,10 +24,10 @@ class Talk : ActionRole() {
         val delayTime = 0.6
 
         val grow = Grow(actor, growTime, 1.0, Eases.easeOut)
-                .and(Fade(actor, growTime, Color.white(), Eases.linear))
+                .and(Fade(actor.color, growTime,1f, Eases.linear))
 
         val move = Forwards(actor.position, 1000.0, direction, moveTime, Eases.easeIn)
-                .and(Fade(actor, moveTime, Color.white().transparent(), Eases.easeIn))
+                .and(Fade(actor.color, moveTime, 0f, Eases.easeIn))
 
         return grow.then(Delay(delayTime)).then(move).then(Kill(actor))
 
