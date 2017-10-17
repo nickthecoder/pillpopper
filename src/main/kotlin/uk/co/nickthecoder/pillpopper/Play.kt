@@ -17,8 +17,17 @@ class Play : AbstractDirector() {
         instance = this
     }
 
+    override fun activated() {
+
+        val width = (neighbourhood.width() + neighbourhood.blockWidth).toInt()
+        val height = (neighbourhood.height() + neighbourhood.blockHeight).toInt()
+
+        Game.instance.window.resize(width, height)
+        Game.instance.scene.layout(width, height)
+    }
+
     companion object {
-          lateinit var instance: Play
+        lateinit var instance: Play
     }
 
 }

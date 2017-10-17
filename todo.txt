@@ -8,6 +8,9 @@ Next
 ----
 
 
+Resize window based on the size of the maze
+
+
 Later
 -----
 
@@ -18,8 +21,6 @@ Animation for Player and Ghosts
 	Eyes as separate entities
 		Different poses for left/right/up/down
 		Jiggle around a little.
-
-Resize window based on the size of the maze
 
 Splash screen
 
