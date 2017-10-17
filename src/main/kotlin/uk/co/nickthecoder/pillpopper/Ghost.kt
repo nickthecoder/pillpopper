@@ -1,7 +1,6 @@
 package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.AbstractRole
-import uk.co.nickthecoder.tickle.Game
 import uk.co.nickthecoder.tickle.Role
 import uk.co.nickthecoder.tickle.action.Action
 import uk.co.nickthecoder.tickle.action.Idle
@@ -98,7 +97,7 @@ abstract class Ghost : AbstractRole() {
         actor.color = Color(1f, 1f, 1f, 0.8f)
         movement = Idle(initialIdle).then(chaseOne.repeat(exitAfter).then { seekDoor(afterAction = chase) })
 
-        block = Game.instance.director.neighbourhood.getBlock(actor.x, actor.y)
+        block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
         val foundDoor = closest(actor.stage!!.findRole<Door>())
         if (foundDoor == null) {
             actor.die()
@@ -116,7 +115,7 @@ abstract class Ghost : AbstractRole() {
         val oldDirection = direction
         travelled = travelled.rem(GRID_SIZE)
 
-        block = Game.instance.director.neighbourhood.getBlock(actor.x, actor.y)
+        block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
 
         chooseDirection(scorer)
 

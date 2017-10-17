@@ -41,7 +41,7 @@ class Player : AbstractRole() {
 
     override fun activated() {
         speed = highSpeed
-        block = Game.instance.director.neighbourhood.getBlock(actor.x, actor.y)
+        block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
     }
 
     var movement: Action = Movement()
@@ -150,7 +150,7 @@ class Player : AbstractRole() {
 
             // Change our block
             if (travelled > 0.8 * GRID_SIZE) {
-                block = Game.instance.director.neighbourhood.getBlock(actor.x, actor.y)
+                block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
             }
 
             // Have we travelled a whole GRID_SIZE? in which case, we need to check if we should turn left or right.

@@ -10,7 +10,7 @@ class Play : AbstractDirector() {
     @Attribute
     var nextScene: String = ""
 
-    override val neighbourhood = StandardNeighbourhood(GRID_SIZE.toDouble())
+    val neighbourhood = StandardNeighbourhood(GRID_SIZE.toDouble())
 
     override fun begin() {
         Game.instance.mergeScene("glass")
