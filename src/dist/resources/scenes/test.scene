@@ -75,31 +75,31 @@
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 400,
+                    "x": 440,
                     "y": 360,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 400,
+                    "x": 440,
                     "y": 320,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 400,
+                    "x": 440,
                     "y": 280,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 400,
+                    "x": 440,
                     "y": 240,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 400,
+                    "x": 440,
                     "y": 200,
                     "direction": 0
                 },
@@ -117,7 +117,7 @@
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 160,
+                    "x": 280,
                     "y": 160,
                     "direction": 0
                 },
@@ -135,7 +135,7 @@
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 320,
+                    "x": 120,
                     "y": 160,
                     "direction": 0
                 },
@@ -201,7 +201,7 @@
                 },
                 {
                     "costume": "wall_se",
-                    "x": 400,
+                    "x": 440,
                     "y": 160,
                     "direction": 0
                 },
@@ -243,7 +243,7 @@
                 },
                 {
                     "costume": "pill",
-                    "x": 80,
+                    "x": 200,
                     "y": 480,
                     "direction": 0
                 },
@@ -297,93 +297,69 @@
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 120,
+                    "x": 160,
                     "y": 200,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 120,
+                    "x": 160,
                     "y": 240,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 280,
+                    "x": 320,
                     "y": 240,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ns",
-                    "x": 280,
+                    "x": 320,
                     "y": 200,
                     "direction": 0
                 },
                 {
                     "costume": "wall_nw",
-                    "x": 120,
+                    "x": 160,
                     "y": 280,
                     "direction": 0
                 },
                 {
                     "costume": "wall_ne",
-                    "x": 280,
+                    "x": 320,
                     "y": 280,
                     "direction": 0
                 },
                 {
                     "costume": "door",
-                    "x": 200,
-                    "y": 280,
-                    "direction": 0
-                },
-                {
-                    "costume": "wall_w",
                     "x": 240,
                     "y": 280,
                     "direction": 0
                 },
                 {
+                    "costume": "wall_w",
+                    "x": 280,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
                     "costume": "wall_e",
-                    "x": 160,
+                    "x": 200,
                     "y": 280,
                     "direction": 0
                 },
                 {
                     "costume": "wall_tn",
-                    "x": 120,
+                    "x": 160,
                     "y": 160,
                     "direction": 0
                 },
                 {
                     "costume": "wall_tn",
-                    "x": 280,
+                    "x": 320,
                     "y": 160,
                     "direction": 0
-                },
-                {
-                    "costume": "winky",
-                    "x": 160,
-                    "y": 200,
-                    "direction": 0,
-                    "attributes": [
-                        {
-                            "name": "exitAfter",
-                            "value": "5"
-                        },
-                        {
-                            "name": "highSpeed",
-                            "value": "4.13"
-                        },
-                        {
-                            "name": "lowSpeed",
-                            "value": "3"
-                        },
-                        {
-                            "name": "reExitAfter",
-                            "value": "5"
-                        }
-                    ]
                 },
                 {
                     "costume": "wall_ew",
@@ -417,14 +393,8 @@
                 },
                 {
                     "costume": "wall_ew",
-                    "x": 440,
-                    "y": 400,
-                    "direction": 0
-                },
-                {
-                    "costume": "wall_te",
                     "x": 400,
-                    "y": 400,
+                    "y": 160,
                     "direction": 0
                 },
                 {
@@ -491,6 +461,140 @@
                     "costume": "wall_e",
                     "x": 160,
                     "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "small",
+                    "x": 160,
+                    "y": 240,
+                    "direction": 0,
+                    "text": "100"
+                },
+                {
+                    "costume": "small",
+                    "x": 200,
+                    "y": 480,
+                    "direction": 0,
+                    "text": "Hello World"
+                },
+                {
+                    "costume": "drinky",
+                    "x": 200,
+                    "y": 200,
+                    "direction": 0,
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
+                },
+                {
+                    "costume": "powerPill",
+                    "x": 80,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "powerPill",
+                    "x": 360,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "powerPill",
+                    "x": 200,
+                    "y": 440,
+                    "direction": 0
+                },
+                {
+                    "costume": "powerPill",
+                    "x": 360,
+                    "y": 480,
+                    "direction": 0
+                },
+                {
+                    "costume": "powerPill",
+                    "x": 80,
+                    "y": 480,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_sw",
+                    "x": 400,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "wall_ts",
+                    "x": 440,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "beer",
+                    "x": 320,
+                    "y": 320,
+                    "direction": 0
+                },
+                {
+                    "costume": "beer",
+                    "x": 120,
+                    "y": 240,
+                    "direction": 0
+                },
+                {
+                    "costume": "beer",
+                    "x": 160,
+                    "y": 480,
+                    "direction": 0
+                },
+                {
+                    "costume": "beer",
+                    "x": 240,
+                    "y": 480,
+                    "direction": 0
+                },
+                {
+                    "costume": "beer",
+                    "x": 320,
+                    "y": 480,
+                    "direction": 0
+                },
+                {
+                    "costume": "beer",
+                    "x": 80,
+                    "y": 400,
+                    "direction": 0
+                },
+                {
+                    "costume": "beer",
+                    "x": 400,
+                    "y": 280,
+                    "direction": 0
+                },
+                {
+                    "costume": "beer",
+                    "x": 360,
+                    "y": 200,
+                    "direction": 0
+                },
+                {
+                    "costume": "beer",
+                    "x": 80,
+                    "y": 200,
                     "direction": 0
                 }
             ]

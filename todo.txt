@@ -6,12 +6,7 @@ Bugs
 Next
 ----
 
-Move to next level when complete
-
-Slow scared ghosts down
-	Full speed when eaten
-
-Slow Player when eating pills
+Show points gained when eating a Bonus or a ghost.
 
 Later
 -----

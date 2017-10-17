@@ -82,6 +82,14 @@
             "size": 32,
             "xPadding": 1,
             "yPadding": 1
+        },
+        {
+            "name": "small",
+            "fontName": "URW Gothic L Semi-Bold",
+            "style": "PLAIN",
+            "size": 14,
+            "xPadding": 8,
+            "yPadding": 8
         }
     ],
     "poses": [
@@ -654,6 +662,12 @@
                     "poses": [
                         "eaten"
                     ]
+                },
+                {
+                    "name": "points",
+                    "costumes": [
+                        "points"
+                    ]
                 }
             ],
             "attributes": [
@@ -831,6 +845,12 @@
                     "poses": [
                         "beer"
                     ]
+                },
+                {
+                    "name": "points",
+                    "costumes": [
+                        "points"
+                    ]
                 }
             ]
         },
@@ -865,6 +885,32 @@
                     "name": "default",
                     "poses": [
                         "wine"
+                    ]
+                },
+                {
+                    "name": "points",
+                    "costumes": [
+                        "points"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "points",
+            "role": "uk.co.nickthecoder.pillpopper.Points",
+            "canRotate": false,
+            "zOrder": 0,
+            "events": [
+                {
+                    "name": "default",
+                    "textStyles": [
+                        {
+                            "font": "small",
+                            "halign": "CENTER",
+                            "valign": "CENTER",
+                            "color": "#000000ff",
+                            "outlineColor": "#99cc99ff"
+                        }
                     ]
                 }
             ]
