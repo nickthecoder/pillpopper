@@ -58,8 +58,8 @@ class Player : AbstractRole() {
             if (role is Edible) {
                 role.eaten()
                 if (role is PowerPill) {
-                    val talk = actor.createChild("talk")
-                    talk.event("powerPill")
+                    val talk = actor.createChildOnStage("talk")
+                    (talk.role as Talk).event("powerPill")
                 }
                 speed = lowSpeed
             } else {

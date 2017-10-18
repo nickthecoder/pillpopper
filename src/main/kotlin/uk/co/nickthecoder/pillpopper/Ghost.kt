@@ -244,7 +244,7 @@ abstract class Ghost : AbstractRole() {
         speed = highSpeed
         eaten = true
         scared = false
-        val points = actor.createChild("points")
+        val points = actor.createChildOnStage("points")
         points.textAppearance?.text = PillPopper.instance.eatenGhost().toString()
     }
 

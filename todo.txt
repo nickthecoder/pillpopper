@@ -3,10 +3,12 @@
 Bugs
 ----
 
+Word can overlap the edge of the screen
 
 Next
 ----
 
+Tunnel from one side to another.
 
 Resize window based on the size of the maze
 
@@ -28,14 +30,14 @@ Highscore (saved)
 
 Scrolling view for a HUGE maze.
 
-Scores fly upwards each time something is eaten.
-
 Much Later
 ----------
 
 Animations between Play scenes
-	
-Speech bubbles when eating power pills and bonuses
-	
+
+Add some of Repton?
+	maybe gradually morph the game INTO repton ;-)
+	Or maybe start with Repton, but have Pac-Man levels in it.
+	Exits which open only when the level is complete - you the get to choose where to go to next.
 
 
