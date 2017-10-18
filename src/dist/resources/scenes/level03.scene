@@ -399,50 +399,9 @@
                     "scale": 1
                 },
                 {
-                    "costume": "drinky",
-                    "x": 240,
-                    "y": 280,
-                    "direction": 0,
-                    "scale": 1,
-                    "attributes": [
-                        {
-                            "name": "highSpeed",
-                            "value": "3.5"
-                        },
-                        {
-                            "name": "lowSpeed",
-                            "value": "2.5"
-                        }
-                    ]
-                },
-                {
                     "costume": "player",
                     "x": 240,
                     "y": 120,
-                    "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "stinky",
-                    "x": 240,
-                    "y": 360,
-                    "direction": 0,
-                    "scale": 1,
-                    "attributes": [
-                        {
-                            "name": "highSpeed",
-                            "value": "3.8"
-                        },
-                        {
-                            "name": "lowSpeed",
-                            "value": "3.2"
-                        }
-                    ]
-                },
-                {
-                    "costume": "snide",
-                    "x": 280,
-                    "y": 320,
                     "direction": 0,
                     "scale": 1
                 },

@@ -1,20 +1,15 @@
 package uk.co.nickthecoder.pillpopper
 
-import uk.co.nickthecoder.tickle.AbstractRole
 import uk.co.nickthecoder.tickle.Role
 import uk.co.nickthecoder.tickle.action.Action
 import uk.co.nickthecoder.tickle.action.Idle
-import uk.co.nickthecoder.tickle.action.NoAction
 import uk.co.nickthecoder.tickle.action.OneAction
 import uk.co.nickthecoder.tickle.graphics.Color
-import uk.co.nickthecoder.tickle.neighbourhood.Block
 import uk.co.nickthecoder.tickle.stage.findRole
 import uk.co.nickthecoder.tickle.util.Attribute
 import uk.co.nickthecoder.tickle.util.CostumeAttribute
 
-abstract class Ghost : AbstractRole() {
-
-    var direction = Direction.NORTH
+abstract class Ghost : Traveller() {
 
     /**
      * Initial delay at the start of the scene. Each Ghost will have a different delay, so they don't end up on
@@ -28,8 +23,6 @@ abstract class Ghost : AbstractRole() {
 
     @Attribute
     var lowSpeed = 3.0
-
-    var speed = 0.0
 
     /**
      * Time to stay in the pen at the beginning of the scene (measured in whole-block movements)
@@ -52,26 +45,15 @@ abstract class Ghost : AbstractRole() {
     /**
      * A chasing movement of one block
      */
-    val chaseOne = OneAction { changeDirection(chaseScorer) }.then(MoveForwards().then { checkTurningScared() })
+    val chaseOne = OneAction { changeDirection(chaseScorer) }
+            .then(CheckTouching().whilst(MoveForwards())
+                    .then { checkTurningScared() })
 
     /**
      * Chases forever - [movement] uses this most of the time.
      */
     val chase: Action = chaseOne.forever()
 
-    /**
-     * The current movement action. This changes over time.
-     */
-    var movement: Action = NoAction()
-        set(v) {
-            v.begin()
-            field = v
-        }
-
-    var travelled = 0.0
-
-
-    lateinit var block: Block
 
     var seekingDoor: Boolean = false
 
@@ -93,11 +75,12 @@ abstract class Ghost : AbstractRole() {
     lateinit var door: Role
 
     override fun activated() {
+        super.activated()
+
         speed = highSpeed
         actor.color = Color(1f, 1f, 1f, 0.8f)
         movement = Idle(initialIdle).then(chaseOne.repeat(exitAfter).then { seekDoor(afterAction = chase) })
 
-        block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
         val foundDoor = closest(actor.stage!!.findRole<Door>())
         if (foundDoor == null) {
             actor.die()
@@ -107,49 +90,26 @@ abstract class Ghost : AbstractRole() {
         }
     }
 
-    override fun tick() {
-        movement.act()
-    }
 
     fun changeDirection(scorer: (Direction) -> Double) {
         val oldDirection = direction
 
-        block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
+        if (block !== Play.instance.neighbourhood.getBlock(actor.x, actor.y)) {
+            println("ERROR. Ghost is in the wrong block")
+        }
 
         if (block.isTunnel()) {
+            println("${actor} entering a tunnel")
             val oldMovement = movement
             speed = lowSpeed
-            movement = MoveForwards().then(MoveForwards()).then {
-
-                when (direction) {
-                    Direction.SOUTH -> {
-                        actor.y += (actor.stage?.firstView()?.rect?.height ?: 0).toDouble()
-                    }
-                    Direction.NORTH -> {
-                        actor.y -= (actor.stage?.firstView()?.rect?.height ?: 0).toDouble()
-                    }
-                    Direction.WEST -> {
-                        actor.x += (actor.stage?.firstView()?.rect?.width ?: 0).toDouble()
-                    }
-                    Direction.EAST -> {
-                        actor.x -= (actor.stage?.firstView()?.rect?.width ?: 0).toDouble()
-                    }
-                }
-
-            }.then {
-                MoveForwards().then(MoveForwards())
-            }.then {
-                movement = oldMovement
-            }
+            enterTunnel()
         } else {
 
             chooseDirection(scorer)
 
             // Correct for overshoot when turning a corner.
             if (oldDirection != direction) {
-                actor.x -= travelled * oldDirection.dx
-                actor.y -= travelled * oldDirection.dy
-                travelled = 0.0
+                alignWithCenterOfBlock()
             }
         }
     }
@@ -224,10 +184,13 @@ abstract class Ghost : AbstractRole() {
     fun checkTurningScared() {
         if (turningScared) {
             turningScared = false
-            val runOne = OneAction { changeDirection { runAwayScorer(it) } }.then(MoveForwards()).then {
-                checkTurningScared()
-                checkEaten()
-            }
+            val runOne = OneAction { changeDirection { runAwayScorer(it) } }
+                    .then(CheckTouching().whilst(MoveForwards()))
+                    .then {
+                        checkTurningScared()
+                        checkEaten()
+                    }
+
             movement = runOne.repeat(30)
                     .then {
                         scared = false
@@ -275,14 +238,9 @@ abstract class Ghost : AbstractRole() {
         points.textAppearance?.text = PillPopper.instance.eatenGhost().toString()
     }
 
-    inner class MoveForwards : Action {
+
+    inner class CheckTouching : Action {
         override fun act(): Boolean {
-            if (travelled >= GRID_SIZE) {
-                println("ERROR. Already travelled more than a whole block.")
-            }
-            travelled += speed
-            actor.x += speed * direction.dx
-            actor.y += speed * direction.dy
 
             if (touchingPlayer()) {
                 if (eaten) {
@@ -294,14 +252,8 @@ abstract class Ghost : AbstractRole() {
                 }
 
             }
-            if (travelled >= GRID_SIZE) {
-                travelled -= GRID_SIZE
-                return true
-            } else {
-                return false
-            }
+            return true
         }
-
     }
 
 }

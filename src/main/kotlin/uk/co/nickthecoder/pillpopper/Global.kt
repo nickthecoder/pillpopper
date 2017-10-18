@@ -8,14 +8,6 @@ val TOUCHING_DISTANCE = 10.0
 
 val STARTING_BONUS = 50
 
-enum class Direction(val dx: Int, val dy: Int) {
-    NORTH(0, 1), EAST(1, 0), SOUTH(0, -1), WEST(-1, 0);
-
-    fun isOpposite(other: Direction): Boolean {
-        return if (dx == 0) dy == -other.dy else dx == -other.dx
-    }
-}
-
 fun Block.isSolid(dx: Int, dy: Int, ignoreDoors: Boolean = false): Boolean {
 
     val nextBlock = neighbouringBlock(dx, dy)
