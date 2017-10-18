@@ -8,6 +8,8 @@ val TOUCHING_DISTANCE = 10.0
 
 val STARTING_BONUS = 50
 
+fun Block.neighbour(direction: Direction) = neighbouringBlock(direction.dx, direction.dy)
+
 fun Block.isSolid(dx: Int, dy: Int, ignoreDoors: Boolean = false): Boolean {
 
     val nextBlock = neighbouringBlock(dx, dy)
@@ -20,6 +22,7 @@ fun Block.isSolid(ignoreDoors: Boolean = false): Boolean {
         if (it.role is Solid) {
             if (ignoreDoors) {
                 if (it.role is Door) {
+                    println("Can go through the door!")
                     // Do nothing (ignore the door)
                 } else {
                     return true

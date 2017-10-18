@@ -9,7 +9,7 @@ class Snide : Ghost() {
      */
     override val chaseScorer = { dir: Direction ->
         scoreDirectlyTo(dir,
-                Player.instance.actor.x + Player.instance.dx * AWAY - actor.x,
-                Player.instance.actor.y + Player.instance.dy * AWAY - actor.y)
+                Player.instance.actor.x + Player.instance.direction.dx * AWAY - actor.x,
+                Player.instance.actor.y + Player.instance.direction.dy * AWAY - actor.y)
     }
 }

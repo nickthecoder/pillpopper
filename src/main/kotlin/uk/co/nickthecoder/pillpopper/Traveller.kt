@@ -3,21 +3,28 @@ package uk.co.nickthecoder.pillpopper
 import uk.co.nickthecoder.tickle.AbstractRole
 import uk.co.nickthecoder.tickle.action.Action
 import uk.co.nickthecoder.tickle.action.NoAction
+import uk.co.nickthecoder.tickle.action.OneAction
 import uk.co.nickthecoder.tickle.neighbourhood.Block
 
 abstract class Traveller : AbstractRole() {
 
-    var direction = Direction.NORTH
+    var direction = Direction.NONE
+        set(v) {
+            if (v != field && v != field.opposite()) {
+                alignWithCenterOfBlock()
+            }
+            field = v
+        }
 
     var speed = 0.0
 
     lateinit var block: Block
 
     /**
-     * When a ghost turns scared, this is changed to "run away". Similar for when eaten.
+     * When a ghost turns scared, this is runOne.forever(). Similar for when eaten.
      * Also, when exiting a tunnel, this is the action that follow.
      */
-    var nextMovement: Action = NoAction()
+    var nextMovement: Action? = null
 
     /**
      * The current movement action. This changes over time.
@@ -28,12 +35,20 @@ abstract class Traveller : AbstractRole() {
             field = v
         }
 
-
+    /**
+     * The distance travelled within this block
+     */
     var travelled = 0.0
 
     override fun activated() {
+        setBlock()
+    }
+
+    fun setBlock() {
         block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
     }
+
+    fun findBlock(): Block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
 
     override fun tick() {
         movement.act()
@@ -66,28 +81,28 @@ abstract class Traveller : AbstractRole() {
                 Direction.EAST -> {
                     actor.x -= (actor.stage?.firstView()?.rect?.width ?: 0).toDouble()
                 }
+                Direction.NONE -> {
+                }
             }
-            println("Jumped")
 
         }.then(MoveForwards().then(MoveForwards())
         ).then {
-            println("exiting tunnel $actor @ $block")
-
-            //alignWithCenterOfBlock()
+            // TODO Check if this is needed
+            alignWithCenterOfBlock()
 
             // TODO Remove this when sure there are no errors
-            val expectedBlock = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
+            val expectedBlock = findBlock()
             if (block !== expectedBlock) {
                 println("ERROR. ${actor} in wrong block after tunnel. $block vs $expectedBlock")
             }
-            block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
+            setBlock()
 
-            movement = nextMovement
+            movement = nextMovement ?: OneAction { println("ERROR. No next action set when entering the tunnel") }
         }
 
     }
 
-    inner class MoveForwards : Action {
+    open inner class MoveForwards : Action {
 
         var changedBlock = false
 
@@ -104,9 +119,10 @@ abstract class Traveller : AbstractRole() {
             actor.x += speed * direction.dx
             actor.y += speed * direction.dy
 
-            if (!changedBlock && travelled > GRID_SIZE * 0.5) {
-                block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
-                println("Traveller changed block to $block")
+            // Note. Don't use 0.5, because that will land us on the boundary of two blocks, and which block gets picked
+            // might be affected by rounding errors.
+            if (!changedBlock && travelled > GRID_SIZE * 0.6) {
+                setBlock()
                 changedBlock = true
             }
 
@@ -116,6 +132,13 @@ abstract class Traveller : AbstractRole() {
             } else {
                 return false
             }
+        }
+
+        fun reverse() {
+            direction = direction.opposite()
+            travelled = GRID_SIZE - travelled
+            setBlock()
+            changedBlock = false
         }
 
     }

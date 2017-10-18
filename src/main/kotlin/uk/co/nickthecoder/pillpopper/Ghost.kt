@@ -46,29 +46,39 @@ abstract class Ghost : Traveller() {
      * A chasing movement of one block
      */
     val chaseOne = OneAction { changeDirection(chaseScorer) }
-            .then(CheckTouching().whilst(MoveForwards())
-                    .then { checkTurningScared() })
+            .then(CheckTouching().whilst(MoveForwards()))
 
     /**
      * Chases forever - [movement] uses this most of the time.
      */
-    val chase: Action = chaseOne.forever()
+    val chase: Action = OneAction { canBeScared = true }.then(chaseOne.forever())
 
+    /**
+     * A run-away movement of one block
+     */
+    val runOne = OneAction { changeDirection { runAwayScorer(it) } }
+            .then(CheckTouching().whilst(MoveForwards()))
 
+    /**
+     * Used to alter the test for canMove, to only allow access to a door when exiting or entering the pen.
+     * Not when chasing, or running away. Also used to prevent ghosts turning scared while in the pen.
+     */
     var seekingDoor: Boolean = false
 
     /**
-     * True when a power pill has been eaten. Reset as soon as checkTurningScared has run.
+     * Set to true when chasing the player.
+     * Set to false when eaten
      */
-    var turningScared: Boolean = false
+    var canBeScared: Boolean = false
 
     /**
-     * True after a power pill has been eaten. Reset when the pill was worn off, of I've been eaten
+     * True after a power pill has been eaten. Reset when the pill was worn off, or I've been eaten
      */
     var scared: Boolean = false
 
     /**
      * true when the ghost has been eaten. Reset when out of the pen.
+     * Used when touching the player (touching does nothing when eaten).
      */
     var eaten: Boolean = false
 
@@ -79,7 +89,10 @@ abstract class Ghost : Traveller() {
 
         speed = highSpeed
         actor.color = Color(1f, 1f, 1f, 0.8f)
-        movement = Idle(initialIdle).then(chaseOne.repeat(exitAfter).then { seekDoor(afterAction = chase) })
+        movement = Idle(initialIdle)
+                .then(chaseOne.repeat(exitAfter))
+                .then { println("Initial Delay over") }
+                .then(seekDoorAction(afterAction = chase))
 
         val foundDoor = closest(actor.stage!!.findRole<Door>())
         if (foundDoor == null) {
@@ -90,37 +103,39 @@ abstract class Ghost : Traveller() {
         }
     }
 
-
+    /**
+     * After moving a whole block, decide which way to move next.
+     * If nextMovement is set, then this different pattern of movement is started (by setting movement).
+     */
     fun changeDirection(scorer: (Direction) -> Double) {
-        val oldDirection = direction
+        val next = nextMovement
+        if (next != null) {
+            nextMovement = null
+            movement = next
+            movement.act()
+            return
+        }
 
-        if (block !== Play.instance.neighbourhood.getBlock(actor.x, actor.y)) {
-            println("ERROR. Ghost is in the wrong block")
+        // For debugging only
+        if (block !== findBlock()) {
+            println("ERROR. Ghost is in the wrong block $block vs ${findBlock()} $actor")
         }
 
         if (block.isTunnel()) {
-            println("${actor} entering a tunnel")
-            val oldMovement = movement
             speed = lowSpeed
             enterTunnel()
         } else {
-
-            chooseDirection(scorer)
-
-            // Correct for overshoot when turning a corner.
-            if (oldDirection != direction) {
-                alignWithCenterOfBlock()
-            }
+            direction = chooseDirection(scorer)
         }
     }
 
-    fun chooseDirection(scorer: (Direction) -> Double) {
+    fun chooseDirection(scorer: (Direction) -> Double): Direction {
 
         var bestScore = -Double.MAX_VALUE
         var bestDirection: Direction? = null
 
         Direction.values().forEach { dir ->
-            if (canMove(dir) && !dir.isOpposite(direction)) {
+            if (dir != Direction.NONE && canMove(dir) && !dir.isOpposite(direction)) {
                 val score = scorer(dir)
                 if (score > bestScore) {
                     bestScore = score
@@ -129,13 +144,16 @@ abstract class Ghost : Traveller() {
             }
         }
         if (bestDirection == null) {
-            actor.die()
+            // A dead end - turn around!
+            return direction.opposite()
         } else {
-            direction = bestDirection!!
+            return bestDirection!!
         }
     }
 
-    fun canMove(direction: Direction) = !block.isSolid(direction.dx, direction.dy, seekingDoor)
+    fun canMove(dir: Direction): Boolean {
+        return block.neighbour(dir)?.isSolid(seekingDoor) != true
+    }
 
     /**
      * Run away from the player
@@ -155,75 +173,23 @@ abstract class Ghost : Traveller() {
         }
     }
 
-    fun seekDoor(afterAction: Action) {
-        seekingDoor = true
-
-        val scorer = { dir: Direction -> scoreDirectlyTo(dir, door.actor.x, door.actor.y) }
-
-        movement = OneAction { changeDirection(scorer) }.then(MoveForwards().then {
-            if (block.isDoor()) {
-                seekingDoor = false
-                movement = afterAction
-            }
-        }).forever()
-
-    }
-
     /**
      * A power pill has been eaten by the Player.
      */
     fun runAway() {
-        if (!eaten && !seekingDoor) {
+        if (canBeScared) {
             actor.event("scared")
             speed = lowSpeed
-            turningScared = true
             scared = true
-        }
-    }
 
-    fun checkTurningScared() {
-        if (turningScared) {
-            turningScared = false
-            val runOne = OneAction { changeDirection { runAwayScorer(it) } }
-                    .then(CheckTouching().whilst(MoveForwards()))
-                    .then {
-                        checkTurningScared()
-                        checkEaten()
-                    }
-
-            movement = runOne.repeat(30)
+            // TODO Change this to a timed-out, rather than a fixed number of moves.
+            nextMovement = runOne.repeat(30)
                     .then {
                         scared = false
                         actor.event("default")
                         movement = chase
                     }
         }
-    }
-
-    fun checkEaten() {
-        if (eaten) {
-            turningScared = false
-            // Go to the pen
-            seekDoor(chaseOne.repeat(2)
-                    // Change back to a normal ghost
-                    .then { actor.event("default") }
-                    .then(
-                            chaseOne.repeat(reExitAfter) // Wait in the pen for a while,
-                                    // Head out the door and resume chasing the player
-                                    .then {
-                                        eaten = false
-                                        seekDoor(afterAction = chase)
-                                    }
-                    )
-            )
-        }
-    }
-
-    fun touchingPlayer(): Boolean {
-        val dx = Math.abs(Player.instance.actor.x - actor.x)
-        val dy = Math.abs(Player.instance.actor.y - actor.y)
-
-        return dx < TOUCHING_DISTANCE && dy < TOUCHING_DISTANCE
     }
 
     /**
@@ -234,8 +200,45 @@ abstract class Ghost : Traveller() {
         speed = highSpeed
         eaten = true
         scared = false
+        canBeScared = false
+
         val points = actor.createChildOnStage("points")
         points.textAppearance?.text = PillPopper.instance.eatenGhost().toString()
+
+        val inPen = chaseOne.repeat(2)
+                // Change back to a normal ghost
+                .then {
+                    eaten = false
+                    actor.event("default")
+                }
+                .then(
+                        chaseOne.repeat(reExitAfter) // Wait in the pen for a while,
+                                // Head out the door and resume chasing the player
+                                .then(seekDoorAction(afterAction = chase))
+                )
+
+        nextMovement = seekDoorAction(inPen)
+    }
+
+    fun seekDoorAction(afterAction: Action): Action {
+
+        val scorer = { dir: Direction -> scoreDirectlyTo(dir, door.actor.x, door.actor.y) }
+
+        return OneAction { seekingDoor = true }.then(OneAction { changeDirection(scorer) }.then(MoveForwards().then {
+            if (block.isDoor()) {
+                println("*** Seeking door = false")
+                seekingDoor = false
+                movement = afterAction
+            }
+        }).forever())
+
+    }
+
+    fun touchingPlayer(): Boolean {
+        val dx = Math.abs(Player.instance.actor.x - actor.x)
+        val dy = Math.abs(Player.instance.actor.y - actor.y)
+
+        return dx < TOUCHING_DISTANCE && dy < TOUCHING_DISTANCE
     }
 
 
@@ -250,11 +253,10 @@ abstract class Ghost : Traveller() {
                 } else {
                     Player.instance.killed()
                 }
-
             }
             return true
         }
     }
-
 }
+
 

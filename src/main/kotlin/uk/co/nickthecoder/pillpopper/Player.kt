@@ -1,18 +1,15 @@
 package uk.co.nickthecoder.pillpopper
 
-import uk.co.nickthecoder.tickle.AbstractRole
 import uk.co.nickthecoder.tickle.Game
-import uk.co.nickthecoder.tickle.action.Action
 import uk.co.nickthecoder.tickle.action.Kill
 import uk.co.nickthecoder.tickle.action.animation.Eases
 import uk.co.nickthecoder.tickle.action.animation.Forwards
 import uk.co.nickthecoder.tickle.action.animation.Grow
-import uk.co.nickthecoder.tickle.neighbourhood.Block
 import uk.co.nickthecoder.tickle.resources.Resources
 import uk.co.nickthecoder.tickle.util.Angle
 import uk.co.nickthecoder.tickle.util.Attribute
 
-class Player : AbstractRole() {
+class Player : Traveller() {
 
     @Attribute
     var highSpeed: Double = 4.0
@@ -20,40 +17,25 @@ class Player : AbstractRole() {
     @Attribute
     var lowSpeed: Double = 3.0
 
-    var speed: Double = 0.0
-
     val left = Resources.instance.input("left")
     val right = Resources.instance.input("right")
     val up = Resources.instance.input("up")
     val down = Resources.instance.input("down")
 
-    var dx: Int = 0
-
-    var dy: Int = 0
-
     var dead: Boolean = false
-
-    var travelled: Double = 0.0
-
-    lateinit var block: Block
 
     override fun begin() {
         Player.instance = this
     }
 
     override fun activated() {
+        super.activated()
         speed = highSpeed
-        block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
+        movement = Movement()
     }
 
-    var movement: Action = Movement()
-        set(v) {
-            field = v
-            v.begin()
-        }
-
     override fun tick() {
-        movement.act()
+        super.tick()
 
         block.occupants.forEach {
             val role = it.role
@@ -70,11 +52,12 @@ class Player : AbstractRole() {
         }
     }
 
-    fun canMove(deltaX: Int, deltaY: Int): Boolean {
-        if (deltaX == 0 && deltaY == 0) {
+    fun canMove(dir: Direction): Boolean {
+        if (dir == Direction.NONE) {
             return false
         }
-        return !block.isSolid(deltaX, deltaY)
+        val isSolid = block.neighbour(dir)?.isSolid()
+        return isSolid != true
     }
 
     /**
@@ -100,141 +83,59 @@ class Player : AbstractRole() {
         movement = (jumpUp.and(kissIn)).then(jumpDown.and(kissOut)).repeat(3).then { Game.instance.startScene(Play.instance.nextScene) }
     }
 
+    var nextDirection: Direction = Direction.NONE
 
-    fun adjust() {
-        // Turning a corner. We may have overshot the junction a little, so lets move back to compensate
-        actor.x -= travelled * dx
-        actor.y -= travelled * dy
-        travelled = 0.0
-    }
-
-    inner class Movement : Action {
-
-        var nextDx: Int = 0
-        var nextDy: Int = 0
-
+    inner class Movement : MoveForwards() {
 
         override fun act(): Boolean {
-            // If moving in the same direction as the key press, do nothing
-            // If moving in the opposite direction to the key press, reverse direction.
-            // If turning left or right, remember which way we want to move in nextDx,nextDy.
+
+            // If reversing, then do that straight away.
+            // Remember which way we want to move (in nextDirection), which is then acted upon as soon as possible.
+            // e.g. If going north, and pressed left, then move north till we arrive at a place where we can move west.
             if (left.isPressed()) {
-                if (dx == 1) {
-                    travelled = GRID_SIZE - travelled
-                    dx = -1
+                if (direction == Direction.EAST) {
+                    reverse()
                 }
-                nextDx = -1
-                nextDy = 0
+                nextDirection = Direction.WEST
             }
             if (right.isPressed()) {
-                if (dx == -1) {
-                    travelled = GRID_SIZE - travelled
-                    dx = 1
+                if (direction == Direction.WEST) {
+                    reverse()
                 }
-                nextDx = 1
-                nextDy = 0
+                nextDirection = Direction.EAST
             }
             if (down.isPressed()) {
-                if (dy == 1) {
-                    travelled = GRID_SIZE - travelled
-                    dy = -1
+                if (direction == Direction.NORTH) {
+                    reverse()
                 }
-                nextDx = 0
-                nextDy = -1
+                nextDirection = Direction.SOUTH
             }
             if (up.isPressed()) {
-                if (dy == -1) {
-                    travelled = GRID_SIZE - travelled
-                    dy = 1
+                if (direction == Direction.SOUTH) {
+                    reverse()
                 }
-                nextDx = 0
-                nextDy = 1
+                nextDirection = Direction.NORTH
             }
 
-            // Move
-            actor.x += dx * speed
-            actor.y += dy * speed
+            val movedByAWholeBlock = direction == Direction.NONE || super.act()
 
-            travelled += speed * Math.abs(dx + dy)
+            if (movedByAWholeBlock) {
 
-            // Change our block
-            if (travelled > 0.8 * GRID_SIZE) {
-                block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
-            }
-
-            // Have we travelled a whole GRID_SIZE? in which case, we need to check if we should turn left or right.
-
-            if (travelled >= GRID_SIZE || (dx == 0 && dy == 0)) {
-                travelled = travelled.rem(GRID_SIZE)
+                super.begin() // Reset for a new block movement.
 
                 if (block.isTunnel()) {
 
-                    movement = TunnelMovement()
+                    enterTunnel()
 
                 } else {
 
-                    if (canMove(nextDx, nextDy)) {
-                        changeDirection(nextDx, nextDy)
+                    if (canMove(nextDirection)) {
+                        direction = nextDirection
                     } else {
-                        if (!canMove(dx, dy)) {
-                            dx = 0
-                            dy = 0
+                        if (direction != Direction.NONE && !canMove(direction)) {
+                            direction = Direction.NONE
                         }
                     }
-                }
-            }
-
-            return false
-        }
-
-        fun changeDirection(deltaX: Int, deltaY: Int) {
-            if (dx == deltaX && dy == deltaY) {
-                // Don't need to do anything!
-                return
-            }
-            adjust()
-            dx = deltaX
-            dy = deltaY
-        }
-
-
-    }
-
-    inner class TunnelMovement : Action {
-        var blocksMoved = 0
-
-        override fun act(): Boolean {
-            actor.x += dx * speed
-            actor.y += dy * speed
-
-            travelled += speed
-
-            if (travelled >= GRID_SIZE) {
-
-                blocksMoved++
-                travelled -= GRID_SIZE
-
-                if (blocksMoved == 4) {
-                    movement = Movement()
-                    block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
-
-                } else if (blocksMoved == 2) {
-
-                    if (dy == -1) {
-                        actor.y += (actor.stage?.firstView()?.rect?.height ?: 0).toDouble()
-                    }
-                    if (dy == 1) {
-                        actor.y -= (actor.stage?.firstView()?.rect?.height ?: 0).toDouble()
-                    }
-                    if (dx == -1) {
-                        actor.x += (actor.stage?.firstView()?.rect?.width ?: 0).toDouble()
-                    }
-                    if (dx == 1) {
-                        actor.x -= (actor.stage?.firstView()?.rect?.width ?: 0).toDouble()
-                    }
-                    actor.x += -GRID_SIZE * dx * 2
-                    actor.y += -GRID_SIZE * dy * 2
-                    adjust()
                 }
             }
 

@@ -400,17 +400,20 @@
                 },
                 {
                     "costume": "player",
-                    "x": 240,
-                    "y": 120,
+                    "x": 160,
+                    "y": 80,
                     "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "winky",
-                    "x": 240,
-                    "y": 320,
-                    "direction": 0,
-                    "scale": 1
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "highSpeed",
+                            "value": "6"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "6"
+                        }
+                    ]
                 },
                 {
                     "costume": "door",
@@ -1577,13 +1580,6 @@
                 {
                     "costume": "pill",
                     "x": 160,
-                    "y": 80,
-                    "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "pill",
-                    "x": 160,
                     "y": 120,
                     "direction": 0,
                     "scale": 1
@@ -1627,13 +1623,6 @@
                     "costume": "pill",
                     "x": 240,
                     "y": 200,
-                    "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "pill",
-                    "x": 240,
-                    "y": 160,
                     "direction": 0,
                     "scale": 1
                 },
@@ -2242,13 +2231,6 @@
                 {
                     "costume": "pill",
                     "x": 880,
-                    "y": 400,
-                    "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "pill",
-                    "x": 880,
                     "y": 440,
                     "direction": 0,
                     "scale": 1
@@ -2262,7 +2244,7 @@
                 },
                 {
                     "costume": "pill",
-                    "x": 840,
+                    "x": 880,
                     "y": 400,
                     "direction": 0,
                     "scale": 1
@@ -2325,13 +2307,6 @@
                 },
                 {
                     "costume": "pill",
-                    "x": 720,
-                    "y": 320,
-                    "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "pill",
                     "x": 760,
                     "y": 320,
                     "direction": 0,
@@ -2354,13 +2329,6 @@
                 {
                     "costume": "pill",
                     "x": 880,
-                    "y": 320,
-                    "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "pill",
-                    "x": 920,
                     "y": 320,
                     "direction": 0,
                     "scale": 1
@@ -2452,13 +2420,6 @@
                 {
                     "costume": "pill",
                     "x": 920,
-                    "y": 240,
-                    "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "pill",
-                    "x": 840,
                     "y": 240,
                     "direction": 0,
                     "scale": 1

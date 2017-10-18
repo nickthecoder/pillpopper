@@ -1238,6 +1238,10 @@
                         {
                             "name": "lowSpeed",
                             "value": "2.5"
+                        },
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
                         }
                     ]
                 },
@@ -1245,37 +1249,6 @@
                     "costume": "player",
                     "x": 360,
                     "y": 80,
-                    "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "stinky",
-                    "x": 360,
-                    "y": 280,
-                    "direction": 0,
-                    "scale": 1,
-                    "attributes": [
-                        {
-                            "name": "highSpeed",
-                            "value": "3.8"
-                        },
-                        {
-                            "name": "lowSpeed",
-                            "value": "3.2"
-                        }
-                    ]
-                },
-                {
-                    "costume": "snide",
-                    "x": 400,
-                    "y": 280,
-                    "direction": 0,
-                    "scale": 1
-                },
-                {
-                    "costume": "winky",
-                    "x": 360,
-                    "y": 320,
                     "direction": 0,
                     "scale": 1
                 },
