@@ -48,3 +48,14 @@ fun Block.isDoor(): Boolean {
     }
     return false
 }
+
+
+fun Block.isTunnel(): Boolean {
+    occupants.forEach {
+        if (it.role is Tunnel) {
+            return true
+        }
+    }
+    return false
+}
+

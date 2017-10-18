@@ -33,6 +33,8 @@ class Player : AbstractRole() {
 
     var dead: Boolean = false
 
+    var travelled: Double = 0.0
+
     lateinit var block: Block
 
     override fun begin() {
@@ -98,12 +100,19 @@ class Player : AbstractRole() {
         movement = (jumpUp.and(kissIn)).then(jumpDown.and(kissOut)).repeat(3).then { Game.instance.startScene(Play.instance.nextScene) }
     }
 
+
+    fun adjust() {
+        // Turning a corner. We may have overshot the junction a little, so lets move back to compensate
+        actor.x -= travelled * dx
+        actor.y -= travelled * dy
+        travelled = 0.0
+    }
+
     inner class Movement : Action {
 
         var nextDx: Int = 0
         var nextDy: Int = 0
 
-        var travelled: Double = 0.0
 
         override fun act(): Boolean {
             // If moving in the same direction as the key press, do nothing
@@ -154,15 +163,23 @@ class Player : AbstractRole() {
             }
 
             // Have we travelled a whole GRID_SIZE? in which case, we need to check if we should turn left or right.
+
             if (travelled >= GRID_SIZE || (dx == 0 && dy == 0)) {
                 travelled = travelled.rem(GRID_SIZE)
 
-                if (canMove(nextDx, nextDy)) {
-                    changeDirection(nextDx, nextDy)
+                if (block.isTunnel()) {
+
+                    movement = TunnelMovement()
+
                 } else {
-                    if (!canMove(dx, dy)) {
-                        dx = 0
-                        dy = 0
+
+                    if (canMove(nextDx, nextDy)) {
+                        changeDirection(nextDx, nextDy)
+                    } else {
+                        if (!canMove(dx, dy)) {
+                            dx = 0
+                            dy = 0
+                        }
                     }
                 }
             }
@@ -175,16 +192,54 @@ class Player : AbstractRole() {
                 // Don't need to do anything!
                 return
             }
-
-            // Turning a corner. We may have overshot the junction a little, so lets move back to compensate
-            actor.x -= travelled * dx
-            actor.y -= travelled * dy
-            travelled = 0.0
-
+            adjust()
             dx = deltaX
             dy = deltaY
         }
 
+
+    }
+
+    inner class TunnelMovement : Action {
+        var blocksMoved = 0
+
+        override fun act(): Boolean {
+            actor.x += dx * speed
+            actor.y += dy * speed
+
+            travelled += speed
+
+            if (travelled >= GRID_SIZE) {
+
+                blocksMoved++
+                travelled -= GRID_SIZE
+
+                if (blocksMoved == 4) {
+                    movement = Movement()
+                    block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
+
+                } else if (blocksMoved == 2) {
+
+                    if (dy == -1) {
+                        actor.y += (actor.stage?.firstView()?.rect?.height ?: 0).toDouble()
+                    }
+                    if (dy == 1) {
+                        actor.y -= (actor.stage?.firstView()?.rect?.height ?: 0).toDouble()
+                    }
+                    if (dx == -1) {
+                        actor.x += (actor.stage?.firstView()?.rect?.width ?: 0).toDouble()
+                    }
+                    if (dx == 1) {
+                        actor.x -= (actor.stage?.firstView()?.rect?.width ?: 0).toDouble()
+                    }
+                    actor.x += -GRID_SIZE * dx * 2
+                    actor.y += -GRID_SIZE * dy * 2
+                    adjust()
+                }
+            }
+
+            return false
+        }
     }
 
     companion object {

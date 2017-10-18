@@ -5,7 +5,7 @@
         "height": 600,
         "resizable": true,
         "initialScene": "level01",
-        "testScene": "test",
+        "testScene": "level03",
         "producer": "uk.co.nickthecoder.pillpopper.PillPopper",
         "packages": [
             "uk.co.nickthecoder.tickle",
@@ -399,6 +399,17 @@
             "top": 139,
             "offsetX": 14,
             "offsetY": 11,
+            "direction": 0
+        },
+        {
+            "name": "tunnel",
+            "texture": "sprites",
+            "left": 187,
+            "bottom": 167,
+            "right": 219,
+            "top": 134,
+            "offsetX": 16,
+            "offsetY": 16,
             "direction": 0
         }
     ],
@@ -949,6 +960,20 @@
                         "Here I come...",
                         "Scared?",
                         "Run away"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "tunnel",
+            "role": "uk.co.nickthecoder.pillpopper.Tunnel",
+            "canRotate": false,
+            "zOrder": 0,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "tunnel"
                     ]
                 }
             ]

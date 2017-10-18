@@ -3,8 +3,6 @@
 Bugs
 ----
 
-Word can overlap the edge of the screen
-
 Next
 ----
 

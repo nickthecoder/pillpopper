@@ -113,17 +113,44 @@ abstract class Ghost : AbstractRole() {
 
     fun changeDirection(scorer: (Direction) -> Double) {
         val oldDirection = direction
-        travelled = travelled.rem(GRID_SIZE)
 
         block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
 
-        chooseDirection(scorer)
+        if (block.isTunnel()) {
+            val oldMovement = movement
+            speed = lowSpeed
+            movement = MoveForwards().then(MoveForwards()).then {
 
-        // Correct for overshoot when turning a corner.
-        if (oldDirection != direction) {
-            actor.x -= travelled * oldDirection.dx
-            actor.y -= travelled * oldDirection.dy
-            travelled = 0.0
+                when (direction) {
+                    Direction.SOUTH -> {
+                        actor.y += (actor.stage?.firstView()?.rect?.height ?: 0).toDouble()
+                    }
+                    Direction.NORTH -> {
+                        actor.y -= (actor.stage?.firstView()?.rect?.height ?: 0).toDouble()
+                    }
+                    Direction.WEST -> {
+                        actor.x += (actor.stage?.firstView()?.rect?.width ?: 0).toDouble()
+                    }
+                    Direction.EAST -> {
+                        actor.x -= (actor.stage?.firstView()?.rect?.width ?: 0).toDouble()
+                    }
+                }
+
+            }.then {
+                MoveForwards().then(MoveForwards())
+            }.then {
+                movement = oldMovement
+            }
+        } else {
+
+            chooseDirection(scorer)
+
+            // Correct for overshoot when turning a corner.
+            if (oldDirection != direction) {
+                actor.x -= travelled * oldDirection.dx
+                actor.y -= travelled * oldDirection.dy
+                travelled = 0.0
+            }
         }
     }
 
@@ -267,8 +294,12 @@ abstract class Ghost : AbstractRole() {
                 }
 
             }
-
-            return travelled >= GRID_SIZE
+            if (travelled >= GRID_SIZE) {
+                travelled -= GRID_SIZE
+                return true
+            } else {
+                return false
+            }
         }
 
     }
