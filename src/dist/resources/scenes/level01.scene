@@ -1233,7 +1233,7 @@
                     "attributes": [
                         {
                             "name": "highSpeed",
-                            "value": "3.5"
+                            "value": "2.9"
                         },
                         {
                             "name": "lowSpeed",
@@ -1241,7 +1241,7 @@
                         },
                         {
                             "name": "exitAfter",
-                            "value": "5"
+                            "value": "7"
                         }
                     ]
                 },
@@ -1250,7 +1250,17 @@
                     "x": 360,
                     "y": 80,
                     "direction": 0,
-                    "scale": 1
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        }
+                    ]
                 },
                 {
                     "costume": "door",
@@ -1284,6 +1294,81 @@
                         {
                             "name": "quantity",
                             "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "costume": "stinky",
+                    "x": 360,
+                    "y": 280,
+                    "direction": 0,
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "15"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "2.5"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
+                },
+                {
+                    "costume": "winky",
+                    "x": 400,
+                    "y": 280,
+                    "direction": 0,
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "10"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "2.8"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "2.5"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
+                },
+                {
+                    "costume": "snide",
+                    "x": 360,
+                    "y": 320,
+                    "direction": 0,
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "2.6"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "2.5"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
                         }
                     ]
                 }

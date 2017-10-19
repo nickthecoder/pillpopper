@@ -7,10 +7,6 @@ Bugs
 Next
 ----
 
-Tunnel from one side to another.
-
-Resize window based on the size of the maze
-
 
 Later
 -----

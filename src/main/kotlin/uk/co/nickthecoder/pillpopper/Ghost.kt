@@ -91,7 +91,6 @@ abstract class Ghost : Traveller() {
         actor.color = Color(1f, 1f, 1f, 0.8f)
         movement = Idle(initialIdle)
                 .then(chaseOne.repeat(exitAfter))
-                .then { println("Initial Delay over") }
                 .then(seekDoorAction(afterAction = chase))
 
         val foundDoor = closest(actor.stage!!.findRole<Door>())
@@ -226,7 +225,6 @@ abstract class Ghost : Traveller() {
 
         return OneAction { seekingDoor = true }.then(OneAction { changeDirection(scorer) }.then(MoveForwards().then {
             if (block.isDoor()) {
-                println("*** Seeking door = false")
                 seekingDoor = false
                 movement = afterAction
             }

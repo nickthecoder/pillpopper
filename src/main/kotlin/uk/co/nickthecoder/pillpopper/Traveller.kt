@@ -90,11 +90,6 @@ abstract class Traveller : AbstractRole() {
             // TODO Check if this is needed
             alignWithCenterOfBlock()
 
-            // TODO Remove this when sure there are no errors
-            val expectedBlock = findBlock()
-            if (block !== expectedBlock) {
-                println("ERROR. ${actor} in wrong block after tunnel. $block vs $expectedBlock")
-            }
             setBlock()
 
             movement = nextMovement ?: OneAction { println("ERROR. No next action set when entering the tunnel") }

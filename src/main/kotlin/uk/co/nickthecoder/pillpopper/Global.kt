@@ -22,7 +22,6 @@ fun Block.isSolid(ignoreDoors: Boolean = false): Boolean {
         if (it.role is Solid) {
             if (ignoreDoors) {
                 if (it.role is Door) {
-                    println("Can go through the door!")
                     // Do nothing (ignore the door)
                 } else {
                     return true
