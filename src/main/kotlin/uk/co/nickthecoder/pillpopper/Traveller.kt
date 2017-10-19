@@ -1,6 +1,7 @@
 package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.AbstractRole
+import uk.co.nickthecoder.tickle.Role
 import uk.co.nickthecoder.tickle.action.Action
 import uk.co.nickthecoder.tickle.action.NoAction
 import uk.co.nickthecoder.tickle.action.OneAction
@@ -18,7 +19,7 @@ abstract class Traveller : AbstractRole() {
 
     var speed = 0.0
 
-    lateinit var block: Block
+    lateinit var block: Block<Role>
 
     /**
      * When a ghost turns scared, this is runOne.forever(). Similar for when eaten.
@@ -45,10 +46,10 @@ abstract class Traveller : AbstractRole() {
     }
 
     fun setBlock() {
-        block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
+        block = Play.instance.neighbourhood.blockAt(actor.x, actor.y)
     }
 
-    fun findBlock(): Block = Play.instance.neighbourhood.getBlock(actor.x, actor.y)
+    fun findBlock(): Block<Role> = Play.instance.neighbourhood.blockAt(actor.x, actor.y)
 
     override fun tick() {
         movement.act()

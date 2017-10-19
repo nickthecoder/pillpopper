@@ -9,9 +9,10 @@
             "actors": [
                 {
                     "costume": "score",
-                    "x": 1007,
-                    "y": 585,
+                    "x": 323,
+                    "y": 324,
                     "direction": 0,
+                    "scale": 1,
                     "text": ""
                 }
             ]

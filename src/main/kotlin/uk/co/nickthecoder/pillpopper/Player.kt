@@ -1,7 +1,6 @@
 package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.Game
-import uk.co.nickthecoder.tickle.action.Kill
 import uk.co.nickthecoder.tickle.action.animation.Eases
 import uk.co.nickthecoder.tickle.action.animation.Forwards
 import uk.co.nickthecoder.tickle.action.animation.Grow
@@ -25,7 +24,11 @@ class Player : Traveller() {
     var dead: Boolean = false
 
     override fun begin() {
-        Player.instance = this
+        Player.nullableInstance = this
+    }
+
+    override fun end() {
+        Player.nullableInstance = null
     }
 
     override fun activated() {
@@ -37,8 +40,7 @@ class Player : Traveller() {
     override fun tick() {
         super.tick()
 
-        block.occupants.forEach {
-            val role = it.role
+        block.occupants.forEach { role ->
             if (role is Edible) {
                 role.eaten()
                 if (role is PowerPill) {
@@ -56,16 +58,16 @@ class Player : Traveller() {
         if (dir == Direction.NONE) {
             return false
         }
-        val isSolid = block.neighbour(dir)?.isSolid()
-        return isSolid != true
+        return block.neighbour(dir)?.hasInstance<Solid>() != true
     }
 
     /**
      * A ghost has touched us.
+     * We do NOT kill the Actor, because ghosts will still chase after us, and check if we are touching etc.
      */
     fun killed() {
         dead = true
-        movement = Grow(actor, 1.0, 0.1, Eases.easeIn).then(Kill(actor))
+        movement = Grow(actor, 1.0, 0.1, Eases.easeIn).then { actor.hide() }
     }
 
     /**
@@ -123,7 +125,7 @@ class Player : Traveller() {
 
                 super.begin() // Reset for a new block movement.
 
-                if (block.isTunnel()) {
+                if (block.hasInstance<Tunnel>()) {
 
                     enterTunnel()
 
@@ -144,7 +146,14 @@ class Player : Traveller() {
     }
 
     companion object {
-        lateinit var instance: Player
+        var nullableInstance: Player? = null
+
+        // This acts similar to a "lateinit var", but can also be set BACK to null later.
+        // In other words, it acts like old fashioned Java - throwing null pointer exceptions when things aren't right.
+        // In this case I think it's a good approach. It keeps the code looking tidy; no "!!","?.". littering the code.
+        // If a scene doesn't have a Player, a NullPointerException is a good result!
+        val instance: Player
+            get() = nullableInstance!!
     }
 }
 

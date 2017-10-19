@@ -7,9 +7,14 @@ Bugs
 Next
 ----
 
+Get the score working
 
 Later
 -----
+
+Pop pills in the correct order.
+	Each color pill has its own note
+	Need an intro screen to exaplain it.
 
 Leave lipstick marks when kissing (End of level animation).
 

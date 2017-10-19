@@ -1168,6 +1168,14 @@
                         {
                             "name": "lowSpeed",
                             "value": "2.5"
+                        },
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
                         }
                     ]
                 },
@@ -1176,7 +1184,17 @@
                     "x": 520,
                     "y": 240,
                     "direction": 0,
-                    "scale": 1
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        }
+                    ]
                 },
                 {
                     "costume": "stinky",
@@ -1192,6 +1210,14 @@
                         {
                             "name": "lowSpeed",
                             "value": "3.2"
+                        },
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
                         }
                     ]
                 },
@@ -1200,14 +1226,50 @@
                     "x": 560,
                     "y": 400,
                     "direction": 0,
-                    "scale": 1
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
                 },
                 {
                     "costume": "winky",
                     "x": 520,
                     "y": 440,
                     "direction": 0,
-                    "scale": 1
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
                 },
                 {
                     "costume": "door",

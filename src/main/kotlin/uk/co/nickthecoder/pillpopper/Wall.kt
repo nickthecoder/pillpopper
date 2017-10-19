@@ -5,7 +5,7 @@ import uk.co.nickthecoder.tickle.AbstractRole
 open class Wall : AbstractRole(), Solid {
 
     override fun activated() {
-        Play.instance.neighbourhood.getBlock(actor.x, actor.y).add(this)
+        Play.instance.neighbourhood.blockAt(actor.x, actor.y).add(this)
     }
 
     override fun tick() {}

@@ -15,7 +15,7 @@ class Drinky : Ghost() {
     }
 
     /**
-     * Head directly for the player, but when close, head for the bottom left corner
+     * Head directly for the player, but when close, head for the flag, or the bottom left corner is there is no flag.
      */
     override val chaseScorer = { dir: Direction ->
         val pa = Player.instance.actor

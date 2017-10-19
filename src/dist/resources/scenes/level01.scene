@@ -1242,6 +1242,10 @@
                         {
                             "name": "exitAfter",
                             "value": "7"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
                         }
                     ]
                 },

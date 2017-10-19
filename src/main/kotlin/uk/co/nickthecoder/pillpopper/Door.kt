@@ -1,3 +1,13 @@
 package uk.co.nickthecoder.pillpopper
 
-class Door : Wall()
+import uk.co.nickthecoder.tickle.AbstractRole
+
+class Door : AbstractRole(), Solid {
+
+    override fun activated() {
+        Play.instance.neighbourhood.blockAt(actor.x, actor.y).add(this)
+    }
+
+    override fun tick() {}
+
+}

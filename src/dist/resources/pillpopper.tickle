@@ -5,7 +5,7 @@
         "height": 600,
         "resizable": true,
         "initialScene": "level01",
-        "testScene": "level03",
+        "testScene": "level01",
         "producer": "uk.co.nickthecoder.pillpopper.PillPopper",
         "packages": [
             "uk.co.nickthecoder.tickle",
@@ -838,20 +838,6 @@
             ]
         },
         {
-            "name": "flag",
-            "role": "uk.co.nickthecoder.pillpopper.Flag",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "flag"
-                    ]
-                }
-            ]
-        },
-        {
             "name": "beer",
             "role": "uk.co.nickthecoder.pillpopper.Bonus",
             "canRotate": false,
@@ -974,6 +960,20 @@
                     "name": "default",
                     "poses": [
                         "tunnel"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "flag",
+            "role": "uk.co.nickthecoder.pillpopper.Flag",
+            "canRotate": false,
+            "zOrder": 0,
+            "events": [
+                {
+                    "name": "default",
+                    "poses": [
+                        "flag"
                     ]
                 }
             ]

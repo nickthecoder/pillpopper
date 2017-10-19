@@ -120,7 +120,7 @@ abstract class Ghost : Traveller() {
             println("ERROR. Ghost is in the wrong block $block vs ${findBlock()} $actor")
         }
 
-        if (block.isTunnel()) {
+        if (block.hasInstance<Tunnel>()) {
             speed = lowSpeed
             enterTunnel()
         } else {
@@ -151,7 +151,18 @@ abstract class Ghost : Traveller() {
     }
 
     fun canMove(dir: Direction): Boolean {
-        return block.neighbour(dir)?.isSolid(seekingDoor) != true
+        val neighbour = block.neighbour(dir)
+        val isSolid = neighbour?.hasInstance<Solid>() != false
+
+        if (isSolid) {
+            if (seekingDoor) {
+                return neighbour?.hasInstance<Door>() == true
+            } else {
+                return false
+            }
+        } else {
+            return true
+        }
     }
 
     /**
@@ -224,7 +235,7 @@ abstract class Ghost : Traveller() {
         val scorer = { dir: Direction -> scoreDirectlyTo(dir, door.actor.x, door.actor.y) }
 
         return OneAction { seekingDoor = true }.then(OneAction { changeDirection(scorer) }.then(MoveForwards().then {
-            if (block.isDoor()) {
+            if (block.hasInstance<Door>()) {
                 seekingDoor = false
                 movement = afterAction
             }

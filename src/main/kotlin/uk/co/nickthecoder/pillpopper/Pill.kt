@@ -13,7 +13,7 @@ open class Pill : AbstractRole(), Edible {
     open val isPowerPill = false
 
     override fun activated() {
-        Play.instance.neighbourhood.getBlock(actor.x, actor.y).add(this)
+        Play.instance.neighbourhood.blockAt(actor.x, actor.y).add(this)
         PillPopper.instance.pills++
     }
 
@@ -22,7 +22,7 @@ open class Pill : AbstractRole(), Edible {
     override fun eaten() {
         actor.die()
         eaten = true
-        Play.instance.neighbourhood.getBlock(actor.x, actor.y).remove(this)
+        Play.instance.neighbourhood.blockAt(actor.x, actor.y).remove(this)
         PillPopper.instance.eatenPill(isPowerPill)
     }
 
