@@ -16,10 +16,10 @@ class Player : Traveller() {
     @Attribute
     var lowSpeed: Double = 3.0
 
-    val left = Resources.instance.input("left")
-    val right = Resources.instance.input("right")
-    val up = Resources.instance.input("up")
-    val down = Resources.instance.input("down")
+    val left = Resources.instance.inputs.find("left")!!
+    val right = Resources.instance.inputs.find("right")!!
+    val up = Resources.instance.inputs.find("up")!!
+    val down = Resources.instance.inputs.find("down")!!
 
     var dead: Boolean = false
 

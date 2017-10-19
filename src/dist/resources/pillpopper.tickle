@@ -413,203 +413,210 @@
             "direction": 0
         }
     ],
+    "costumeGroups": [
+        {
+            "name": "walls",
+            "costumes": [
+                {
+                    "name": "wall_e",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_e"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_w",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_w"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_tw",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_tw"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_ts",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_ts"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_tn",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_tn"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_te",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_te"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_sw",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_sw"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_se",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_se"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_s",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_s"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_nw",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_nw"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_ns",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_ns"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_ne",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_ne"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_n",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_n"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wall_ew",
+                    "role": "uk.co.nickthecoder.pillpopper.Wall",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wall_ew"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
     "costumes": [
-        {
-            "name": "wall_s",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_s"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_w",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_w"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_e",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_e"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_n",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_n"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_se",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_se"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_sw",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_sw"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_ne",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_ne"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_nw",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_nw"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_ns",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_ns"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_ew",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_ew"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_tw",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_tw"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_tn",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_tn"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_ts",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_ts"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wall_te",
-            "role": "uk.co.nickthecoder.pillpopper.Wall",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wall_te"
-                    ]
-                }
-            ]
-        },
         {
             "name": "powerPill",
             "role": "uk.co.nickthecoder.pillpopper.PowerPill",
