@@ -11,6 +11,6 @@ val STARTING_BONUS = 50 // Points
 
 val POWER_PILL_WARNING_TIME = 3.0 // Seconds
 
-val INFO_HEIGHT = 60 // The height of the area with the scores etc.
+val INFO_HEIGHT = 40 // The height of the area with the scores etc.
 
 fun Block<Role>.neighbour(direction: Direction) = neighbouringBlock(direction.dx, direction.dy)

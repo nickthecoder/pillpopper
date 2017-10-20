@@ -36,7 +36,7 @@ class Play : AbstractDirector() {
         val height = (neighbourhood.height() + neighbourhood.blockHeight).toInt()
 
         Game.instance.window.resize(width, height + INFO_HEIGHT)
-        Game.instance.scene.layout(width, height)
+        Game.instance.scene.layout(width, height + INFO_HEIGHT)
     }
 
     override fun preTick() {

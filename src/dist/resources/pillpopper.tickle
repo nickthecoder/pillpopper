@@ -40,8 +40,8 @@
                     "zOrder": 50,
                     "hAlignment": "LEFT",
                     "leftRightMargin": 0,
-                    "vAlignment": "TOP",
-                    "topBottomMargin": 0
+                    "vAlignment": "BOTTOM",
+                    "topBottomMargin": 40
                 }
             ]
         },
@@ -62,8 +62,9 @@
                     "zOrder": 90,
                     "hAlignment": "LEFT",
                     "leftRightMargin": 0,
-                    "vAlignment": "TOP",
-                    "topBottomMargin": 0
+                    "vAlignment": "BOTTOM",
+                    "topBottomMargin": 0,
+                    "height": 50
                 }
             ]
         }
@@ -817,6 +818,151 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "score etc",
+            "costumes": [
+                {
+                    "name": "score",
+                    "role": "uk.co.nickthecoder.pillpopper.Score",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "textStyles": [
+                                {
+                                    "font": "plain",
+                                    "halign": "LEFT",
+                                    "valign": "BOTTOM",
+                                    "color": "#ffffffff"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "scoreLabel",
+                    "role": "",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "textStyles": [
+                                {
+                                    "font": "plain",
+                                    "halign": "LEFT",
+                                    "valign": "BOTTOM",
+                                    "color": "#ffffffff"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "bonuses",
+            "costumes": [
+                {
+                    "name": "beer",
+                    "role": "uk.co.nickthecoder.pillpopper.Bonus",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "beer"
+                            ]
+                        },
+                        {
+                            "name": "points",
+                            "costumes": [
+                                "points"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "wine",
+                    "role": "uk.co.nickthecoder.pillpopper.Bonus",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "wine"
+                            ]
+                        },
+                        {
+                            "name": "points",
+                            "costumes": [
+                                "points"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "miscellaneous",
+            "costumes": [
+                {
+                    "name": "talk",
+                    "role": "uk.co.nickthecoder.pillpopper.Talk",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "textStyles": [
+                                {
+                                    "font": "points",
+                                    "halign": "CENTER",
+                                    "valign": "BOTTOM",
+                                    "color": "#ffffffff",
+                                    "outlineColor": "#000000ff"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "powerPill",
+                            "strings": [
+                                "Run!",
+                                "Revenge!",
+                                "Rampage!",
+                                "Coming to get you...",
+                                "Here I come...",
+                                "Scared?",
+                                "Run away"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "points",
+                    "role": "uk.co.nickthecoder.pillpopper.Points",
+                    "canRotate": false,
+                    "zOrder": 50,
+                    "events": [
+                        {
+                            "name": "default",
+                            "textStyles": [
+                                {
+                                    "font": "points",
+                                    "halign": "CENTER",
+                                    "valign": "CENTER",
+                                    "color": "#ffffffff",
+                                    "outlineColor": "#110141ff"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "costumes": [
@@ -861,25 +1007,6 @@
             ]
         },
         {
-            "name": "score",
-            "role": "uk.co.nickthecoder.pillpopper.Score",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "textStyles": [
-                        {
-                            "font": "plain",
-                            "halign": "RIGHT",
-                            "valign": "TOP",
-                            "color": "#ffffffff"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "name": "player",
             "role": "uk.co.nickthecoder.pillpopper.Player",
             "canRotate": false,
@@ -914,26 +1041,6 @@
             ]
         },
         {
-            "name": "beer",
-            "role": "uk.co.nickthecoder.pillpopper.Bonus",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "beer"
-                    ]
-                },
-                {
-                    "name": "points",
-                    "costumes": [
-                        "points"
-                    ]
-                }
-            ]
-        },
-        {
             "name": "bonusFactory",
             "role": "uk.co.nickthecoder.pillpopper.BonusFactory",
             "canRotate": false,
@@ -950,78 +1057,6 @@
                     "costumes": [
                         "beer",
                         "wine"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "wine",
-            "role": "uk.co.nickthecoder.pillpopper.Bonus",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "wine"
-                    ]
-                },
-                {
-                    "name": "points",
-                    "costumes": [
-                        "points"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "points",
-            "role": "uk.co.nickthecoder.pillpopper.Points",
-            "canRotate": false,
-            "zOrder": 50,
-            "events": [
-                {
-                    "name": "default",
-                    "textStyles": [
-                        {
-                            "font": "points",
-                            "halign": "CENTER",
-                            "valign": "CENTER",
-                            "color": "#ffffffff",
-                            "outlineColor": "#110141ff"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "talk",
-            "role": "uk.co.nickthecoder.pillpopper.Talk",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "textStyles": [
-                        {
-                            "font": "points",
-                            "halign": "CENTER",
-                            "valign": "BOTTOM",
-                            "color": "#ffffffff",
-                            "outlineColor": "#000000ff"
-                        }
-                    ]
-                },
-                {
-                    "name": "powerPill",
-                    "strings": [
-                        "Run!",
-                        "Revenge!",
-                        "Rampage!",
-                        "Coming to get you...",
-                        "Here I come...",
-                        "Scared?",
-                        "Run away"
                     ]
                 }
             ]

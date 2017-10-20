@@ -4,6 +4,10 @@
         {
             "name": "nextScene",
             "value": "level02"
+        },
+        {
+            "name": "powerPillTime",
+            "value": "10"
         }
     ],
     "background": "#000000",

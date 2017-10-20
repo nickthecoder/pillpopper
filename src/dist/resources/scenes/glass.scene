@@ -9,11 +9,19 @@
             "actors": [
                 {
                     "costume": "score",
-                    "x": 199,
-                    "y": 56,
+                    "x": 138,
+                    "y": 12,
                     "direction": 0,
                     "scale": 1,
                     "text": ""
+                },
+                {
+                    "costume": "scoreLabel",
+                    "x": 20,
+                    "y": 12,
+                    "direction": 0,
+                    "scale": 1,
+                    "text": "Score :"
                 }
             ]
         }
