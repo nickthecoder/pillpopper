@@ -4,6 +4,10 @@
         {
             "name": "nextScene",
             "value": "smaller"
+        },
+        {
+            "name": "powerPillTime",
+            "value": "10"
         }
     ],
     "background": "#000000",
@@ -808,6 +812,31 @@
                     "y": 80,
                     "direction": 0,
                     "scale": 1
+                },
+                {
+                    "costume": "winky",
+                    "x": 240,
+                    "y": 120,
+                    "direction": 0,
+                    "scale": 1,
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
                 }
             ]
         }

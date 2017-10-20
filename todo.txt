@@ -8,9 +8,13 @@ Next
 ----
 
 Get the score working
+	Need a good way to align it flexibly.
+	View.align(actor, LEFT/RIGHT/RATIO, TOP/BOTTOM/RATIO) ???
 
 Later
 -----
+
+Time out the power pill and flash.
 
 Pop pills in the correct order.
 	Each color pill has its own note

@@ -2,8 +2,9 @@ package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.Role
 import uk.co.nickthecoder.tickle.action.Action
+import uk.co.nickthecoder.tickle.action.Do
 import uk.co.nickthecoder.tickle.action.Idle
-import uk.co.nickthecoder.tickle.action.OneAction
+import uk.co.nickthecoder.tickle.action.NoAction
 import uk.co.nickthecoder.tickle.graphics.Color
 import uk.co.nickthecoder.tickle.stage.findRole
 import uk.co.nickthecoder.tickle.util.Attribute
@@ -45,18 +46,18 @@ abstract class Ghost : Traveller() {
     /**
      * A chasing movement of one block
      */
-    val chaseOne = OneAction { changeDirection(chaseScorer) }
+    val chaseOne = Do { changeDirection(chaseScorer) }
             .then(CheckTouching().whilst(MoveForwards()))
 
     /**
      * Chases forever - [movement] uses this most of the time.
      */
-    val chase: Action = OneAction { canBeScared = true }.then(chaseOne.forever())
+    val chase: Action = Do { canBeScared = true }.then(chaseOne.forever())
 
     /**
      * A run-away movement of one block
      */
-    val runOne = OneAction { changeDirection { runAwayScorer(it) } }
+    val runOne = Do { changeDirection { runAwayScorer(it) } }
             .then(CheckTouching().whilst(MoveForwards()))
 
     /**
@@ -82,6 +83,12 @@ abstract class Ghost : Traveller() {
      */
     var eaten: Boolean = false
 
+    var powerPillWarningAction: Action? = null
+        set(v) {
+            field = v
+            v?.begin()
+        }
+
     lateinit var door: Role
 
     override fun activated() {
@@ -100,6 +107,11 @@ abstract class Ghost : Traveller() {
         } else {
             door = foundDoor
         }
+    }
+
+    override fun tick() {
+        super.tick()
+        powerPillWarningAction?.act()
     }
 
     /**
@@ -175,11 +187,11 @@ abstract class Ghost : Traveller() {
     /**
      * Head for x,y
      */
-    fun scoreDirectlyTo(dir: Direction, tartgetX: Double, targetY: Double): Double {
+    fun scoreDirectlyTo(dir: Direction, targetX: Double, targetY: Double): Double {
         return if (dir.dx == 0) {
             (targetY - actor.y) * dir.dy
         } else {
-            (tartgetX - actor.x) * dir.dx
+            (targetX - actor.x) * dir.dx
         }
     }
 
@@ -192,10 +204,8 @@ abstract class Ghost : Traveller() {
             speed = lowSpeed
             scared = true
 
-            // TODO Change this to a timed-out, rather than a fixed number of moves.
-            nextMovement = runOne.repeat(30)
+            nextMovement = runOne.until { !eaten && !scared }
                     .then {
-                        scared = false
                         actor.event("default")
                         movement = chase
                     }
@@ -211,6 +221,7 @@ abstract class Ghost : Traveller() {
         eaten = true
         scared = false
         canBeScared = false
+        powerPillWarningAction = null
 
         val points = actor.createChildOnStage("points")
         points.textAppearance?.text = PillPopper.instance.eatenGhost().toString()
@@ -234,13 +245,15 @@ abstract class Ghost : Traveller() {
 
         val scorer = { dir: Direction -> scoreDirectlyTo(dir, door.actor.x, door.actor.y) }
 
-        return OneAction { seekingDoor = true }.then(OneAction { changeDirection(scorer) }.then(MoveForwards().then {
-            if (block.hasInstance<Door>()) {
-                seekingDoor = false
-                movement = afterAction
-            }
-        }).forever())
-
+        return Do { seekingDoor = true }
+                .then { changeDirection(scorer) }
+                .then(MoveForwards())
+                .then {
+                    if (block.hasInstance<Door>()) {
+                        seekingDoor = false
+                        movement = afterAction
+                    }
+                }.forever()
     }
 
     fun touchingPlayer(): Boolean {
@@ -250,6 +263,24 @@ abstract class Ghost : Traveller() {
         return dx < TOUCHING_DISTANCE && dy < TOUCHING_DISTANCE
     }
 
+    fun levelComplete() {
+        movement = NoAction()
+    }
+
+    fun powerPillWarning() {
+        if (scared) {
+            val flash = Do { actor.event("default") }
+                    .then(Idle(6))
+                    .then { actor.event("scared") }
+                    .then(Idle(20))
+
+            powerPillWarningAction = flash.until { !scared }.then { powerPillWarningAction = null }
+        }
+    }
+
+    fun powerPillEnd() {
+        scared = false
+    }
 
     inner class CheckTouching : Action {
         override fun act(): Boolean {

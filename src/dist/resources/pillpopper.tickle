@@ -614,6 +614,209 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "ghosts",
+            "costumes": [
+                {
+                    "name": "drinky",
+                    "role": "uk.co.nickthecoder.pillpopper.Drinky",
+                    "canRotate": false,
+                    "zOrder": 1,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "drinky"
+                            ]
+                        },
+                        {
+                            "name": "scared",
+                            "poses": [
+                                "scared"
+                            ]
+                        },
+                        {
+                            "name": "eaten",
+                            "poses": [
+                                "eaten"
+                            ]
+                        },
+                        {
+                            "name": "points",
+                            "costumes": [
+                                "points"
+                            ]
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "initialIdle",
+                            "value": "3"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
+                },
+                {
+                    "name": "snide",
+                    "role": "uk.co.nickthecoder.pillpopper.Snide",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "snide"
+                            ]
+                        },
+                        {
+                            "name": "scared",
+                            "poses": [
+                                "scared"
+                            ]
+                        },
+                        {
+                            "name": "eaten",
+                            "poses": [
+                                "eaten"
+                            ]
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "initialIdle",
+                            "value": "6"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
+                },
+                {
+                    "name": "stinky",
+                    "role": "uk.co.nickthecoder.pillpopper.Stinky",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "stinky"
+                            ]
+                        },
+                        {
+                            "name": "scared",
+                            "poses": [
+                                "scared"
+                            ]
+                        },
+                        {
+                            "name": "eaten",
+                            "poses": [
+                                "eaten"
+                            ]
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "initialIdle",
+                            "value": "9"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
+                },
+                {
+                    "name": "winky",
+                    "role": "uk.co.nickthecoder.pillpopper.Winky",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "poses": [
+                                "winky"
+                            ]
+                        },
+                        {
+                            "name": "scared",
+                            "poses": [
+                                "scared"
+                            ]
+                        },
+                        {
+                            "name": "eaten",
+                            "poses": [
+                                "eaten"
+                            ]
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "exitAfter",
+                            "value": "5"
+                        },
+                        {
+                            "name": "highSpeed",
+                            "value": "4"
+                        },
+                        {
+                            "name": "initialIdle",
+                            "value": "12"
+                        },
+                        {
+                            "name": "lowSpeed",
+                            "value": "3"
+                        },
+                        {
+                            "name": "reExitAfter",
+                            "value": "5"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "costumes": [
@@ -658,44 +861,6 @@
             ]
         },
         {
-            "name": "drinky",
-            "role": "uk.co.nickthecoder.pillpopper.Drinky",
-            "canRotate": false,
-            "zOrder": 1,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "drinky"
-                    ]
-                },
-                {
-                    "name": "scared",
-                    "poses": [
-                        "scared"
-                    ]
-                },
-                {
-                    "name": "eaten",
-                    "poses": [
-                        "eaten"
-                    ]
-                },
-                {
-                    "name": "points",
-                    "costumes": [
-                        "points"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "name": "initialIdle",
-                    "value": "3"
-                }
-            ]
-        },
-        {
             "name": "score",
             "role": "uk.co.nickthecoder.pillpopper.Score",
             "canRotate": false,
@@ -731,102 +896,6 @@
                     "costumes": [
                         "talk"
                     ]
-                }
-            ]
-        },
-        {
-            "name": "snide",
-            "role": "uk.co.nickthecoder.pillpopper.Snide",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "snide"
-                    ]
-                },
-                {
-                    "name": "scared",
-                    "poses": [
-                        "scared"
-                    ]
-                },
-                {
-                    "name": "eaten",
-                    "poses": [
-                        "eaten"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "name": "initialIdle",
-                    "value": "6"
-                }
-            ]
-        },
-        {
-            "name": "stinky",
-            "role": "uk.co.nickthecoder.pillpopper.Stinky",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "stinky"
-                    ]
-                },
-                {
-                    "name": "scared",
-                    "poses": [
-                        "scared"
-                    ]
-                },
-                {
-                    "name": "eaten",
-                    "poses": [
-                        "eaten"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "name": "initialIdle",
-                    "value": "9"
-                }
-            ]
-        },
-        {
-            "name": "winky",
-            "role": "uk.co.nickthecoder.pillpopper.Winky",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "winky"
-                    ]
-                },
-                {
-                    "name": "scared",
-                    "poses": [
-                        "scared"
-                    ]
-                },
-                {
-                    "name": "eaten",
-                    "poses": [
-                        "eaten"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "name": "initialIdle",
-                    "value": "12"
                 }
             ]
         },

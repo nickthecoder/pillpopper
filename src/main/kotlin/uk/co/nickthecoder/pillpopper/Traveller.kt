@@ -3,8 +3,8 @@ package uk.co.nickthecoder.pillpopper
 import uk.co.nickthecoder.tickle.AbstractRole
 import uk.co.nickthecoder.tickle.Role
 import uk.co.nickthecoder.tickle.action.Action
+import uk.co.nickthecoder.tickle.action.Do
 import uk.co.nickthecoder.tickle.action.NoAction
-import uk.co.nickthecoder.tickle.action.OneAction
 import uk.co.nickthecoder.tickle.neighbourhood.Block
 
 abstract class Traveller : AbstractRole() {
@@ -93,7 +93,7 @@ abstract class Traveller : AbstractRole() {
 
             setBlock()
 
-            movement = nextMovement ?: OneAction { println("ERROR. No next action set when entering the tunnel") }
+            movement = nextMovement ?: Do { println("ERROR. No next action set when entering the tunnel") }
         }
 
     }
