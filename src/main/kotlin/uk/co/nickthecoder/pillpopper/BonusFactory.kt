@@ -21,7 +21,6 @@ class BonusFactory : ActionRole() {
     var quantity: Int = 3
 
     override fun createAction(): Action? {
-        actor.hide()
         return Delay(initialDelay).then(
                 PeriodicFactory(period, quantity) {
                     val block = Play.instance.neighbourhood.blockAt(actor.x, actor.y)

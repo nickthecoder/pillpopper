@@ -6,10 +6,5 @@ import uk.co.nickthecoder.tickle.AbstractRole
  * Used by Drinky as the point to head towards when too close to Player
  */
 class Flag : AbstractRole() {
-
-    override fun activated() {
-        actor.hide()
-    }
-
     override fun tick() {}
 }

@@ -5,7 +5,7 @@
         "height": 600,
         "resizable": true,
         "initialScene": "level01",
-        "testScene": "level01",
+        "testScene": "level03",
         "producer": "uk.co.nickthecoder.pillpopper.PillPopper",
         "packages": [
             "uk.co.nickthecoder.tickle",
@@ -1023,7 +1023,7 @@
             "zOrder": 0,
             "events": [
                 {
-                    "name": "default",
+                    "name": "editor",
                     "poses": [
                         "bonusFactory"
                     ]
@@ -1035,6 +1035,20 @@
                         "wine"
                     ]
                 }
+            ],
+            "attributes": [
+                {
+                    "name": "initialDelay",
+                    "value": "10"
+                },
+                {
+                    "name": "period",
+                    "value": "15"
+                },
+                {
+                    "name": "quantity",
+                    "value": "3"
+                }
             ]
         },
         {
@@ -1044,7 +1058,7 @@
             "zOrder": 0,
             "events": [
                 {
-                    "name": "default",
+                    "name": "editor",
                     "poses": [
                         "tunnel"
                     ]

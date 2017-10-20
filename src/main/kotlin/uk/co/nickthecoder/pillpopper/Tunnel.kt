@@ -5,7 +5,6 @@ import uk.co.nickthecoder.tickle.AbstractRole
 class Tunnel : AbstractRole() {
 
     override fun activated() {
-        actor.hide()
         Play.instance.neighbourhood.blockAt(actor.x, actor.y).add(this)
     }
 
