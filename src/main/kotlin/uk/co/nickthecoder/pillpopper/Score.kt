@@ -7,6 +7,6 @@ class Score : AbstractRole() {
     override fun tick() {}
 
     fun update(score: Int) {
-        actor.textAppearance?.text = score.toString()
+        actor.textAppearance?.text = "Score : $score"
     }
 }

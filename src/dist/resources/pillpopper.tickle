@@ -820,49 +820,6 @@
             ]
         },
         {
-            "name": "score etc",
-            "costumes": [
-                {
-                    "name": "score",
-                    "role": "uk.co.nickthecoder.pillpopper.Score",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "textStyles": [
-                                {
-                                    "font": "plain",
-                                    "halign": "LEFT",
-                                    "valign": "BOTTOM",
-                                    "color": "#ffffffff"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "scoreLabel",
-                    "role": "",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "textStyles": [
-                                {
-                                    "font": "plain",
-                                    "halign": "LEFT",
-                                    "valign": "BOTTOM",
-                                    "color": "#ffffffff"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "name": "bonuses",
             "costumes": [
                 {
@@ -957,6 +914,25 @@
                                     "valign": "CENTER",
                                     "color": "#ffffffff",
                                     "outlineColor": "#110141ff"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "score",
+                    "role": "uk.co.nickthecoder.pillpopper.Score",
+                    "canRotate": false,
+                    "zOrder": 0,
+                    "events": [
+                        {
+                            "name": "default",
+                            "textStyles": [
+                                {
+                                    "font": "plain",
+                                    "halign": "LEFT",
+                                    "valign": "BOTTOM",
+                                    "color": "#ffffffff"
                                 }
                             ]
                         }

@@ -1,20 +1,18 @@
 
 
-
 Bugs
 ----
 
 Next
 ----
 
-Get the score working
-	Need a good way to align it flexibly.
-	View.align(actor, LEFT/RIGHT/RATIO, TOP/BOTTOM/RATIO) ???
+Need a good way to align glass pane flexibly, when the window changes size.
+	Reposition relative to : Top/Center/Bottom and Left/Center/Right and maybe ratio too.
+		Only show this if "isResizable" is set on the Layout
+	
 
 Later
 -----
-
-Time out the power pill and flash.
 
 Pop pills in the correct order.
 	Each color pill has its own note
