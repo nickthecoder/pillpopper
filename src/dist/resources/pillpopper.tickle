@@ -1,1121 +1,485 @@
-{
-    "info": {
-        "title": "Pill Popper",
-        "width": 1024,
-        "height": 600,
-        "resizable": true,
-        "initialScene": "level01",
-        "testScene": "level03",
-        "producer": "uk.co.nickthecoder.pillpopper.PillPopper",
-        "packages": [
-            "uk.co.nickthecoder.tickle",
-            "uk.co.nickthecoder.pillpopper"
-        ]
+{ "info": { "title": "Pill Popper", "width": 1024, "height": 600, "resizable": true, "initialScene": "level01", "testScene": "level03", "producer": "uk.co.nickthecoder.pillpopper.PillPopper"}, "preferences": { "outputFormat": "UGLY", "packages": 
+  [
+    "uk.co.nickthecoder.tickle",
+    "uk.co.nickthecoder.pillpopper"
+  ]
+, "treeThumbnailSize": 24, "costumePickerThumbnailSize": 40}, "layouts": 
+  [
+    { "name": "main", "stages": 
+      [
+        { "name": "main", "stage": "uk.co.nickthecoder.tickle.stage.GameStage", "constraint": "uk.co.nickthecoder.tickle.resources.GridConstraint", "constraintAttributes": 
+          [
+            { "name": "xSpacing", "value": "40"},
+            { "name": "ySpacing", "value": "40"}
+          ]
+        }
+      ]
+    , "views": 
+      [
+        { "name": "main", "view": "uk.co.nickthecoder.tickle.stage.ZOrderStageView", "stage": "main", "zOrder": 50, "hAlignment": "LEFT", "leftRightMargin": 0, "vAlignment": "BOTTOM", "topBottomMargin": 40}
+      ]
     },
-    "layouts": [
-        {
-            "name": "main",
-            "stages": [
-                {
-                    "name": "main",
-                    "stage": "uk.co.nickthecoder.tickle.stage.GameStage",
-                    "constraint": "uk.co.nickthecoder.tickle.resources.GridConstraint",
-                    "constraintAttributes": [
-                        {
-                            "name": "xSpacing",
-                            "value": "40"
-                        },
-                        {
-                            "name": "ySpacing",
-                            "value": "40"
-                        }
-                    ]
-                }
-            ],
-            "views": [
-                {
-                    "name": "main",
-                    "view": "uk.co.nickthecoder.tickle.stage.ZOrderStageView",
-                    "stage": "main",
-                    "zOrder": 50,
-                    "hAlignment": "LEFT",
-                    "leftRightMargin": 0,
-                    "vAlignment": "BOTTOM",
-                    "topBottomMargin": 40
-                }
-            ]
+    { "name": "glass", "stages": 
+      [
+        { "name": "glass", "stage": "uk.co.nickthecoder.tickle.stage.GameStage", "constraint": "uk.co.nickthecoder.tickle.resources.NoStageConstraint"}
+      ]
+    , "views": 
+      [
+        { "name": "glass", "view": "uk.co.nickthecoder.tickle.stage.ZOrderStageView", "stage": "glass", "zOrder": 90, "hAlignment": "LEFT", "leftRightMargin": 0, "vAlignment": "BOTTOM", "topBottomMargin": 0, "height": 50}
+      ]
+    }
+  ]
+, "textures": 
+  [
+    { "name": "sprites", "file": "images/sprites.png"}
+  ]
+, "fonts": 
+  [
+    { "name": "plain", "fontName": "SansSerif", "style": "PLAIN", "size": 32, "xPadding": 1, "yPadding": 1},
+    { "name": "points", "fontName": "URW Gothic L Semi-Bold", "style": "PLAIN", "size": 24, "xPadding": 6, "yPadding": 6}
+  ]
+, "poses": 
+  [
+    { "name": "wall_s", "texture": "sprites", "left": 275, "bottom": 90, "right": 315, "top": 50, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_w", "texture": "sprites", "left": 230, "bottom": 90, "right": 270, "top": 50, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_e", "texture": "sprites", "left": 275, "bottom": 45, "right": 315, "top": 5, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_n", "texture": "sprites", "left": 230, "bottom": 45, "right": 270, "top": 5, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_se", "texture": "sprites", "left": 185, "bottom": 90, "right": 225, "top": 50, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_sw", "texture": "sprites", "left": 140, "bottom": 90, "right": 180, "top": 50, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_ne", "texture": "sprites", "left": 185, "bottom": 45, "right": 225, "top": 5, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_nw", "texture": "sprites", "left": 140, "bottom": 45, "right": 180, "top": 5, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_ns", "texture": "sprites", "left": 95, "bottom": 91, "right": 135, "top": 51, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_ew", "texture": "sprites", "left": 95, "bottom": 45, "right": 135, "top": 5, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_tw", "texture": "sprites", "left": 50, "bottom": 90, "right": 90, "top": 50, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_tn", "texture": "sprites", "left": 5, "bottom": 90, "right": 45, "top": 50, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_ts", "texture": "sprites", "left": 50, "bottom": 45, "right": 90, "top": 5, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "wall_te", "texture": "sprites", "left": 5, "bottom": 45, "right": 45, "top": 5, "offsetX": 20, "offsetY": 20, "direction": 0},
+    { "name": "powerPill", "texture": "sprites", "left": 30, "bottom": 131, "right": 58, "top": 91, "offsetX": 13, "offsetY": 20, "direction": 0},
+    { "name": "pill", "texture": "sprites", "left": 5, "bottom": 121, "right": 25, "top": 101, "offsetX": 10, "offsetY": 10, "direction": 0},
+    { "name": "popper", "texture": "sprites", "left": 5, "bottom": 158, "right": 46, "top": 131, "offsetX": 24, "offsetY": 13, "direction": 0},
+    { "name": "drinky", "texture": "sprites", "left": 102, "bottom": 131, "right": 135, "top": 95, "offsetX": 16, "offsetY": 18, "direction": 0},
+    { "name": "winky", "texture": "sprites", "left": 142, "bottom": 131, "right": 175, "top": 95, "offsetX": 16, "offsetY": 18, "direction": 0},
+    { "name": "stinky", "texture": "sprites", "left": 182, "bottom": 131, "right": 215, "top": 95, "offsetX": 16, "offsetY": 18, "direction": 0},
+    { "name": "snide", "texture": "sprites", "left": 222, "bottom": 131, "right": 255, "top": 95, "offsetX": 16, "offsetY": 18, "direction": 0},
+    { "name": "door", "texture": "sprites", "left": 263, "bottom": 105, "right": 303, "top": 96, "offsetX": 20, "offsetY": 4, "direction": 0},
+    { "name": "flag", "texture": "sprites", "left": 261, "bottom": 133, "right": 276, "top": 107, "offsetX": 7, "offsetY": 2, "direction": 0},
+    { "name": "scared", "texture": "sprites", "left": 62, "bottom": 134, "right": 95, "top": 95, "offsetX": 16, "offsetY": 18, "direction": 0},
+    { "name": "eaten", "texture": "sprites", "left": 53, "bottom": 169, "right": 104, "top": 136, "offsetX": 24, "offsetY": 14, "direction": 0},
+    { "name": "beer", "texture": "sprites", "left": 108, "bottom": 168, "right": 131, "top": 137, "offsetX": 12, "offsetY": 14, "direction": 0},
+    { "name": "wine", "texture": "sprites", "left": 138, "bottom": 166, "right": 155, "top": 138, "offsetX": 9, "offsetY": 14, "direction": 0},
+    { "name": "bonusFactory", "texture": "sprites", "left": 160, "bottom": 163, "right": 185, "top": 139, "offsetX": 14, "offsetY": 11, "direction": 0},
+    { "name": "tunnel", "texture": "sprites", "left": 187, "bottom": 167, "right": 219, "top": 134, "offsetX": 16, "offsetY": 16, "direction": 0}
+  ]
+, "costumeGroups": 
+  [
+    { "name": "walls", "costumes": 
+      [
+        { "name": "wall_e", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_e"
+              ]
+            }
+          ]
         },
-        {
-            "name": "glass",
-            "stages": [
-                {
-                    "name": "glass",
-                    "stage": "uk.co.nickthecoder.tickle.stage.GameStage",
-                    "constraint": "uk.co.nickthecoder.tickle.resources.NoStageConstraint"
-                }
-            ],
-            "views": [
-                {
-                    "name": "glass",
-                    "view": "uk.co.nickthecoder.tickle.stage.ZOrderStageView",
-                    "stage": "glass",
-                    "zOrder": 90,
-                    "hAlignment": "LEFT",
-                    "leftRightMargin": 0,
-                    "vAlignment": "BOTTOM",
-                    "topBottomMargin": 0,
-                    "height": 50
-                }
-            ]
+        { "name": "wall_w", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_w"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_tw", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_tw"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_ts", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_ts"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_tn", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_tn"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_te", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_te"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_sw", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_sw"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_se", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_se"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_s", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_s"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_nw", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_nw"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_ns", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_ns"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_ne", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_ne"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_n", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_n"
+              ]
+            }
+          ]
+        },
+        { "name": "wall_ew", "role": "uk.co.nickthecoder.pillpopper.Wall", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wall_ew"
+              ]
+            }
+          ]
         }
-    ],
-    "textures": [
-        {
-            "name": "sprites",
-            "file": "images/sprites.png"
+      ]
+    , "showInSceneEditor": true},
+    { "name": "ghosts", "costumes": 
+      [
+        { "name": "drinky", "role": "uk.co.nickthecoder.pillpopper.Drinky", "canRotate": false, "zOrder": 1, "initialEvent": "default", "showInSceneEditor": true, "inheritsEventsFrom": "ghost-base", "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "drinky"
+              ]
+            }
+          ]
+        , "attributes": 
+          [
+            { "name": "exitAfter", "value": "5"},
+            { "name": "highSpeed", "value": "4"},
+            { "name": "initialIdle", "value": "3"},
+            { "name": "lowSpeed", "value": "3"},
+            { "name": "reExitAfter", "value": "5"}
+          ]
+        },
+        { "name": "snide", "role": "uk.co.nickthecoder.pillpopper.Snide", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "inheritsEventsFrom": "ghost-base", "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "snide"
+              ]
+            }
+          ]
+        , "attributes": 
+          [
+            { "name": "exitAfter", "value": "5"},
+            { "name": "highSpeed", "value": "4"},
+            { "name": "initialIdle", "value": "6"},
+            { "name": "lowSpeed", "value": "3"},
+            { "name": "reExitAfter", "value": "5"}
+          ]
+        },
+        { "name": "stinky", "role": "uk.co.nickthecoder.pillpopper.Stinky", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "inheritsEventsFrom": "ghost-base", "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "stinky"
+              ]
+            }
+          ]
+        , "attributes": 
+          [
+            { "name": "exitAfter", "value": "5"},
+            { "name": "highSpeed", "value": "4"},
+            { "name": "initialIdle", "value": "9"},
+            { "name": "lowSpeed", "value": "3"},
+            { "name": "reExitAfter", "value": "5"}
+          ]
+        },
+        { "name": "winky", "role": "uk.co.nickthecoder.pillpopper.Winky", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "inheritsEventsFrom": "ghost-base", "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "winky"
+              ]
+            }
+          ]
+        , "attributes": 
+          [
+            { "name": "exitAfter", "value": "5"},
+            { "name": "highSpeed", "value": "4"},
+            { "name": "initialIdle", "value": "12"},
+            { "name": "lowSpeed", "value": "3"},
+            { "name": "reExitAfter", "value": "5"}
+          ]
+        },
+        { "name": "ghost-base", "role": "", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": false, "events": 
+          [
+            { "name": "scared", "poses": 
+              [
+                "scared"
+              ]
+            },
+            { "name": "eaten", "poses": 
+              [
+                "eaten"
+              ]
+            },
+            { "name": "points", "costumes": 
+              [
+                "points"
+              ]
+            }
+          ]
         }
-    ],
-    "fonts": [
-        {
-            "name": "plain",
-            "fontName": "SansSerif",
-            "style": "PLAIN",
-            "size": 32,
-            "xPadding": 1,
-            "yPadding": 1
+      ]
+    , "showInSceneEditor": true},
+    { "name": "bonuses", "costumes": 
+      [
+        { "name": "beer", "role": "uk.co.nickthecoder.pillpopper.Bonus", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "beer"
+              ]
+            },
+            { "name": "points", "costumes": 
+              [
+                "points"
+              ]
+            }
+          ]
         },
-        {
-            "name": "points",
-            "fontName": "URW Gothic L Semi-Bold",
-            "style": "PLAIN",
-            "size": 24,
-            "xPadding": 6,
-            "yPadding": 6
+        { "name": "wine", "role": "uk.co.nickthecoder.pillpopper.Bonus", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "wine"
+              ]
+            },
+            { "name": "points", "costumes": 
+              [
+                "points"
+              ]
+            }
+          ]
         }
-    ],
-    "poses": [
-        {
-            "name": "wall_s",
-            "texture": "sprites",
-            "left": 275,
-            "bottom": 90,
-            "right": 315,
-            "top": 50,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
+      ]
+    , "showInSceneEditor": true},
+    { "name": "miscellaneous", "costumes": 
+      [
+        { "name": "talk", "role": "uk.co.nickthecoder.pillpopper.Talk", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "textStyles": 
+              [
+                { "font": "points", "halign": "CENTER", "valign": "BOTTOM", "color": "#ffffffff", "outlineColor": "#000000ff"}
+              ]
+            },
+            { "name": "powerPill", "strings": 
+              [
+                "Run!",
+                "Revenge!",
+                "Rampage!",
+                "Coming to get you...",
+                "Here I come...",
+                "Scared?",
+                "Run away"
+              ]
+            }
+          ]
         },
-        {
-            "name": "wall_w",
-            "texture": "sprites",
-            "left": 230,
-            "bottom": 90,
-            "right": 270,
-            "top": 50,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
+        { "name": "points", "role": "uk.co.nickthecoder.pillpopper.Points", "canRotate": false, "zOrder": 50, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "textStyles": 
+              [
+                { "font": "points", "halign": "CENTER", "valign": "CENTER", "color": "#ffffffff", "outlineColor": "#110141ff"}
+              ]
+            }
+          ]
         },
-        {
-            "name": "wall_e",
-            "texture": "sprites",
-            "left": 275,
-            "bottom": 45,
-            "right": 315,
-            "top": 5,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_n",
-            "texture": "sprites",
-            "left": 230,
-            "bottom": 45,
-            "right": 270,
-            "top": 5,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_se",
-            "texture": "sprites",
-            "left": 185,
-            "bottom": 90,
-            "right": 225,
-            "top": 50,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_sw",
-            "texture": "sprites",
-            "left": 140,
-            "bottom": 90,
-            "right": 180,
-            "top": 50,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_ne",
-            "texture": "sprites",
-            "left": 185,
-            "bottom": 45,
-            "right": 225,
-            "top": 5,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_nw",
-            "texture": "sprites",
-            "left": 140,
-            "bottom": 45,
-            "right": 180,
-            "top": 5,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_ns",
-            "texture": "sprites",
-            "left": 95,
-            "bottom": 91,
-            "right": 135,
-            "top": 51,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_ew",
-            "texture": "sprites",
-            "left": 95,
-            "bottom": 45,
-            "right": 135,
-            "top": 5,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_tw",
-            "texture": "sprites",
-            "left": 50,
-            "bottom": 90,
-            "right": 90,
-            "top": 50,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_tn",
-            "texture": "sprites",
-            "left": 5,
-            "bottom": 90,
-            "right": 45,
-            "top": 50,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_ts",
-            "texture": "sprites",
-            "left": 50,
-            "bottom": 45,
-            "right": 90,
-            "top": 5,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "wall_te",
-            "texture": "sprites",
-            "left": 5,
-            "bottom": 45,
-            "right": 45,
-            "top": 5,
-            "offsetX": 20,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "powerPill",
-            "texture": "sprites",
-            "left": 30,
-            "bottom": 131,
-            "right": 58,
-            "top": 91,
-            "offsetX": 13,
-            "offsetY": 20,
-            "direction": 0
-        },
-        {
-            "name": "pill",
-            "texture": "sprites",
-            "left": 5,
-            "bottom": 121,
-            "right": 25,
-            "top": 101,
-            "offsetX": 10,
-            "offsetY": 10,
-            "direction": 0
-        },
-        {
-            "name": "popper",
-            "texture": "sprites",
-            "left": 5,
-            "bottom": 158,
-            "right": 46,
-            "top": 131,
-            "offsetX": 24,
-            "offsetY": 13,
-            "direction": 0
-        },
-        {
-            "name": "drinky",
-            "texture": "sprites",
-            "left": 102,
-            "bottom": 131,
-            "right": 135,
-            "top": 95,
-            "offsetX": 16,
-            "offsetY": 18,
-            "direction": 0
-        },
-        {
-            "name": "winky",
-            "texture": "sprites",
-            "left": 142,
-            "bottom": 131,
-            "right": 175,
-            "top": 95,
-            "offsetX": 16,
-            "offsetY": 18,
-            "direction": 0
-        },
-        {
-            "name": "stinky",
-            "texture": "sprites",
-            "left": 182,
-            "bottom": 131,
-            "right": 215,
-            "top": 95,
-            "offsetX": 16,
-            "offsetY": 18,
-            "direction": 0
-        },
-        {
-            "name": "snide",
-            "texture": "sprites",
-            "left": 222,
-            "bottom": 131,
-            "right": 255,
-            "top": 95,
-            "offsetX": 16,
-            "offsetY": 18,
-            "direction": 0
-        },
-        {
-            "name": "door",
-            "texture": "sprites",
-            "left": 263,
-            "bottom": 105,
-            "right": 303,
-            "top": 96,
-            "offsetX": 20,
-            "offsetY": 4,
-            "direction": 0
-        },
-        {
-            "name": "flag",
-            "texture": "sprites",
-            "left": 261,
-            "bottom": 133,
-            "right": 276,
-            "top": 107,
-            "offsetX": 7,
-            "offsetY": 2,
-            "direction": 0
-        },
-        {
-            "name": "scared",
-            "texture": "sprites",
-            "left": 62,
-            "bottom": 134,
-            "right": 95,
-            "top": 95,
-            "offsetX": 16,
-            "offsetY": 18,
-            "direction": 0
-        },
-        {
-            "name": "eaten",
-            "texture": "sprites",
-            "left": 53,
-            "bottom": 169,
-            "right": 104,
-            "top": 136,
-            "offsetX": 24,
-            "offsetY": 14,
-            "direction": 0
-        },
-        {
-            "name": "beer",
-            "texture": "sprites",
-            "left": 108,
-            "bottom": 168,
-            "right": 131,
-            "top": 137,
-            "offsetX": 12,
-            "offsetY": 14,
-            "direction": 0
-        },
-        {
-            "name": "wine",
-            "texture": "sprites",
-            "left": 138,
-            "bottom": 166,
-            "right": 155,
-            "top": 138,
-            "offsetX": 9,
-            "offsetY": 14,
-            "direction": 0
-        },
-        {
-            "name": "bonusFactory",
-            "texture": "sprites",
-            "left": 160,
-            "bottom": 163,
-            "right": 185,
-            "top": 139,
-            "offsetX": 14,
-            "offsetY": 11,
-            "direction": 0
-        },
-        {
-            "name": "tunnel",
-            "texture": "sprites",
-            "left": 187,
-            "bottom": 167,
-            "right": 219,
-            "top": 134,
-            "offsetX": 16,
-            "offsetY": 16,
-            "direction": 0
+        { "name": "score", "role": "uk.co.nickthecoder.pillpopper.Score", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "default", "textStyles": 
+              [
+                { "font": "plain", "halign": "LEFT", "valign": "BOTTOM", "color": "#ffffffff"}
+              ]
+            }
+          ]
         }
-    ],
-    "costumeGroups": [
-        {
-            "name": "walls",
-            "costumes": [
-                {
-                    "name": "wall_e",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_e"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_w",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_w"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_tw",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_tw"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_ts",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_ts"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_tn",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_tn"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_te",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_te"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_sw",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_sw"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_se",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_se"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_s",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_s"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_nw",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_nw"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_ns",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_ns"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_ne",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_ne"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_n",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_n"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wall_ew",
-                    "role": "uk.co.nickthecoder.pillpopper.Wall",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wall_ew"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "ghosts",
-            "costumes": [
-                {
-                    "name": "drinky",
-                    "role": "uk.co.nickthecoder.pillpopper.Drinky",
-                    "canRotate": false,
-                    "zOrder": 1,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "drinky"
-                            ]
-                        },
-                        {
-                            "name": "scared",
-                            "poses": [
-                                "scared"
-                            ]
-                        },
-                        {
-                            "name": "eaten",
-                            "poses": [
-                                "eaten"
-                            ]
-                        },
-                        {
-                            "name": "points",
-                            "costumes": [
-                                "points"
-                            ]
-                        }
-                    ],
-                    "attributes": [
-                        {
-                            "name": "exitAfter",
-                            "value": "5"
-                        },
-                        {
-                            "name": "highSpeed",
-                            "value": "4"
-                        },
-                        {
-                            "name": "initialIdle",
-                            "value": "3"
-                        },
-                        {
-                            "name": "lowSpeed",
-                            "value": "3"
-                        },
-                        {
-                            "name": "reExitAfter",
-                            "value": "5"
-                        }
-                    ]
-                },
-                {
-                    "name": "snide",
-                    "role": "uk.co.nickthecoder.pillpopper.Snide",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "snide"
-                            ]
-                        },
-                        {
-                            "name": "scared",
-                            "poses": [
-                                "scared"
-                            ]
-                        },
-                        {
-                            "name": "eaten",
-                            "poses": [
-                                "eaten"
-                            ]
-                        }
-                    ],
-                    "attributes": [
-                        {
-                            "name": "exitAfter",
-                            "value": "5"
-                        },
-                        {
-                            "name": "highSpeed",
-                            "value": "4"
-                        },
-                        {
-                            "name": "initialIdle",
-                            "value": "6"
-                        },
-                        {
-                            "name": "lowSpeed",
-                            "value": "3"
-                        },
-                        {
-                            "name": "reExitAfter",
-                            "value": "5"
-                        }
-                    ]
-                },
-                {
-                    "name": "stinky",
-                    "role": "uk.co.nickthecoder.pillpopper.Stinky",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "stinky"
-                            ]
-                        },
-                        {
-                            "name": "scared",
-                            "poses": [
-                                "scared"
-                            ]
-                        },
-                        {
-                            "name": "eaten",
-                            "poses": [
-                                "eaten"
-                            ]
-                        }
-                    ],
-                    "attributes": [
-                        {
-                            "name": "exitAfter",
-                            "value": "5"
-                        },
-                        {
-                            "name": "highSpeed",
-                            "value": "4"
-                        },
-                        {
-                            "name": "initialIdle",
-                            "value": "9"
-                        },
-                        {
-                            "name": "lowSpeed",
-                            "value": "3"
-                        },
-                        {
-                            "name": "reExitAfter",
-                            "value": "5"
-                        }
-                    ]
-                },
-                {
-                    "name": "winky",
-                    "role": "uk.co.nickthecoder.pillpopper.Winky",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "winky"
-                            ]
-                        },
-                        {
-                            "name": "scared",
-                            "poses": [
-                                "scared"
-                            ]
-                        },
-                        {
-                            "name": "eaten",
-                            "poses": [
-                                "eaten"
-                            ]
-                        }
-                    ],
-                    "attributes": [
-                        {
-                            "name": "exitAfter",
-                            "value": "5"
-                        },
-                        {
-                            "name": "highSpeed",
-                            "value": "4"
-                        },
-                        {
-                            "name": "initialIdle",
-                            "value": "12"
-                        },
-                        {
-                            "name": "lowSpeed",
-                            "value": "3"
-                        },
-                        {
-                            "name": "reExitAfter",
-                            "value": "5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "bonuses",
-            "costumes": [
-                {
-                    "name": "beer",
-                    "role": "uk.co.nickthecoder.pillpopper.Bonus",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "beer"
-                            ]
-                        },
-                        {
-                            "name": "points",
-                            "costumes": [
-                                "points"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "wine",
-                    "role": "uk.co.nickthecoder.pillpopper.Bonus",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "poses": [
-                                "wine"
-                            ]
-                        },
-                        {
-                            "name": "points",
-                            "costumes": [
-                                "points"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "miscellaneous",
-            "costumes": [
-                {
-                    "name": "talk",
-                    "role": "uk.co.nickthecoder.pillpopper.Talk",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "textStyles": [
-                                {
-                                    "font": "points",
-                                    "halign": "CENTER",
-                                    "valign": "BOTTOM",
-                                    "color": "#ffffffff",
-                                    "outlineColor": "#000000ff"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "powerPill",
-                            "strings": [
-                                "Run!",
-                                "Revenge!",
-                                "Rampage!",
-                                "Coming to get you...",
-                                "Here I come...",
-                                "Scared?",
-                                "Run away"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "points",
-                    "role": "uk.co.nickthecoder.pillpopper.Points",
-                    "canRotate": false,
-                    "zOrder": 50,
-                    "events": [
-                        {
-                            "name": "default",
-                            "textStyles": [
-                                {
-                                    "font": "points",
-                                    "halign": "CENTER",
-                                    "valign": "CENTER",
-                                    "color": "#ffffffff",
-                                    "outlineColor": "#110141ff"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "score",
-                    "role": "uk.co.nickthecoder.pillpopper.Score",
-                    "canRotate": false,
-                    "zOrder": 0,
-                    "events": [
-                        {
-                            "name": "default",
-                            "textStyles": [
-                                {
-                                    "font": "plain",
-                                    "halign": "LEFT",
-                                    "valign": "BOTTOM",
-                                    "color": "#ffffffff"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+      ]
+    , "showInSceneEditor": true}
+  ]
+, "costumes": 
+  [
+    { "name": "powerPill", "role": "uk.co.nickthecoder.pillpopper.PowerPill", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+      [
+        { "name": "default", "poses": 
+          [
+            "powerPill"
+          ]
         }
-    ],
-    "costumes": [
-        {
-            "name": "powerPill",
-            "role": "uk.co.nickthecoder.pillpopper.PowerPill",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "powerPill"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "name": "points",
-                    "value": "10"
-                }
-            ]
-        },
-        {
-            "name": "pill",
-            "role": "uk.co.nickthecoder.pillpopper.Pill",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "pill"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "name": "points",
-                    "value": "1"
-                }
-            ]
-        },
-        {
-            "name": "player",
-            "role": "uk.co.nickthecoder.pillpopper.Player",
-            "canRotate": false,
-            "zOrder": -1,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "popper"
-                    ]
-                },
-                {
-                    "name": "talk",
-                    "costumes": [
-                        "talk"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "door",
-            "role": "uk.co.nickthecoder.pillpopper.Door",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "door"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "bonusFactory",
-            "role": "uk.co.nickthecoder.pillpopper.BonusFactory",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "editor",
-                    "poses": [
-                        "bonusFactory"
-                    ]
-                },
-                {
-                    "name": "bonus",
-                    "costumes": [
-                        "beer",
-                        "wine"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "name": "initialDelay",
-                    "value": "10"
-                },
-                {
-                    "name": "period",
-                    "value": "15"
-                },
-                {
-                    "name": "quantity",
-                    "value": "3"
-                }
-            ]
-        },
-        {
-            "name": "tunnel",
-            "role": "uk.co.nickthecoder.pillpopper.Tunnel",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "editor",
-                    "poses": [
-                        "tunnel"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "flag",
-            "role": "uk.co.nickthecoder.pillpopper.Flag",
-            "canRotate": false,
-            "zOrder": 0,
-            "events": [
-                {
-                    "name": "default",
-                    "poses": [
-                        "flag"
-                    ]
-                }
-            ]
+      ]
+    , "attributes": 
+      [
+        { "name": "points", "value": "10"}
+      ]
+    },
+    { "name": "pill", "role": "uk.co.nickthecoder.pillpopper.Pill", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+      [
+        { "name": "default", "poses": 
+          [
+            "pill"
+          ]
         }
-    ],
-    "inputs": [
-        {
-            "name": "left",
-            "keys": [
-                {
-                    "key": "Left",
-                    "state": "PRESSED"
-                }
-            ]
+      ]
+    , "attributes": 
+      [
+        { "name": "points", "value": "1"}
+      ]
+    },
+    { "name": "player", "role": "uk.co.nickthecoder.pillpopper.Player", "canRotate": false, "zOrder": -1, "initialEvent": "default", "showInSceneEditor": true, "events": 
+      [
+        { "name": "default", "poses": 
+          [
+            "popper"
+          ]
         },
-        {
-            "name": "right",
-            "keys": [
-                {
-                    "key": "Right",
-                    "state": "PRESSED"
-                }
-            ]
-        },
-        {
-            "name": "up",
-            "keys": [
-                {
-                    "key": "Up",
-                    "state": "PRESSED"
-                }
-            ]
-        },
-        {
-            "name": "down",
-            "keys": [
-                {
-                    "key": "Down",
-                    "state": "PRESSED"
-                }
-            ]
+        { "name": "talk", "costumes": 
+          [
+            "talk"
+          ]
         }
-    ]
+      ]
+    },
+    { "name": "door", "role": "uk.co.nickthecoder.pillpopper.Door", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+      [
+        { "name": "default", "poses": 
+          [
+            "door"
+          ]
+        }
+      ]
+    },
+    { "name": "bonusFactory", "role": "uk.co.nickthecoder.pillpopper.BonusFactory", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+      [
+        { "name": "editor", "poses": 
+          [
+            "bonusFactory"
+          ]
+        },
+        { "name": "bonus", "costumes": 
+          [
+            "beer",
+            "wine"
+          ]
+        }
+      ]
+    , "attributes": 
+      [
+        { "name": "initialDelay", "value": "10"},
+        { "name": "period", "value": "15"},
+        { "name": "quantity", "value": "3"}
+      ]
+    },
+    { "name": "tunnel", "role": "uk.co.nickthecoder.pillpopper.Tunnel", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+      [
+        { "name": "editor", "poses": 
+          [
+            "tunnel"
+          ]
+        }
+      ]
+    },
+    { "name": "flag", "role": "uk.co.nickthecoder.pillpopper.Flag", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+      [
+        { "name": "editor", "poses": 
+          [
+            "flag"
+          ]
+        }
+      ]
+    }
+  ]
+, "inputs": 
+  [
+    { "name": "left", "keys": 
+      [
+        { "key": "Left", "state": "PRESSED"}
+      ]
+    },
+    { "name": "right", "keys": 
+      [
+        { "key": "Right", "state": "PRESSED"}
+      ]
+    },
+    { "name": "up", "keys": 
+      [
+        { "key": "Up", "state": "PRESSED"}
+      ]
+    },
+    { "name": "down", "keys": 
+      [
+        { "key": "Down", "state": "PRESSED"}
+      ]
+    }
+  ]
 }

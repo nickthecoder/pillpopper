@@ -5,10 +5,6 @@ Bugs
 Next
 ----
 
-Need a good way to align glass pane flexibly, when the window changes size.
-	Reposition relative to : Top/Center/Bottom and Left/Center/Right and maybe ratio too.
-		Only show this if "isResizable" is set on the Layout
-	
 
 Later
 -----
