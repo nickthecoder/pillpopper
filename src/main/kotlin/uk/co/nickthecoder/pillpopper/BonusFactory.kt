@@ -20,7 +20,7 @@ class BonusFactory : ActionRole() {
     @Attribute
     var quantity: Int = 3
 
-    override fun createAction(): Action? {
+    override fun createAction(): Action {
         return Delay(initialDelay).then(
                 PeriodicFactory(period, quantity) {
                     val block = Play.instance.neighbourhood.blockAt(actor.x, actor.y)

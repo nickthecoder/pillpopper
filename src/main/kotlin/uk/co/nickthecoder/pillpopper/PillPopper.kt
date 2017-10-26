@@ -14,6 +14,8 @@ class PillPopper : AbstractProducer() {
 
     var livesIndicator: Lives? = null
 
+    var bonusIndicator: BonusIndicator? = null
+
     var score: Int = 0
 
     /**
@@ -22,9 +24,9 @@ class PillPopper : AbstractProducer() {
     var ghostPoints = 0
 
     /**
-     * Points for eating a Bonus. Increases for each bonus eaten.
+     * How many bonuses have been collected (in the correct sequence).
      */
-    var bonusPoints = STARTING_BONUS
+    var bonusIndex = 0
 
     /**
      * The number of pills yet to be collected. Incremented  by Pill.onActivate
@@ -42,6 +44,8 @@ class PillPopper : AbstractProducer() {
             scoreRole = glass.actors.firstOrNull { it.role is Score }?.role as Score
             scoreRole?.update(score)
             livesIndicator = glass.actors.firstOrNull { it.role is Lives }?.role as Lives
+            bonusIndicator = glass.actors.firstOrNull { it.role is BonusIndicator }?.role as BonusIndicator
+            bonusIndicator?.initialise(bonusIndex)
         }
     }
 
@@ -54,11 +58,11 @@ class PillPopper : AbstractProducer() {
 
     fun eatenPill(isPowerPill: Boolean) {
         if (isPowerPill) {
-            ghostPoints = 50
-            addPoints(10)
+            ghostPoints = GHOST_POINTS
+            addPoints(POWER_PILL_POINTS)
             Play.instance.eatenPowerPill()
         } else {
-            addPoints(1)
+            addPoints(PILL_POINTS)
         }
         pills--
         if (pills <= 0) {
@@ -70,19 +74,24 @@ class PillPopper : AbstractProducer() {
         }
     }
 
-    fun eatenBonus(): Int {
-        val points = bonusPoints
+    fun eatenBonus(index: Int): Int {
+        if (index != bonusIndex) {
+            addPoints(WRONG_BONUS_POINTS)
+            return 0
+        }
+
+        val points = STARTING_BONUS.shl(index)
         addPoints(points)
-        bonusPoints *= 2
+
+        bonusIndicator?.bonusSequence(bonusIndex)
+        if (index >= BONUSES - 1) {
+            bonusIndex = 0
+        } else {
+            bonusIndex++
+        }
         return points
     }
 
-    /**
-     * If the bonus timed out before being eaten then the bonus is reset
-     */
-    fun missedBonus() {
-        bonusPoints = STARTING_BONUS
-    }
 
     fun addPoints(points: Int) {
         score += points

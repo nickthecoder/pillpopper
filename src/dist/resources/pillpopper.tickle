@@ -1,4 +1,4 @@
-{ "info": { "title": "Pill Popper", "width": 1024, "height": 600, "resizable": true, "initialScene": "level01", "testScene": "level03", "producer": "uk.co.nickthecoder.pillpopper.PillPopper"}, "preferences": { "outputFormat": "UGLY", "packages": 
+{ "info": { "title": "Pill Popper", "width": 1024, "height": 600, "resizable": true, "initialScene": "level01", "testScene": "test", "producer": "uk.co.nickthecoder.pillpopper.PillPopper"}, "preferences": { "outputFormat": "UGLY", "packages": 
   [
     "uk.co.nickthecoder.tickle",
     "uk.co.nickthecoder.pillpopper"
@@ -68,7 +68,9 @@
     { "name": "beer", "texture": "sprites", "left": 108, "bottom": 168, "right": 131, "top": 137, "offsetX": 12, "offsetY": 14, "direction": 0},
     { "name": "wine", "texture": "sprites", "left": 138, "bottom": 166, "right": 155, "top": 138, "offsetX": 9, "offsetY": 14, "direction": 0},
     { "name": "bonusFactory", "texture": "sprites", "left": 160, "bottom": 163, "right": 185, "top": 139, "offsetX": 14, "offsetY": 11, "direction": 0},
-    { "name": "tunnel", "texture": "sprites", "left": 187, "bottom": 167, "right": 219, "top": 134, "offsetX": 16, "offsetY": 16, "direction": 0}
+    { "name": "tunnel", "texture": "sprites", "left": 187, "bottom": 167, "right": 219, "top": 134, "offsetX": 16, "offsetY": 16, "direction": 0},
+    { "name": "brandy", "texture": "sprites", "left": 223, "bottom": 166, "right": 246, "top": 141, "offsetX": 14, "offsetY": 10, "direction": 0},
+    { "name": "shot", "texture": "sprites", "left": 252, "bottom": 165, "right": 270, "top": 146, "offsetX": 9, "offsetY": 12, "direction": 0}
   ]
 , "costumeGroups": 
   [
@@ -295,21 +297,20 @@
     , "showInSceneEditor": true},
     { "name": "bonuses", "costumes": 
       [
-        { "name": "beer", "role": "uk.co.nickthecoder.pillpopper.Bonus", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+        { "name": "beer", "role": "uk.co.nickthecoder.pillpopper.Bonus", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": false, "inheritsEventsFrom": "bonus-base", "events": 
           [
             { "name": "default", "poses": 
               [
                 "beer"
               ]
-            },
-            { "name": "points", "costumes": 
-              [
-                "points"
-              ]
             }
           ]
+        , "attributes": 
+          [
+            { "name": "index", "value": "0"}
+          ]
         },
-        { "name": "wine", "role": "uk.co.nickthecoder.pillpopper.Bonus", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+        { "name": "wine", "role": "uk.co.nickthecoder.pillpopper.Bonus", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": false, "inheritsEventsFrom": "bonus-base", "events": 
           [
             { "name": "default", "poses": 
               [
@@ -322,9 +323,52 @@
               ]
             }
           ]
+        , "attributes": 
+          [
+            { "name": "index", "value": "1"}
+          ]
+        },
+        { "name": "brandy", "role": "uk.co.nickthecoder.pillpopper.Bonus", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": false, "inheritsEventsFrom": "bonus-base", "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "brandy"
+              ]
+            }
+          ]
+        , "attributes": 
+          [
+            { "name": "index", "value": "2"}
+          ]
+        },
+        { "name": "shot", "role": "uk.co.nickthecoder.pillpopper.Bonus", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": false, "inheritsEventsFrom": "bonus-base", "events": 
+          [
+            { "name": "default", "poses": 
+              [
+                "shot"
+              ]
+            }
+          ]
+        , "attributes": 
+          [
+            { "name": "index", "value": "3"}
+          ]
+        },
+        { "name": "bonus-base", "role": "uk.co.nickthecoder.pillpopper.Bonus", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": false, "events": 
+          [
+            { "name": "points", "costumes": 
+              [
+                "points"
+              ]
+            }
+          ]
+        , "attributes": 
+          [
+            { "name": "index", "value": "0"}
+          ]
         }
       ]
-    , "showInSceneEditor": true},
+    , "showInSceneEditor": false},
     { "name": "miscellaneous", "costumes": 
       [
         { "name": "talk", "role": "uk.co.nickthecoder.pillpopper.Talk", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
@@ -380,6 +424,35 @@
             { "name": "indicator", "poses": 
               [
                 "popper"
+              ]
+            }
+          ]
+        },
+        { "name": "bonusIndicator", "role": "uk.co.nickthecoder.pillpopper.BonusIndicator", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "editor", "poses": 
+              [
+                "beer"
+              ]
+            },
+            { "name": "0", "poses": 
+              [
+                "beer"
+              ]
+            },
+            { "name": "1", "poses": 
+              [
+                "wine"
+              ]
+            },
+            { "name": "2", "poses": 
+              [
+                "brandy"
+              ]
+            },
+            { "name": "3", "poses": 
+              [
+                "shot"
               ]
             }
           ]
@@ -448,7 +521,9 @@
         { "name": "bonus", "costumes": 
           [
             "beer",
-            "wine"
+            "wine",
+            "brandy",
+            "shot"
           ]
         }
       ]

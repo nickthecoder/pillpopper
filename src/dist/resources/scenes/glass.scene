@@ -8,7 +8,8 @@
             { "name": "suffix", "value": ""}
           ]
         },
-        { "costume": "lives", "x": 33, "y": 26, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": ""}
+        { "costume": "lives", "x": 33, "y": 26, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": ""},
+        { "costume": "bonusIndicator", "x": 992, "y": 26, "xAlignment": "RIGHT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": ""}
       ]
     }
   ]

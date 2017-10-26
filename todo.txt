@@ -6,6 +6,11 @@ Bugs
 Next
 ----
 
+Bonus Indicator
+	Bonuses are random (but weighted, lowest most common).
+	You need to collect them in order, the next one is semi-opaque.
+	Collect out-of-sequence for 10 points (without animation).
+	Collect them in sequence for their true value.
 
 Later
 -----
