@@ -61,6 +61,12 @@ abstract class Ghost : Traveller() {
             .then(CheckTouching().whilst(MoveForwards()))
 
     /**
+     * Set when the eaten ghost has gone through the door. Reset when the delay is over, and the ghost is
+     * seeking the door to escape.
+     */
+    var waitingInPen = true
+
+    /**
      * Used to alter the test for canMove, to only allow access to a door when exiting or entering the pen.
      * Not when chasing, or running away. Also used to prevent ghosts turning scared while in the pen.
      */
@@ -96,9 +102,10 @@ abstract class Ghost : Traveller() {
 
         speed = highSpeed
         actor.color = Color(1f, 1f, 1f, 0.8f)
+        waitingInPen = true
         movement = Idle(initialIdle)
                 .then(chaseOne.repeat(exitAfter))
-                .then(seekDoorAction(afterAction = chase))
+                .then { waitingInPen = false }.then(seekDoorAction(afterAction = chase))
 
         val foundDoor = closest(actor.stage!!.findRole<Door>())
         if (foundDoor == null) {
@@ -229,12 +236,14 @@ abstract class Ghost : Traveller() {
         val inPen = chaseOne.repeat(2)
                 // Change back to a normal ghost
                 .then {
+                    waitingInPen = true
                     eaten = false
                     actor.event("default")
                 }
                 .then(
                         chaseOne.repeat(reExitAfter) // Wait in the pen for a while,
                                 // Head out the door and resume chasing the player
+                                .then { waitingInPen = false }
                                 .then(seekDoorAction(afterAction = chase))
                 )
 
@@ -245,7 +254,7 @@ abstract class Ghost : Traveller() {
      * Avoid the player, until PillPopper tells us to chase after him again.
      */
     fun playerDied() {
-        if (!eaten && !scared && !seekingDoor) {
+        if (!eaten && !scared && !seekingDoor && !waitingInPen) {
             nextMovement = runOne.forSeconds(RESTART_PERIOD)
                     .then { nextMovement = chase }.then(runOne)
         }
