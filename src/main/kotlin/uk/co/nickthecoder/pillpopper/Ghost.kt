@@ -241,6 +241,16 @@ abstract class Ghost : Traveller() {
         nextMovement = seekDoorAction(inPen)
     }
 
+    /**
+     * Avoid the player, until PillPopper tells us to chase after him again.
+     */
+    fun playerDied() {
+        if (!eaten && !scared && !seekingDoor) {
+            nextMovement = runOne.forSeconds(RESTART_PERIOD)
+                    .then { nextMovement = chase }.then(runOne)
+        }
+    }
+
     fun seekDoorAction(afterAction: Action): Action {
 
         val scorer = { dir: Direction -> scoreDirectlyTo(dir, door.actor.x, door.actor.y) }

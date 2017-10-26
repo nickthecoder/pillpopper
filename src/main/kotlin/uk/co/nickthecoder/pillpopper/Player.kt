@@ -1,6 +1,9 @@
 package uk.co.nickthecoder.pillpopper
 
+import org.joml.Vector2d
 import uk.co.nickthecoder.tickle.Game
+import uk.co.nickthecoder.tickle.action.Delay
+import uk.co.nickthecoder.tickle.action.Do
 import uk.co.nickthecoder.tickle.action.animation.Eases
 import uk.co.nickthecoder.tickle.action.animation.Forwards
 import uk.co.nickthecoder.tickle.action.animation.Grow
@@ -23,6 +26,11 @@ class Player : Traveller() {
 
     var dead: Boolean = false
 
+    /**
+     * The starting position. Go back here when we die, and resurrect.
+     */
+    var initialPosition = Vector2d()
+
     override fun begin() {
         Player.nullableInstance = this
     }
@@ -33,6 +41,8 @@ class Player : Traveller() {
 
     override fun activated() {
         super.activated()
+        initialPosition.set(actor.position)
+
         speed = highSpeed
         movement = Movement()
     }
@@ -66,8 +76,29 @@ class Player : Traveller() {
      * We do NOT kill the Actor, because ghosts will still chase after us, and check if we are touching etc.
      */
     fun killed() {
-        dead = true
-        movement = Grow(actor, 1.0, 0.1, Eases.easeIn).then { actor.hide() }
+        if (!dead) {
+            dead = true
+
+            val die = Grow(actor, 0.5, 0.1, Eases.easeIn).then { actor.hide() }
+
+            val resurrect = Do {
+                actor.position.set(initialPosition)
+                travelled = 0.0
+                direction = Direction.NONE
+                block = findBlock()
+                actor.event("default")
+
+            }.then(Grow(actor, 0.5, 1.0))
+                    .then {
+                        dead = false
+                    }.then(Movement())
+
+            if (PillPopper.instance.playerDied()) {
+                movement = die.then(Delay(RESTART_PERIOD - 1.0)).then(resurrect)
+            } else {
+                movement = die
+            }
+        }
     }
 
     /**

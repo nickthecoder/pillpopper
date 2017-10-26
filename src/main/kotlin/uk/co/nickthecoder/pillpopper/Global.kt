@@ -13,4 +13,7 @@ val POWER_PILL_WARNING_TIME = 3.0 // Seconds
 
 val INFO_HEIGHT = 40 // The height of the area with the scores etc.
 
+val RESTART_PERIOD = 4.0 // seconds. Time that the Player takes to resurrect.
+
 fun Block<Role>.neighbour(direction: Direction) = neighbouringBlock(direction.dx, direction.dy)
+

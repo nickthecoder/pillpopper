@@ -1,23 +1,15 @@
-{
-    "director": "uk.co.nickthecoder.tickle.NoDirector",
-    "background": "#000000",
-    "showMouse": false,
-    "layout": "glass",
-    "stages": [
-        {
-            "name": "glass",
-            "actors": [
-                {
-                    "costume": "score",
-                    "x": 511,
-                    "y": 7,
-                    "xAlignment": "CENTER",
-                    "yAlignment": "BOTTOM",
-                    "direction": 0,
-                    "scale": 1,
-                    "text": "Score"
-                }
-            ]
-        }
-    ]
+{ "director": "uk.co.nickthecoder.tickle.NoDirector", "background": "#000000", "showMouse": false, "layout": "glass", "stages": 
+  [
+    { "name": "glass", "actors": 
+      [
+        { "costume": "score", "x": 511, "y": 7, "xAlignment": "CENTER", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": "Score : 0", "attributes": 
+          [
+            { "name": "prefix", "value": "Score : "},
+            { "name": "suffix", "value": ""}
+          ]
+        },
+        { "costume": "lives", "x": 33, "y": 26, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": ""}
+      ]
+    }
+  ]
 }

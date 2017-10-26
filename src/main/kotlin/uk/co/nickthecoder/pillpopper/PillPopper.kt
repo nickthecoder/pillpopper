@@ -12,6 +12,8 @@ class PillPopper : AbstractProducer() {
 
     var scoreRole: Score? = null
 
+    var livesIndicator: Lives? = null
+
     var score: Int = 0
 
     /**
@@ -33,10 +35,13 @@ class PillPopper : AbstractProducer() {
         pills = 0
     }
 
+    var lives: Int = 3
+
     override fun sceneActivated() {
         Game.instance.scene.findStage("glass")?.let { glass ->
             scoreRole = glass.actors.firstOrNull { it.role is Score }?.role as Score
             scoreRole?.update(score)
+            livesIndicator = glass.actors.firstOrNull { it.role is Lives }?.role as Lives
         }
     }
 
@@ -83,6 +88,18 @@ class PillPopper : AbstractProducer() {
         score += points
         scoreRole?.update(score)
     }
+
+    fun playerDied(): Boolean {
+        lives--
+        livesIndicator?.playerDied()
+        Game.instance.scene.findStage("main")?.let { main ->
+            main.actors.filter { it.role is Ghost }.forEach { actor ->
+                (actor.role as Ghost).playerDied()
+            }
+        }
+        return lives > 0
+    }
+
 
     companion object {
         lateinit var instance: PillPopper

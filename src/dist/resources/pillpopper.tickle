@@ -360,7 +360,26 @@
           [
             { "name": "default", "textStyles": 
               [
-                { "font": "plain", "halign": "LEFT", "valign": "BOTTOM", "color": "#ffffffff"}
+                { "font": "plain", "halign": "CENTER", "valign": "BOTTOM", "color": "#ffffffff"}
+              ]
+            }
+          ]
+        , "attributes": 
+          [
+            { "name": "prefix", "value": "Score : "},
+            { "name": "suffix", "value": ""}
+          ]
+        },
+        { "name": "lives", "role": "uk.co.nickthecoder.pillpopper.Lives", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
+          [
+            { "name": "editor", "poses": 
+              [
+                "popper"
+              ]
+            },
+            { "name": "indicator", "poses": 
+              [
+                "popper"
               ]
             }
           ]
