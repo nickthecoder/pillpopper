@@ -20,6 +20,7 @@ class Bonus : ActionRole(), Edible {
     }
 
     override fun eaten() {
+        actor.event("eaten")
         actor.die()
         Play.instance.neighbourhood.blockAt(actor.x, actor.y).remove(this)
         val bonusPoints = PillPopper.instance.eatenBonus(index)

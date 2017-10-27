@@ -1,0 +1,29 @@
+Sound Credits
+=============
+
+Here's the credits for each sound effect, downloaded from free sources.
+I've manipulated all of them in one way or another.
+
+pill.ogg
+--------
+https://freesound.org/people/elmasmalo1/sounds/377020/
+
+gulp1.ogg, gulp2.ogg
+--------------------
+https://freesound.org/people/GagaMan/sounds/88510/
+
+burps1.ogg, burp2.ogg, burp3.ogg, burp4.ogg
+-------------------------------------------
+https://freesound.org/people/Reitanna/sounds/215322/
+https://freesound.org/people/Reitanna/sounds/215321/
+https://freesound.org/people/Reitanna/sounds/215320/
+https://freesound.org/people/Reitanna/sounds/215319/
+
+alert1.ogg
+----------
+https://freesound.org/people/philitup321/sounds/204369/
+
+complete1.ogg
+-------------
+https://freesound.org/people/FoolBoyMedia/sounds/234563/
+

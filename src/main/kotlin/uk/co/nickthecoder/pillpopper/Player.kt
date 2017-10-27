@@ -105,6 +105,7 @@ class Player : Traveller() {
      * Called by PillPopper Producer when all pills have been eaten
      */
     fun levelComplete() {
+        actor.event("complete")
         actor.zOrder = 100.0
         val time = 0.2
 

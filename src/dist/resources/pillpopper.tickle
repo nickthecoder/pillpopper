@@ -72,6 +72,18 @@
     { "name": "brandy", "texture": "sprites", "left": 223, "bottom": 166, "right": 246, "top": 141, "offsetX": 14, "offsetY": 10, "direction": 0},
     { "name": "shot", "texture": "sprites", "left": 252, "bottom": 165, "right": 270, "top": 146, "offsetX": 9, "offsetY": 12, "direction": 0}
   ]
+, "sounds": 
+  [
+    { "name": "pill", "file": "sounds/pill.ogg"},
+    { "name": "gulp1", "file": "sounds/gulp1.ogg"},
+    { "name": "gulp2", "file": "sounds/gulp2.ogg"},
+    { "name": "burp1", "file": "sounds/burp1.ogg"},
+    { "name": "burp2", "file": "sounds/burp2.ogg"},
+    { "name": "burp3", "file": "sounds/burp3.ogg"},
+    { "name": "burp4", "file": "sounds/burp4.ogg"},
+    { "name": "alert1", "file": "sounds/alert1.ogg"},
+    { "name": "complete1", "file": "sounds/complete1.ogg"}
+  ]
 , "costumeGroups": 
   [
     { "name": "walls", "costumes": 
@@ -212,6 +224,11 @@
               [
                 "drinky"
               ]
+            },
+            { "name": "eaten", "sounds": 
+              [
+                "burp1"
+              ]
             }
           ]
         , "attributes": 
@@ -228,6 +245,11 @@
             { "name": "default", "poses": 
               [
                 "snide"
+              ]
+            },
+            { "name": "eaten", "sounds": 
+              [
+                "burp2"
               ]
             }
           ]
@@ -246,6 +268,11 @@
               [
                 "stinky"
               ]
+            },
+            { "name": "eaten", "sounds": 
+              [
+                "burp3"
+              ]
             }
           ]
         , "attributes": 
@@ -262,6 +289,11 @@
             { "name": "default", "poses": 
               [
                 "winky"
+              ]
+            },
+            { "name": "eaten", "sounds": 
+              [
+                "burp4"
               ]
             }
           ]
@@ -359,6 +391,12 @@
             { "name": "points", "costumes": 
               [
                 "points"
+              ]
+            },
+            { "name": "eaten", "sounds": 
+              [
+                "gulp1",
+                "gulp2"
               ]
             }
           ]
@@ -468,6 +506,11 @@
           [
             "powerPill"
           ]
+        },
+        { "name": "eaten", "sounds": 
+          [
+            "alert1"
+          ]
         }
       ]
     , "attributes": 
@@ -478,6 +521,11 @@
     { "name": "pill", "role": "uk.co.nickthecoder.pillpopper.Pill", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 
       [
         { "name": "default", "poses": 
+          [
+            "pill"
+          ]
+        },
+        { "name": "eaten", "sounds": 
           [
             "pill"
           ]
@@ -499,7 +547,17 @@
           [
             "talk"
           ]
+        },
+        { "name": "complete", "sounds": 
+          [
+            "complete1"
+          ]
         }
+      ]
+    , "attributes": 
+      [
+        { "name": "highSpeed", "value": "4"},
+        { "name": "lowSpeed", "value": "3"}
       ]
     },
     { "name": "door", "role": "uk.co.nickthecoder.pillpopper.Door", "canRotate": false, "zOrder": 0, "initialEvent": "default", "showInSceneEditor": true, "events": 

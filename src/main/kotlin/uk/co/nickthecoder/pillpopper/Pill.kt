@@ -22,6 +22,7 @@ open class Pill : AbstractRole(), Edible {
     override fun eaten() {
         actor.die()
         eaten = true
+        actor.event("eaten")
         Play.instance.neighbourhood.blockAt(actor.x, actor.y).remove(this)
         PillPopper.instance.eatenPill(isPowerPill)
     }
