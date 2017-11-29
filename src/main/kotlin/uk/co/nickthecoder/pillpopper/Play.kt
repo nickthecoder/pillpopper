@@ -7,7 +7,7 @@ import uk.co.nickthecoder.tickle.action.Action
 import uk.co.nickthecoder.tickle.action.Delay
 import uk.co.nickthecoder.tickle.neighbourhood.StandardNeighbourhood
 import uk.co.nickthecoder.tickle.resources.Resources
-import uk.co.nickthecoder.tickle.stage.findRole
+import uk.co.nickthecoder.tickle.stage.findRoles
 import uk.co.nickthecoder.tickle.util.Attribute
 
 class Play : AbstractDirector() {
@@ -56,13 +56,13 @@ class Play : AbstractDirector() {
 
 
     fun powerPillWarning() {
-        Player.instance.actor.stage!!.findRole<Ghost>().forEach { ghost ->
+        Player.instance.actor.stage!!.findRoles<Ghost>().forEach { ghost ->
             ghost.powerPillWarning()
         }
     }
 
     fun powerPillEnd() {
-        Player.instance.actor.stage!!.findRole<Ghost>().forEach { ghost ->
+        Player.instance.actor.stage!!.findRoles<Ghost>().forEach { ghost ->
             ghost.powerPillEnd()
         }
         powerPillTimer = null

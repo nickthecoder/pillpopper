@@ -2,7 +2,7 @@ package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.AbstractProducer
 import uk.co.nickthecoder.tickle.Game
-import uk.co.nickthecoder.tickle.stage.findRole
+import uk.co.nickthecoder.tickle.stage.findRoles
 
 class PillPopper : AbstractProducer() {
 
@@ -68,7 +68,7 @@ class PillPopper : AbstractProducer() {
         if (pills <= 0) {
             Player.instance.levelComplete()
 
-            Player.instance.actor.stage!!.findRole<Ghost>().forEach { ghost ->
+            Player.instance.actor.stage!!.findRoles<Ghost>().forEach { ghost ->
                 ghost.levelComplete()
             }
         }

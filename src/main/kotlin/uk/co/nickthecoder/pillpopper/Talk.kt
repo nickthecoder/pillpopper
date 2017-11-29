@@ -37,7 +37,7 @@ class Talk : AbstractRole() {
         }
 
         actor.y += 70.0
-        actor.scale = 0.5
+        actor.scaleXY = 0.5
         actor.color.transparent()
 
         val growTime = 0.2

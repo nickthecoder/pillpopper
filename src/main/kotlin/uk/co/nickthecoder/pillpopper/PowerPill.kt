@@ -1,6 +1,6 @@
 package uk.co.nickthecoder.pillpopper
 
-import uk.co.nickthecoder.tickle.stage.findRole
+import uk.co.nickthecoder.tickle.stage.findRoles
 
 class PowerPill : Pill() {
 
@@ -8,7 +8,7 @@ class PowerPill : Pill() {
 
     override fun eaten() {
         super.eaten()
-        actor.stage?.findRole<Ghost>()?.forEach { ghost ->
+        actor.stage?.findRoles<Ghost>()?.forEach { ghost ->
             ghost.runAway()
         }
     }

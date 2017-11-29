@@ -1,7 +1,7 @@
 package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.Role
-import uk.co.nickthecoder.tickle.stage.findRole
+import uk.co.nickthecoder.tickle.stage.findRoles
 
 private val TOO_CLOSE = GRID_SIZE * 8
 
@@ -11,7 +11,7 @@ class Drinky : Ghost() {
 
     override fun activated() {
         super.activated()
-        flag = actor.stage?.findRole<Flag>()?.firstOrNull()
+        flag = actor.stage?.findRoles<Flag>()?.firstOrNull()
     }
 
     /**

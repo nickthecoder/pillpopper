@@ -14,7 +14,7 @@ class Points : ActionRole() {
 
     override fun createAction(): Action {
         actor.y += 30.0
-        actor.scale = 0.3
+        actor.scaleXY = 0.3
         val time = 0.5
         val stillTime = 0.2
         val growTime = 0.3

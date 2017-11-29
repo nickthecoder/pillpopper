@@ -6,7 +6,7 @@ import uk.co.nickthecoder.tickle.action.Do
 import uk.co.nickthecoder.tickle.action.Idle
 import uk.co.nickthecoder.tickle.action.NoAction
 import uk.co.nickthecoder.tickle.graphics.Color
-import uk.co.nickthecoder.tickle.stage.findRole
+import uk.co.nickthecoder.tickle.stage.findRoles
 import uk.co.nickthecoder.tickle.util.Attribute
 import uk.co.nickthecoder.tickle.util.CostumeAttribute
 
@@ -107,7 +107,7 @@ abstract class Ghost : Traveller() {
                 .then(chaseOne.repeat(exitAfter))
                 .then { waitingInPen = false }.then(seekDoorAction(afterAction = chase))
 
-        val foundDoor = closest(actor.stage!!.findRole<Door>())
+        val foundDoor = closest(actor.stage!!.findRoles<Door>())
         if (foundDoor == null) {
             actor.die()
             println("ERROR. No door found!")
