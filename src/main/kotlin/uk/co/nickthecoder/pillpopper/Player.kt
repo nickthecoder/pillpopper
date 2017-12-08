@@ -6,7 +6,7 @@ import uk.co.nickthecoder.tickle.action.Delay
 import uk.co.nickthecoder.tickle.action.Do
 import uk.co.nickthecoder.tickle.action.animation.Eases
 import uk.co.nickthecoder.tickle.action.animation.Forwards
-import uk.co.nickthecoder.tickle.action.animation.Grow
+import uk.co.nickthecoder.tickle.action.animation.Scale
 import uk.co.nickthecoder.tickle.resources.Resources
 import uk.co.nickthecoder.tickle.util.Angle
 import uk.co.nickthecoder.tickle.util.Attribute
@@ -79,7 +79,7 @@ class Player : Traveller() {
         if (!dead) {
             dead = true
 
-            val die = Grow(actor, 0.5, 0.1, Eases.easeIn).then { actor.hide() }
+            val die = Scale(actor, 0.5, 0.1, Eases.easeIn).then { actor.hide() }
 
             val resurrect = Do {
                 actor.position.set(initialPosition)
@@ -88,7 +88,7 @@ class Player : Traveller() {
                 block = findBlock()
                 actor.event("default")
 
-            }.then(Grow(actor, 0.5, 1.0))
+            }.then(Scale(actor, 0.5, 1.0))
                     .then {
                         dead = false
                     }.then(Movement())
@@ -111,8 +111,8 @@ class Player : Traveller() {
 
         val jumpUp = Forwards(actor.position, 50.0, Angle.degrees(90.0), time, Eases.easeOutCubic)
         val jumpDown = Forwards(actor.position, 50.0, Angle.degrees(-90.0), time, Eases.easeInCubic)
-        val kissIn = Grow(actor, time, 3.0, Eases.easeIn)
-        val kissOut = Grow(actor, time, 1.0, Eases.linear)
+        val kissIn = Scale(actor, time, 3.0, Eases.easeIn)
+        val kissOut = Scale(actor, time, 1.0, Eases.linear)
 
         movement = (jumpUp.and(kissIn)).then(jumpDown.and(kissOut)).repeat(3).then { Game.instance.startScene(Play.instance.nextScene) }
     }

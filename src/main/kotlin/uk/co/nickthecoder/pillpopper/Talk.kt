@@ -7,7 +7,7 @@ import uk.co.nickthecoder.tickle.action.Kill
 import uk.co.nickthecoder.tickle.action.animation.Eases
 import uk.co.nickthecoder.tickle.action.animation.Fade
 import uk.co.nickthecoder.tickle.action.animation.Forwards
-import uk.co.nickthecoder.tickle.action.animation.Grow
+import uk.co.nickthecoder.tickle.action.animation.Scale
 import uk.co.nickthecoder.tickle.util.Angle
 
 private val MARGIN = 30.0
@@ -44,7 +44,7 @@ class Talk : AbstractRole() {
         val moveTime = 0.3
         val delayTime = 0.6
 
-        val grow = Grow(actor, growTime, 1.0, Eases.easeOut)
+        val grow = Scale(actor, growTime, 1.0, Eases.easeOut)
                 .and(Fade(actor.color, growTime, 1f, Eases.linear))
 
         val move = Forwards(actor.position, 1000.0, direction, moveTime, Eases.easeIn)

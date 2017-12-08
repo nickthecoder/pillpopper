@@ -3,7 +3,7 @@ package uk.co.nickthecoder.pillpopper
 import uk.co.nickthecoder.tickle.ActionRole
 import uk.co.nickthecoder.tickle.Actor
 import uk.co.nickthecoder.tickle.action.animation.Fade
-import uk.co.nickthecoder.tickle.action.animation.Grow
+import uk.co.nickthecoder.tickle.action.animation.Scale
 
 class Lives : ActionRole() {
 
@@ -25,7 +25,7 @@ class Lives : ActionRole() {
     fun playerDied() {
         if (lifeIndicators.isNotEmpty()) {
             val item = lifeIndicators.removeAt(lifeIndicators.size - 1)
-            action = Grow(item, 1.0, 0.1).and(Fade(item.color, 1.0, 0f))
+            action = Scale(item, 1.0, 0.1).and(Fade(item.color, 1.0, 0f))
         }
     }
 
