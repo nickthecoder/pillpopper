@@ -19,10 +19,10 @@ class Player : Traveller() {
     @Attribute
     var lowSpeed: Double = 3.0
 
-    val left = Resources.instance.inputs.find("left")!!
-    val right = Resources.instance.inputs.find("right")!!
-    val up = Resources.instance.inputs.find("up")!!
-    val down = Resources.instance.inputs.find("down")!!
+    val left = Resources.instance.inputs.find("left")
+    val right = Resources.instance.inputs.find("right")
+    val up = Resources.instance.inputs.find("up")
+    val down = Resources.instance.inputs.find("down")
 
     var dead: Boolean = false
 
@@ -126,25 +126,25 @@ class Player : Traveller() {
             // If reversing, then do that straight away.
             // Remember which way we want to move (in nextDirection), which is then acted upon as soon as possible.
             // e.g. If going north, and pressed left, then move north till we arrive at a place where we can move west.
-            if (left.isPressed()) {
+            if (left?.isPressed() == true) {
                 if (direction == Direction.EAST) {
                     reverse()
                 }
                 nextDirection = Direction.WEST
             }
-            if (right.isPressed()) {
+            if (right?.isPressed() == true) {
                 if (direction == Direction.WEST) {
                     reverse()
                 }
                 nextDirection = Direction.EAST
             }
-            if (down.isPressed()) {
+            if (down?.isPressed() == true) {
                 if (direction == Direction.NORTH) {
                     reverse()
                 }
                 nextDirection = Direction.SOUTH
             }
-            if (up.isPressed()) {
+            if (up?.isPressed() == true) {
                 if (direction == Direction.SOUTH) {
                     reverse()
                 }

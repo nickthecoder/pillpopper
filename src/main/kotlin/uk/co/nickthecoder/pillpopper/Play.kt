@@ -32,6 +32,7 @@ class Play : AbstractDirector() {
     }
 
     override fun activated() {
+        super.activated()
 
         val width = (neighbourhood.width() + neighbourhood.blockWidth).toInt()
         val height = (neighbourhood.height() + neighbourhood.blockHeight).toInt() + INFO_HEIGHT
@@ -43,7 +44,7 @@ class Play : AbstractDirector() {
                 (height - Resources.instance.gameInfo.height).toDouble())
     }
 
-    override fun preTick() {
+    override fun tick() {
         powerPillTimer?.act()
     }
 
