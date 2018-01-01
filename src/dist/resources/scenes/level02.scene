@@ -1,70 +1,206 @@
-{ "director": "uk.co.nickthecoder.pillpopper.Play", "directorAttributes": 
-  [
-    { "name": "nextScene", "value": "level02"},
-    { "name": "powerPillTime", "value": "10"}
-  ]
-, "background": "#000000", "showMouse": true, "layout": "main", "grid": { "enabled": false, "xSpacing": 50, "ySpacing": 50, "xOffset": 0, "yOffset": 0, "xCloseness": 10, "yCloseness": 10}, "guides": { "enabled": true, "closeness": 5, "x": 
-  [
-    
-  ]
-, "y": 
-  [
-    
-  ]
-}, "include": 
-  [
+{
+  "director": "uk.co.nickthecoder.pillpopper.Play",
+  "directorAttributes": [
+    {
+      "name": "nextScene",
+      "value": "level02"
+    },
+    {
+      "name": "powerPillTime",
+      "value": "10"
+    }
+  ],
+  "background": "#000000",
+  "showMouse": true,
+  "layout": "main",
+  "snapToGrid": {
+    "enabled": false,
+    "xSpacing": 50,
+    "ySpacing": 50,
+    "xOffset": 0,
+    "yOffset": 0,
+    "xCloseness": 10,
+    "yCloseness": 10
+  },
+  "snapToGuides": {
+    "enabled": true,
+    "closeness": 5,
+    "x": [
+      
+    ],
+    "y": [
+      
+    ]
+  },
+  "snapToOthers": {
+    "enabled": true,
+    "xCloseness": 10,
+    "yCloseness": 10
+  },
+  "snapRotation": {
+    "enabled": true,
+    "step": 15,
+    "closeness": 15
+  },
+  "include": [
     "mazes/medium"
-  ]
-, "stages": 
-  [
-    { "name": "main", "actors": 
-      [
-        { "costume": "snide", "x": 520, "y": 440, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "attributes": 
-          [
-            { "name": "exitAfter", "value": "5"},
-            { "name": "highSpeed", "value": "2.6"},
-            { "name": "lowSpeed", "value": "2.5"},
-            { "name": "reExitAfter", "value": "5"}
+  ],
+  "stages": [
+    {
+      "name": "main",
+      "actors": [
+        {
+          "costume": "snide",
+          "x": 520,
+          "y": 440,
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "attributes": [
+            {
+              "name": "exitAfter",
+              "value": "5"
+            },
+            {
+              "name": "highSpeed",
+              "value": "2.6"
+            },
+            {
+              "name": "lowSpeed",
+              "value": "2.5"
+            },
+            {
+              "name": "reExitAfter",
+              "value": "5"
+            }
           ]
         },
-        { "costume": "drinky", "x": 480, "y": 400, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "attributes": 
-          [
-            { "name": "exitAfter", "value": "7"},
-            { "name": "highSpeed", "value": "2.9"},
-            { "name": "lowSpeed", "value": "2.5"},
-            { "name": "reExitAfter", "value": "5"}
+        {
+          "costume": "drinky",
+          "x": 480,
+          "y": 400,
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "attributes": [
+            {
+              "name": "exitAfter",
+              "value": "7"
+            },
+            {
+              "name": "highSpeed",
+              "value": "2.9"
+            },
+            {
+              "name": "lowSpeed",
+              "value": "2.5"
+            },
+            {
+              "name": "reExitAfter",
+              "value": "5"
+            }
           ]
         },
-        { "costume": "stinky", "x": 520, "y": 400, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "attributes": 
-          [
-            { "name": "exitAfter", "value": "15"},
-            { "name": "highSpeed", "value": "3"},
-            { "name": "lowSpeed", "value": "2.5"},
-            { "name": "reExitAfter", "value": "5"}
+        {
+          "costume": "stinky",
+          "x": 520,
+          "y": 400,
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "attributes": [
+            {
+              "name": "exitAfter",
+              "value": "15"
+            },
+            {
+              "name": "highSpeed",
+              "value": "3"
+            },
+            {
+              "name": "lowSpeed",
+              "value": "2.5"
+            },
+            {
+              "name": "reExitAfter",
+              "value": "5"
+            }
           ]
         },
-        { "costume": "winky", "x": 560, "y": 400, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "attributes": 
-          [
-            { "name": "exitAfter", "value": "10"},
-            { "name": "highSpeed", "value": "2.8"},
-            { "name": "lowSpeed", "value": "2.5"},
-            { "name": "reExitAfter", "value": "5"}
+        {
+          "costume": "winky",
+          "x": 560,
+          "y": 400,
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "attributes": [
+            {
+              "name": "exitAfter",
+              "value": "10"
+            },
+            {
+              "name": "highSpeed",
+              "value": "2.8"
+            },
+            {
+              "name": "lowSpeed",
+              "value": "2.5"
+            },
+            {
+              "name": "reExitAfter",
+              "value": "5"
+            }
           ]
         },
-        { "costume": "bonusFactory", "x": 360, "y": 200, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": "", "attributes": 
-          [
-            { "name": "initialDelay", "value": "10"},
-            { "name": "period", "value": "15"},
-            { "name": "quantity", "value": "3"}
+        {
+          "costume": "bonusFactory",
+          "x": 360,
+          "y": 200,
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "attributes": [
+            {
+              "name": "initialDelay",
+              "value": "10"
+            },
+            {
+              "name": "period",
+              "value": "15"
+            },
+            {
+              "name": "quantity",
+              "value": "3"
+            }
           ]
         },
-        { "costume": "player", "x": 520, "y": 240, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "attributes": 
-          [
-            { "name": "highSpeed", "value": "4"},
-            { "name": "lowSpeed", "value": "3"}
+        {
+          "costume": "player",
+          "x": 520,
+          "y": 240,
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "attributes": [
+            {
+              "name": "highSpeed",
+              "value": "4"
+            },
+            {
+              "name": "lowSpeed",
+              "value": "3"
+            }
           ]
         },
-        { "costume": "flag", "x": 240, "y": 400, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": ""}
+        {
+          "costume": "flag",
+          "x": 240,
+          "y": 400,
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        }
       ]
     }
   ]

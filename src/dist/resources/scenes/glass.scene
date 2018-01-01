@@ -1,15 +1,81 @@
-{ "director": "uk.co.nickthecoder.tickle.NoDirector", "background": "#000000", "showMouse": false, "layout": "glass", "stages": 
-  [
-    { "name": "glass", "actors": 
-      [
-        { "costume": "score", "x": 511, "y": 7, "xAlignment": "CENTER", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": "Score : 0", "attributes": 
-          [
-            { "name": "prefix", "value": "Score : "},
-            { "name": "suffix", "value": ""}
+{
+  "director": "uk.co.nickthecoder.tickle.NoDirector",
+  "background": "#000000",
+  "showMouse": false,
+  "layout": "glass",
+  "snapToGrid": {
+    "enabled": false,
+    "xSpacing": 50,
+    "ySpacing": 50,
+    "xOffset": 0,
+    "yOffset": 0,
+    "xCloseness": 10,
+    "yCloseness": 10
+  },
+  "snapToGuides": {
+    "enabled": true,
+    "closeness": 5,
+    "x": [
+      
+    ],
+    "y": [
+      
+    ]
+  },
+  "snapToOthers": {
+    "enabled": true,
+    "xCloseness": 10,
+    "yCloseness": 10
+  },
+  "snapRotation": {
+    "enabled": true,
+    "step": 15,
+    "closeness": 15
+  },
+  "include": [
+    
+  ],
+  "stages": [
+    {
+      "name": "glass",
+      "actors": [
+        {
+          "costume": "score",
+          "x": 511,
+          "y": 7,
+          "text": "Score : 0",
+          "viewAlignmentX": "CENTER",
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "attributes": [
+            {
+              "name": "prefix",
+              "value": "Score : "
+            },
+            {
+              "name": "suffix",
+              "value": ""
+            }
           ]
         },
-        { "costume": "lives", "x": 33, "y": 26, "xAlignment": "LEFT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": ""},
-        { "costume": "bonusIndicator", "x": 992, "y": 26, "xAlignment": "RIGHT", "yAlignment": "BOTTOM", "direction": 0, "scale": 1, "text": ""}
+        {
+          "costume": "lives",
+          "x": 33,
+          "y": 26,
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        {
+          "costume": "bonusIndicator",
+          "x": 992,
+          "y": 26,
+          "viewAlignmentX": "RIGHT",
+          "direction": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        }
       ]
     }
   ]

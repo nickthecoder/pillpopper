@@ -6,7 +6,6 @@ import uk.co.nickthecoder.tickle.Role
 import uk.co.nickthecoder.tickle.action.Action
 import uk.co.nickthecoder.tickle.action.Delay
 import uk.co.nickthecoder.tickle.neighbourhood.StandardNeighbourhood
-import uk.co.nickthecoder.tickle.resources.Resources
 import uk.co.nickthecoder.tickle.stage.findRoles
 import uk.co.nickthecoder.tickle.util.Attribute
 
@@ -38,10 +37,10 @@ class Play : AbstractDirector() {
         val height = (neighbourhood.height() + neighbourhood.blockHeight).toInt() + INFO_HEIGHT
 
         Game.instance.window.resize(width, height)
-        Game.instance.scene.layout(width, height)
-        Game.instance.scene.adjustActors(
-                (width - Resources.instance.gameInfo.width).toDouble(),
-                (height - Resources.instance.gameInfo.height).toDouble())
+        //Game.instance.scene.layoutToFit()
+        //Game.instance.scene.adjustActors(
+        //        (width - Resources.instance.gameInfo.width).toDouble(),
+        //        (height - Resources.instance.gameInfo.height).toDouble())
     }
 
     override fun tick() {
