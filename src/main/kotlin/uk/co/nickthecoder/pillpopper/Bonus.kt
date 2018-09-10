@@ -25,7 +25,7 @@ class Bonus : ActionRole(), Edible {
         Play.instance.neighbourhood.blockAt(actor.x, actor.y).remove(this)
         val bonusPoints = PillPopper.instance.eatenBonus(index)
         if (bonusPoints > 0) {
-            val points = actor.createChildOnStage("points")
+            val points = actor.createChild("points")
             points.textAppearance?.text = bonusPoints.toString()
         }
 

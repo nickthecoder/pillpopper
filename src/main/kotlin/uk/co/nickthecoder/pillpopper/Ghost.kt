@@ -230,7 +230,7 @@ abstract class Ghost : Traveller() {
         canBeScared = false
         powerPillWarningAction = null
 
-        val points = actor.createChildOnStage("points")
+        val points = actor.createChild("points")
         points.textAppearance?.text = PillPopper.instance.eatenGhost().toString()
 
         val inPen = chaseOne.repeat(2)

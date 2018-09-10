@@ -17,7 +17,11 @@
       "uk.co.nickthecoder.pillpopper"
     ],
     "treeThumbnailSize": 24,
-    "costumePickerThumbnailSize": 40
+    "costumePickerThumbnailSize": 40,
+    "isMaximized": false,
+    "windowWidth": 1000,
+    "windowHeight": 600,
+    "apiURL": "http://nickthecoder.co.uk/public/tickle/api-0.1/tickle-core/"
   },
   "layouts": [
     {
@@ -57,6 +61,7 @@
       "stages": [
         {
           "name": "glass",
+          "isDefault": true,
           "stage": "uk.co.nickthecoder.tickle.stage.GameStage",
           "constraint": "uk.co.nickthecoder.tickle.resources.NoStageConstraint"
         }
@@ -70,8 +75,7 @@
           "hAlignment": "LEFT",
           "leftRightMargin": 0,
           "vAlignment": "BOTTOM",
-          "topBottomMargin": 0,
-          "height": 50
+          "topBottomMargin": 0
         }
       ]
     }

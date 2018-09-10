@@ -3,7 +3,7 @@
   "directorAttributes": [
     {
       "name": "nextScene",
-      "value": "smaller"
+      "value": "level01"
     },
     {
       "name": "powerPillTime",

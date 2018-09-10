@@ -2,6 +2,7 @@ package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.AbstractProducer
 import uk.co.nickthecoder.tickle.Game
+import uk.co.nickthecoder.tickle.editor.EditorMain
 import uk.co.nickthecoder.tickle.stage.findRoles
 
 class PillPopper : AbstractProducer() {
@@ -113,4 +114,8 @@ class PillPopper : AbstractProducer() {
     companion object {
         lateinit var instance: PillPopper
     }
+}
+
+fun main(args: Array<String>) {
+    EditorMain("pillPopper", args).start()
 }

@@ -7,10 +7,10 @@ class PowerPill : Pill() {
     override val isPowerPill = true
 
     override fun eaten() {
-        super.eaten()
         actor.stage?.findRoles<Ghost>()?.forEach { ghost ->
             ghost.runAway()
         }
+        super.eaten()
     }
 
 }

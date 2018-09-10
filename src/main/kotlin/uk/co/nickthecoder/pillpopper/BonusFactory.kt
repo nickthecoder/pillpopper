@@ -25,7 +25,7 @@ class BonusFactory : ActionRole() {
                 PeriodicFactory(period, quantity) {
                     val block = Play.instance.neighbourhood.blockAt(actor.x, actor.y)
                     if (block.occupants.isEmpty()) {
-                        actor.createChildOnStage("bonus")
+                        actor.createChild("bonus")
                     }
                 }
         )

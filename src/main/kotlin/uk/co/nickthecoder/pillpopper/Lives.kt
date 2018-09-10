@@ -25,7 +25,7 @@ class Lives : ActionRole() {
     fun playerDied() {
         if (lifeIndicators.isNotEmpty()) {
             val item = lifeIndicators.removeAt(lifeIndicators.size - 1)
-            action = Scale(item, 1.0, 0.1).and(Fade(item.color, 1.0, 0f))
+            replaceAction(Scale(item, 1.0, 0.1).and(Fade(item.color, 1.0, 0f)))
         }
     }
 

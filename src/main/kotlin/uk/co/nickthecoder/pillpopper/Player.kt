@@ -54,7 +54,7 @@ class Player : Traveller() {
             if (role is Edible) {
                 role.eaten()
                 if (role is PowerPill) {
-                    val talk = actor.createChildOnStage("talk")
+                    val talk = actor.createChild("talk")
                     (talk.role as Talk).event("powerPill")
                 }
                 speed = lowSpeed

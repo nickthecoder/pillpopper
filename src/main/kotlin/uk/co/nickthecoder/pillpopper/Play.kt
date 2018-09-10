@@ -37,10 +37,7 @@ class Play : AbstractDirector() {
         val height = (neighbourhood.height() + neighbourhood.blockHeight).toInt() + INFO_HEIGHT
 
         Game.instance.window.resize(width, height)
-        //Game.instance.scene.layoutToFit()
-        //Game.instance.scene.adjustActors(
-        //        (width - Resources.instance.gameInfo.width).toDouble(),
-        //        (height - Resources.instance.gameInfo.height).toDouble())
+        Game.instance.scene.layoutToFit()
     }
 
     override fun tick() {
