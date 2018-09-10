@@ -1,10 +1,7 @@
 package uk.co.nickthecoder.pillpopper
 
 import uk.co.nickthecoder.tickle.Role
-import uk.co.nickthecoder.tickle.action.Action
-import uk.co.nickthecoder.tickle.action.Do
-import uk.co.nickthecoder.tickle.action.Idle
-import uk.co.nickthecoder.tickle.action.NoAction
+import uk.co.nickthecoder.tickle.action.*
 import uk.co.nickthecoder.tickle.graphics.Color
 import uk.co.nickthecoder.tickle.stage.findRoles
 import uk.co.nickthecoder.tickle.util.Attribute
@@ -255,7 +252,7 @@ abstract class Ghost : Traveller() {
      */
     fun playerDied() {
         if (!eaten && !scared && !seekingDoor && !waitingInPen) {
-            nextMovement = runOne.forSeconds(RESTART_PERIOD)
+            nextMovement = runOne.whilst(Delay(RESTART_PERIOD))
                     .then { nextMovement = chase }.then(runOne)
         }
     }
